@@ -37,12 +37,6 @@
             <tr><td class="appointment-label"><p>Phone Number:</p></td>
             <td class="appointment-input"><input class="appointment-inputbox" /></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
-            <tr><td class="appointment-label"><p>Meeting Address:</p></td>
-            <td class="appointment-input"><input title="The location that you wish to meet with us to review the pre-inspection from and handling payment prior to inspection." class="appointment-inputbox" /></td>
-            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/ ></td></tr>
-            <tr><td class="appointment-label"><p>Meeting Town:</p></td>
-            <td class="appointment-input"><input class="appointment-inputbox" /></td>
-            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
             <tr><td class="appointment-label"><p>Inspection Address:</p></td>
             <td class="appointment-input"><input class="appointment-inputbox" /></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
@@ -62,14 +56,13 @@
             <td class="appointment-input"><input class="spinner" name="bathrooms" value="2"/></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
             <tr><td class="appointment-label"><p>Listing Square Footage:</p></td>
-            <td class="appointment-input"><input class="appointment-inputbox" /></td>
-            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
-<!--TODO - Add JQUERY calendar widget -->
-            <tr><td class="appointment-label"><p>Date Requested:</p></td>
-            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-input"><input class="spinner-footage" name="square-footage" value="1000"/></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
             <tr><td class="appointment-label"><p>Time Requested:</p></td>
             <td class="appointment-input"><input class="spinner-time" name="bathrooms" value="8:00 AM"/></td>
+            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
+            <tr><td class="appointment-label"><p>Date Requested:</p></td>
+                <td class="appointment-input"><div class="datepicker"></div></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
 <!--TODO - Add custom textarea -->
             <tr><td class="appointment-label"><p>Notes and Special Requirements:</p></td>
@@ -107,8 +100,13 @@
 
     _format: function( value ) {
         return Globalize.format( new Date(value), "t" );
-    }
+        }
     });
+
+    $(function() {
+        $( ".datepicker" ).datepicker();
+    });
+
     $(function() {
         $( ".spinner" ).spinner({
             spin: function( event, ui ) {
@@ -122,7 +120,21 @@
             }
         });
 
+        $( ".spinner-footage" ).spinner({
+            step: 100,
+            spin: function( event, ui ) {
+                if ( ui.value > 10000 ) {
+                    $( this ).spinner( "value", 0 );
+                    return false;
+                } else if ( ui.value < 0 ) {
+                    $( this ).spinner( "value", 10000 );
+                return false;
+                }
+            }
+        });
+
         $( ".spinner-time").timespinner();
+
         $( "#culture" ).change(function() {
                 var current = $( ".spinner-time" ).timespinner( "value" );
                 Globalize.culture( $(this).val() );
