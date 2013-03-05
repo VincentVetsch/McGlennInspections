@@ -16,7 +16,7 @@
     <meta name="description" content="" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <!-- JQuery-UI must be loaded before main stylesheet, otherwise colors get messed up -->
-    <link rel="stylesheet" href="jquery-ui-1.10.1.custom.min.css"/>
+    <link rel="stylesheet" href="jquery-ui-1.10.1.custom.css"/>
     <link href="jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
     <link href="McGlennInspection.css" rel="stylesheet" type="text/css" media="screen/">
     <title>McGlenn Home Inspections, LLC</title>
@@ -56,13 +56,11 @@
             <tr><td class="appointment-label"><p>Inspection ZIP Code:</p></td>
             <td class="appointment-input"><input class="appointment-inputbox" /></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
-<!--TODO - Add spin button for number of rooms -->
-            <tr><td class="appointment-label"><p>Number of Rooms:</p></td>
-            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <tr><td class="appointment-label"><p>Number of Bedrooms:</p></td>
+            <td class="appointment-input"><input class="spinner" name="bedrooms" value="2"/></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
-<!--TODO - Add spin button for number of Bathrooms -->
             <tr><td class="appointment-label"><p>Number of Bathrooms:</p></td>
-            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-input"><input class="spinner" name="bathrooms" value="2"/></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
             <tr><td class="appointment-label"><p>Listing Square Footage:</p></td>
             <td class="appointment-input"><input class="appointment-inputbox" /></td>
@@ -83,8 +81,16 @@
 <!--  Load all javascript at the end to the file to reduce load time -->
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.1.custom.js"></script>
 <script type="text/javascript" src="js/tooltip.js"></script>
 <script type="text/javascript" src="js/sb.js"> </script>
+<script>
+    $(function() {
+        $( ".spinner" ).spinner({
+            step: 1,
+            numberFormat: "n"
+        });
+    });
+</script>
 </body>
 </html>
