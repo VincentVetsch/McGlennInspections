@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//TD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+    Design by Vincent Vetsch
+    http://www.McGlennInspections.com
+    Released for free under a Creative Commons Attribution 2.5 License
+
+    Name       : McGlenn Inspections LLC
+    Description: McGlenn Inspection, LLC Home page example
+    Version    : 1.0
+    Released   : 20130217
+-->
+<html>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>McGlenn Home Inspections, LLC</title>
+        <link href="McGlennInspection.css" rel="stylesheet" type="text/css" media="screen/">
+</head>
+<body>
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script language="JavaScript" type="text/JavaScript">
+        $(function(){
+            $("#McGlenn_Slide > div").hide();
+            frames(0,7);
+            }
+        );
+        function frames(on,frames){$("#frame"+on).fadeIn(500,function(){setTimeout("$(\"#frame"+on+"\").fadeOut(300,function(){frames("+(on+1)%frames+","+frames+");});",5000);});}
+    </script>
+<!--TODO - Add a Django application for adding text and Images -->
+    <div id="McGlenn_Slide">
+    <div id="frame0">
+        <table class="slidetable">
+            <tr>
+            <td class="slidetext">
+                <p><strong>Tree Damage:  </strong>Having trees to close to the house can cause problems with the foundation and in extreme weather conditions can fall on the house.  Most insurance companies charge more or will not cover tree damage to the house.</p>
+            </td>
+            <td class="pic">
+                <img src="images/slideshow/Tree_Damage.jpg"/>
+            </td>
+            </tr>
+        </table>
+    </div>
+    <div id="frame1">
+        <table class="slidetable">
+            <tr>
+            <td class="slidetext">
+                <p><strong>Mold Damage:  </strong>Mold is a very good indicator of water intrusion.  It can cause extreme respitory problems in children and adults.</p>
+            </td>
+            <td class="pic">
+                <img src="images/slideshow/Mold-Damage.jpg"/>
+            </td>
+            </tr>
+        </table>
+    </div>
+    <div id="frame2">
+        <table class="slidetable">
+            <tr>
+            <td class="slidetext">
+                <p><strong>Termite Damage:  </strong>It is wise to have your home inspected for pest every year.  If not, Termites and Carpenter Ants can cost you countless dollars.</p>
+            </td>
+            <td class="pic">
+                <img src="images/slideshow/Termite_Damage_House1.jpg"/>
+            </td>
+            </tr>
+        </table>
+    </div>
+    <div id="frame3">
+        <table class="slidetable">
+            <tr>
+            <td class="slidetext">
+                <p><strong>Foundation Shift Damage:  </strong>As a house settles, sometimes cracks form on foundation walls.  Most of the time this is minor, but there are times when this is major.  It is always wise to check your foundation walls for cracks, if the cracks are larger than a 1/4" contact a structural engineer for further evaluation.</p>
+            </td>
+            <td class="pic">
+                <img src="images/slideshow/Foundation_Water_Damage.jpg"/>
+            </td>
+            </tr>
+        </table>
+    </div>
+    <div id="frame4">
+        <table class="slidetable">
+            <tr>
+            <td class="slidetext">
+                <p><strong>Water Damage:  </strong>Water leaks from the roof if left unchecked can cause damage to ceiling frame, roof rafters, sheeting, insulationand ceiling gypsum board.  It is always a good idea to look in your attic once a year, to catch a problem before it become a big problem.</p>
+             </td>
+            <td class="pic">
+                <img src="images/slideshow/Water_Damage.jpg"/>
+            </td>
+            </tr>
+        </table>
+    </div>
+    <div id="frame5">
+        <table class="slidetable">
+            <tr>
+            <td class="slidetext">
+                <p><strong>Electrical Fire Damage:  </strong>A large number of house fires are caused by overloaded circuits.  Sometimes it is caused by the home owner pluging too many devices into a single outlet.  Sometimes electical fires can be caused by unlicensed electricians overloading branch circuits or mixing aluminum and copper wiring.  When in doubt have a licensed electrician inspect your home.</p>
+            </td>
+            <td class="pic">
+                <img src="images/slideshow/Electrical_Fire.jpg"/>
+            </td>
+            </tr>
+        </table>
+    </div>
+    <div id="frame6">
+        <table class="slidetable">
+            <tr>
+            <td class="slidetext">
+                <p><strong>Water Damage:  </strong>Staining and deterioration of brick and morter are good indicators of water saturation.  There are many ways of correcting and repairing damage.  Contact a licensed mason for options.</p>
+            </td>
+            <td class="pic">
+                <img src="images/slideshow/battle-damage-big-house-2.jpg"/>
+            </td>
+            </tr>
+        </table>
+    </div>
+    </div>
+</body>
+</html>

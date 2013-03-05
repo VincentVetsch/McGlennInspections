@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="McGlenn.svg"
+   inkscape:export-ydpi="90"
+   inkscape:export-xdpi="90"
+   inkscape:export-filename="/home/vince/Projects/McInspWork/images/McGlenn1.png"
+   inkscape:version="0.48.3.1 r9886"
+   version="1.1"
+   id="svg2"
+   height="485.21896"
+   width="739.93787">
+  <defs
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3006">
+      <stop
+         style="stop-color:#000080;stop-opacity:1;"
+         offset="0"
+         id="stop3008" />
+      <stop
+         style="stop-color:#000080;stop-opacity:0;"
+         offset="1"
+         id="stop3010" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3006"
+       id="linearGradient3012"
+       x1="77.159218"
+       y1="189.05243"
+       x2="746.84302"
+       y2="580.67188"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3006"
+       id="linearGradient3014"
+       x1="77.159218"
+       y1="189.05243"
+       x2="746.84302"
+       y2="580.67188"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3006"
+       id="linearGradient3018"
+       x1="77.159218"
+       y1="189.05243"
+       x2="746.84302"
+       y2="580.67188"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       inkscape:collect="always"
+       id="filter3921"
+       color-interpolation-filters="sRGB"
+       y="-0.25"
+       height="1.5"
+       inkscape:menu-tooltip="Darkens the edge with an inner blur and adds a flexible glow"
+       inkscape:menu="Shadows and Glows"
+       inkscape:label="Dark and Glow">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="7.7239826"
+         id="feGaussianBlur3923"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix3244" />
+      <feGaussianBlur
+         id="feGaussianBlur3246"
+         stdDeviation="5"
+         result="result6"
+         in="fbSourceGraphic" />
+      <feComposite
+         id="feComposite3248"
+         in2="result6"
+         result="result8"
+         in="fbSourceGraphic"
+         operator="atop" />
+      <feComposite
+         id="feComposite3250"
+         in2="fbSourceGraphicAlpha"
+         result="result9"
+         operator="over"
+         in="result8" />
+      <feColorMatrix
+         id="feColorMatrix3252"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 "
+         result="result10" />
+      <feBlend
+         id="feBlend3254"
+         in2="result6"
+         in="result10"
+         mode="normal" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter3961"
+       color-interpolation-filters="sRGB"
+       y="-0.25"
+       height="1.5"
+       inkscape:menu-tooltip="Darkens the edge with an inner blur and adds a flexible glow"
+       inkscape:menu="Shadows and Glows"
+       inkscape:label="Dark and Glow">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="5.7693955"
+         id="feGaussianBlur3963"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix3172" />
+      <feGaussianBlur
+         id="feGaussianBlur3174"
+         stdDeviation="5"
+         result="result6"
+         in="fbSourceGraphic" />
+      <feComposite
+         id="feComposite3176"
+         in2="result6"
+         result="result8"
+         in="fbSourceGraphic"
+         operator="atop" />
+      <feComposite
+         id="feComposite3178"
+         in2="fbSourceGraphicAlpha"
+         result="result9"
+         operator="over"
+         in="result8" />
+      <feColorMatrix
+         id="feColorMatrix3180"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 "
+         result="result10" />
+      <feBlend
+         id="feBlend3182"
+         in2="result6"
+         in="result10"
+         mode="normal" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter3989"
+       color-interpolation-filters="sRGB"
+       y="-0.25"
+       height="1.5"
+       inkscape:menu-tooltip="Darkens the edge with an inner blur and adds a flexible glow"
+       inkscape:menu="Shadows and Glows"
+       inkscape:label="Dark and Glow">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="4.2478265"
+         id="feGaussianBlur3991"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix3196" />
+      <feGaussianBlur
+         id="feGaussianBlur3198"
+         stdDeviation="5"
+         result="result6"
+         in="fbSourceGraphic" />
+      <feComposite
+         id="feComposite3200"
+         in2="result6"
+         result="result8"
+         in="fbSourceGraphic"
+         operator="atop" />
+      <feComposite
+         id="feComposite3202"
+         in2="fbSourceGraphicAlpha"
+         result="result9"
+         operator="over"
+         in="result8" />
+      <feColorMatrix
+         id="feColorMatrix3204"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 "
+         result="result10" />
+      <feBlend
+         id="feBlend3206"
+         in2="result6"
+         in="result10"
+         mode="normal" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter4035"
+       y="-0.25"
+       height="1.5"
+       inkscape:menu-tooltip="Darkens the edge with an inner blur and adds a flexible glow"
+       inkscape:menu="Shadows and Glows"
+       inkscape:label="Dark and Glow"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="4.0964161"
+         id="feGaussianBlur4037"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix3184" />
+      <feGaussianBlur
+         id="feGaussianBlur3186"
+         stdDeviation="5"
+         result="result6"
+         in="fbSourceGraphic" />
+      <feComposite
+         id="feComposite3188"
+         in2="result6"
+         result="result8"
+         in="fbSourceGraphic"
+         operator="atop" />
+      <feComposite
+         id="feComposite3190"
+         in2="fbSourceGraphicAlpha"
+         result="result9"
+         operator="over"
+         in="result8" />
+      <feColorMatrix
+         id="feColorMatrix3192"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 "
+         result="result10" />
+      <feBlend
+         id="feBlend3194"
+         in2="result6"
+         in="result10"
+         mode="normal" />
+    </filter>
+    <filter
+       id="filter3208"
+       y="-0.25"
+       height="1.5"
+       inkscape:menu-tooltip="Darkens the edge with an inner blur and adds a flexible glow"
+       inkscape:menu="Shadows and Glows"
+       inkscape:label="Dark and Glow"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur3210"
+         stdDeviation="5"
+         result="result6" />
+      <feComposite
+         id="feComposite3212"
+         in2="result6"
+         result="result8"
+         in="SourceGraphic"
+         operator="atop" />
+      <feComposite
+         id="feComposite3214"
+         in2="SourceAlpha"
+         result="result9"
+         operator="over"
+         in="result8" />
+      <feColorMatrix
+         id="feColorMatrix3216"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 "
+         result="result10" />
+      <feBlend
+         id="feBlend3218"
+         in2="result6"
+         in="result10"
+         mode="normal" />
+    </filter>
+    <filter
+       id="filter3220"
+       y="-0.25"
+       height="1.5"
+       inkscape:menu-tooltip="Darkens the edge with an inner blur and adds a flexible glow"
+       inkscape:menu="Shadows and Glows"
+       inkscape:label="Dark and Glow"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur3222"
+         stdDeviation="5"
+         result="result6" />
+      <feComposite
+         id="feComposite3224"
+         in2="result6"
+         result="result8"
+         in="SourceGraphic"
+         operator="atop" />
+      <feComposite
+         id="feComposite3226"
+         in2="SourceAlpha"
+         result="result9"
+         operator="over"
+         in="result8" />
+      <feColorMatrix
+         id="feColorMatrix3228"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 "
+         result="result10" />
+      <feBlend
+         id="feBlend3230"
+         in2="result6"
+         in="result10"
+         mode="normal" />
+    </filter>
+    <filter
+       id="filter3232"
+       y="-0.25"
+       height="1.5"
+       inkscape:menu-tooltip="Darkens the edge with an inner blur and adds a flexible glow"
+       inkscape:menu="Shadows and Glows"
+       inkscape:label="Dark and Glow"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur3234"
+         stdDeviation="5"
+         result="result6" />
+      <feComposite
+         id="feComposite3236"
+         in2="result6"
+         result="result8"
+         in="SourceGraphic"
+         operator="atop" />
+      <feComposite
+         id="feComposite3238"
+         in2="SourceAlpha"
+         result="result9"
+         operator="over"
+         in="result8" />
+      <feColorMatrix
+         id="feColorMatrix3240"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 "
+         result="result10" />
+      <feBlend
+         id="feBlend3242"
+         in2="result6"
+         in="result10"
+         mode="normal" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.68689135"
+     inkscape:cx="431.92197"
+     inkscape:cy="252.14757"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1354"
+     inkscape:window-height="742"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     showguides="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4099"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       originx="0.79030306px"
+       originy="-422.13814px" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.79030306,-145.00509)">
+    <path
+       style="fill:#0003ff;fill-opacity:1;stroke:#000000;stroke-width:0.94946104px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter3961)"
+       d="m 368.0625,17.59375 c -7.83563,-0.01034 -15.16095,3.719179 -21.625,9.71875 C 123.42104,200.64362 20.6875,287.875 20.6875,287.875 l -2.75,150.6875 c 0.998547,11.74798 8.251868,24.45817 20.21875,28.78125 l 659.5625,0 c 15.10948,0.0864 23.78948,-10.17451 24.34375,-28.5625 L 720.78125,292.5 389.71875,27.34375 c -7.4258,-6.840848 -14.74246,-9.740876 -21.65625,-9.75 z m 72.7278,129.76335 c 8.6134,0.10141 28.45364,6.99325 40,20 l 200,160 0,80 -20,20 -460,0 -20,-20 0,-60 220,-180 c 8.75275,-10.08502 28.92563,-20.13038 40,-20 z"
+       transform="translate(-0.79030306,145.00509)"
+       id="path3050"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sccccccccssccccccccs" />
+    <path
+       style="fill:#0000fb;fill-opacity:1;stroke:#0000fb;stroke-width:0.94946104px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4035)"
+       d="m 480.40625,356.26844 c -2.54152,0.0437 -5.15742,1.61226 -9.9375,5.8125 -3.95771,3.47764 -44.67176,35.10402 -90.46875,70.28125 l -83.28125,63.96875 0,24 0,23.96875 38.21875,-0.9375 C 355.95611,542.83497 436.53142,542.39444 514,542.39344 l 140.875,0 0,-23.8125 0,-23.8125 -84.75,-68.9375 c -53.20473,-43.27612 -86.20862,-69.14535 -88.625,-69.5 -0.36529,-0.0536 -0.73068,-0.0687 -1.09375,-0.0625 z"
+       id="path3070"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#0003ff;fill-opacity:1;stroke:#000000;stroke-width:0.94946104px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter3989)"
+       d="m 108.69169,335.08768 111.74712,-91.75708 -1.32035,-49.09988 -108.90091,1.34069 z"
+       id="path3072"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:none;filter:url(#filter3208)"
+       d="m 29.947955,606.42636 c -5.796436,-5.08935 -9.312008,-11.03408 -11.0645,-18.70975 -1.718632,-7.52736 1.514813,-153.1441 3.452621,-155.48729 2.037313,-2.46349 91.867524,-75.86647 138.660674,-113.30382 41.55905,-33.24974 183.81351,-145.08765 191.34701,-150.43358 7.11179,-5.04669 19.95467,-5.87778 26.95982,-1.74464 2.81668,1.66188 80.37207,63.32202 172.34532,137.02253 l 167.22409,134.00092 0.9664,74.60899 c 0.56672,43.75318 0.41623,76.88038 -0.3639,80.10121 -1.77398,7.32403 -5.16239,12.24385 -10.80017,15.68142 -4.57569,2.78998 -10.16479,2.83683 -339.07964,2.84217 l -334.427279,0.005 -5.220446,-4.5836 z"
+       id="path3862"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:none;filter:url(#filter3220)"
+       d="m 29.947955,606.42636 c -5.796436,-5.08935 -9.312008,-11.03408 -11.0645,-18.70975 -1.718632,-7.52736 1.514813,-153.1441 3.452621,-155.48729 2.037313,-2.46349 91.867524,-75.86647 138.660674,-113.30382 41.55905,-33.24974 183.81351,-145.08765 191.34701,-150.43358 7.11179,-5.04669 19.95467,-5.87778 26.95982,-1.74464 2.81668,1.66188 80.37207,63.32202 172.34532,137.02253 l 167.22409,134.00092 0.9664,74.60899 c 0.56672,43.75318 0.41623,76.88038 -0.3639,80.10121 -1.77398,7.32403 -5.16239,12.24385 -10.80017,15.68142 -4.57569,2.78998 -10.16479,2.83683 -339.07964,2.84217 l -334.427279,0.005 -5.220446,-4.5836 z"
+       id="path3864"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:none;filter:url(#filter3232)"
+       d="m 29.947955,606.42636 c -5.796436,-5.08935 -9.312008,-11.03408 -11.0645,-18.70975 -1.718632,-7.52736 1.514813,-153.1441 3.452621,-155.48729 2.037313,-2.46349 91.867524,-75.86647 138.660674,-113.30382 41.55905,-33.24974 183.81351,-145.08765 191.34701,-150.43358 7.11179,-5.04669 19.95467,-5.87778 26.95982,-1.74464 2.81668,1.66188 80.37207,63.32202 172.34532,137.02253 l 167.22409,134.00092 0.9664,74.60899 c 0.56672,43.75318 0.41623,76.88038 -0.3639,80.10121 -1.77398,7.32403 -5.16239,12.24385 -10.80017,15.68142 -4.57569,2.78998 -10.16479,2.83683 -339.07964,2.84217 l -334.427279,0.005 -5.220446,-4.5836 z"
+       id="path3866"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#ffffff;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:1.35392594;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3921)"
+       d="m 35.84197,591.66531 c -2.931082,-2.93107 -6.61952,-8.24613 -8.196529,-11.81123 -2.775106,-6.27358 -2.833231,-8.78182 -1.807921,-78.01727 0.582653,-39.3444 1.46497,-74.27166 1.960705,-77.61612 0.866412,-5.84522 2.114153,-7.07965 32.201775,-31.8585 80.15588,-66.01286 291.80251,-233.99562 302.00544,-239.70004 5.66922,-3.16964 17.06582,-3.29471 23.08187,-0.25329 2.56255,1.29549 80.4818,63.04106 173.15391,137.21238 l 168.49475,134.85695 -0.0146,77.15922 c -0.0131,72.96082 -0.16598,77.49425 -2.80894,83.31643 -1.61379,3.55502 -4.83046,7.39817 -7.61116,9.09352 -4.79268,2.92202 -6.44609,2.93633 -339.97343,2.94175 l -335.15667,0.005 -5.32924,-5.32924 z"
+       id="path3871"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+    Design by Vincent Vetsch
+    http://www.McGlennInspections.com
+    Released for free under a Creative Commons Attribution 2.5 License
+
+    Name       : McGlenn Home Inspections, LLC
+    Description: McGlenn Home Inspection, LLC Home page example
+    Version    : 1.0
+    Released   : 20130217
+-->
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- JQuery-UI must be loaded before main stylesheet, otherwise colors get messed up -->
+    <link rel="stylesheet" href="jquery-ui-1.10.1.custom.min.css"/>
+    <link href="jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+    <link href="McGlennInspection.css" rel="stylesheet" type="text/css" media="screen/">
+    <title>McGlenn Home Inspections, LLC</title>
+    </head>
+<body>
+<!--TODO - Add this to Django app -->
+    <table class="appointment" border="0" cellpadding="0" cellspacing="0">
+        <form action="document" autocomplete="on">
+            <tr><td colspan="3" align="center" class="appointment-title"><b>Setup Appointment</b></td></tr>
+            <tr><td class="appointment-label"><p>First Name:</p></td>
+            <td class="appointment-input"><input title="I'm sure you know your firstname" class="appointment-inputbox" /></td>
+            <td class="appointment-image" ><img src="images/help-about.svg" width="24" height="24" /></td></tr>
+            <tr><td class="appointment-label"><p>Last Name:</p></td>
+            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
+            <tr><td class="appointment-label"><p>Email Address:</p></td>
+            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
+            <tr><td class="appointment-label"><p>Phone Number:</p></td>
+            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
+            <tr><td class="appointment-label"><p>Meeting Address:</p></td>
+            <td class="appointment-input"><input title="The location that you wish to meet with us to review the pre-inspection from and handling payment prior to inspection." class="appointment-inputbox" /></td>
+            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/ ></td></tr>
+            <tr><td class="appointment-label"><p>Meeting Town:</p></td>
+            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
+            <tr><td class="appointment-label"><p>Inspection Address:</p></td>
+            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
+            <tr><td class="appointment-label"><p>Inspection Town:</p></td>
+            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
+            <tr><td class="appointment-label"><p>Inspection State:</p></td>
+            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
+            <tr><td class="appointment-label"><p>Inspection ZIP Code:</p></td>
+            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
+<!--TODO - Add spin button for number of rooms -->
+            <tr><td class="appointment-label"><p>Number of Rooms:</p></td>
+            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
+<!--TODO - Add spin button for number of Bathrooms -->
+            <tr><td class="appointment-label"><p>Number of Bathrooms:</p></td>
+            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
+            <tr><td class="appointment-label"><p>Listing Square Footage:</p></td>
+            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
+<!--TODO - Add JQUERY calendar widget -->
+            <tr><td class="appointment-label"><p>Date Requested:</p></td>
+            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
+            <tr><td class="appointment-label"><p>Time Requested:</p></td>
+            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
+            <tr><td class="appointment-label"><p>Notes and Special Requirements:</p></td>
+            <td class="appointment-input"><textarea rows="15" cols="60" class="appointment-textarea"></textarea></td>
+            <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
+            <tr style="padding-top:5px"><td colspan="3" align="right" style="background:black; padding:5px"><input type="submit" class="button" ></td></tr>
+        </form>
+    </table>
+<!--  Load all javascript at the end to the file to reduce load time -->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript" src="js/tooltip.js"></script>
+<script type="text/javascript" src="js/sb.js"> </script>
+</body>
+</html>
