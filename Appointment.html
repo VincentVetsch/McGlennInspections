@@ -69,8 +69,9 @@
             <td class="appointment-input"><input class="appointment-inputbox" /></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
             <tr><td class="appointment-label"><p>Time Requested:</p></td>
-            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-input"><input class="spinner-time" name="bathrooms" value="8:00 AM"/></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
+<!--TODO - Add custom textarea -->
             <tr><td class="appointment-label"><p>Notes and Special Requirements:</p></td>
             <td class="appointment-input"><textarea rows="15" cols="60" class="appointment-textarea"></textarea></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
@@ -81,13 +82,51 @@
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.10.1.custom.js"></script>
+<script type="text/javascript" src="js/globalize.js"></script>
 <script type="text/javascript" src="js/tooltip.js"></script>
 <script type="text/javascript" src="js/sb.js"> </script>
 <script>
+    $.widget( "ui.timespinner", $.ui.spinner, {
+        options: {
+            // seconds
+            step: 60 * 10000,
+            // hours
+            page: 60
+    },
+
+    _parse: function( value ) {
+        if ( typeof value === "string" ) {
+        // already a timestamp
+        if ( Number( value ) == value ) {
+            return Number( value );
+        }
+        return +Globalize.parseDate( value );
+        }
+        return value;
+    },
+
+    _format: function( value ) {
+        return Globalize.format( new Date(value), "t" );
+    }
+    });
     $(function() {
         $( ".spinner" ).spinner({
-            step: 1,
-            numberFormat: "n"
+            spin: function( event, ui ) {
+                if ( ui.value > 20 ) {
+                    $( this ).spinner( "value", 0 );
+                    return false;
+                } else if ( ui.value < 0 ) {
+                    $( this ).spinner( "value", 20 );
+                return false;
+                }
+            }
+        });
+
+        $( ".spinner-time").timespinner();
+        $( "#culture" ).change(function() {
+                var current = $( ".spinner-time" ).timespinner( "value" );
+                Globalize.culture( $(this).val() );
+            $( ".spinner-time" ).timespinner( "value", current );
         });
     });
 </script>
