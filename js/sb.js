@@ -1,4 +1,4 @@
-(function($){
+$(function(){
     $(window).load(function(){
         $("body").mCustomScrollbar({
             scrollButtons:{
@@ -7,5 +7,5 @@
             theme:"dark-thick"
         });
     });
-})(jQuery);
+});
 

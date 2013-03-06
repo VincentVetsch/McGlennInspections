@@ -15,9 +15,34 @@
 html, body {
     height:100%;
 }
+body {
+    margin: 0;
+    padding: 0;
+    background: #7E776F url(images/img01.jpg) repeat left top;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #ffffe0;
+    overflow: auto;
+}
 body>.mCustomScrollBox>.mCSB_scrollTools{
     top:2%;
     height:96%;
+}
+/* unvisited link */
+a:link {
+    text-decoration:none;
+}
+/* visited link */
+a:visited {
+    text-decoration:none;
+}
+/* mouse over link */
+a:hover {
+    text-decoration:none;
+}
+/* selected link */
+a:active {
+    text-decoration:underline;
 }
 li {
     font-size: large;
@@ -180,32 +205,6 @@ p {
     margin: 0px;
     margin-left: 5px;
     padding-bottom: 10px;
-}
-body {
-    margin: 0;
-    padding: 0;
-    background: #7E776F url(images/img01.jpg) repeat left top;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    color: #ffffe0;
-    overflow: auto;
-}
-/* unvisited link */
-a:link {
-    text-decoration:none;
-}
-/* visited link */
-a:visited {
-    text-decoration:none;
-}
-/* mouse over link */
-a:hover {
-    text-decoration:none;
-    font-size:105%;
-}
-/* selected link */
-a:active {
-    text-decoration:underline;
 }
 #nav {
     margin-top: 30px;

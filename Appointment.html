@@ -15,132 +15,70 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" href="jquery-ui-1.10.1.custom.css"/>
     <link href="jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+<!--FIXME - Found bug in jquery-ui-1.10.1.custom.css. When you select a spinner box the scrollbar will jump to the top -->
+    <link rel="stylesheet" href="jquery-ui-1.10.1.custom.css"/>
     <link href="McGlennInspection.css" rel="stylesheet" type="text/css" media="screen/">
     <title>McGlenn Home Inspections, LLC</title>
     </head>
 <body>
 <!--TODO - Add this to Django app -->
     <table class="appointment" border="0" cellpadding="0" cellspacing="0">
-        <form action="document" autocomplete="on">
+        <form action="mailto:vincent.vetsch@gmail.com" method="post" enctype="text/plain" autocomplete="on">
             <tr><td colspan="3" align="center" class="appointment-title"><b>Setup Appointment</b></td></tr>
             <tr><td class="appointment-label"><p>First Name:</p></td>
-            <td class="appointment-input"><input title="I'm sure you know your firstname" class="appointment-inputbox" /></td>
+            <td class="appointment-input"><input tabindex="0" title="I'm sure you know your firstname" class="appointment-inputbox" /></td>
             <td class="appointment-image" ><img src="images/help-about.svg" width="24" height="24" /></td></tr>
             <tr><td class="appointment-label"><p>Last Name:</p></td>
-            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-input"><input tabindex="1" class="appointment-inputbox" /></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
             <tr><td class="appointment-label"><p>Email Address:</p></td>
-            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-input"><input tabindex="2" class="appointment-inputbox" /></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
             <tr><td class="appointment-label"><p>Phone Number:</p></td>
-            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-input"><input tabindex="3" class="appointment-inputbox" /></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
             <tr><td class="appointment-label"><p>Inspection Address:</p></td>
-            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-input"><input tabindex="4" class="appointment-inputbox" /></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
             <tr><td class="appointment-label"><p>Inspection Town:</p></td>
-            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-input"><input tabindex="5" class="appointment-inputbox" /></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
             <tr><td class="appointment-label"><p>Inspection State:</p></td>
-            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-input"><input tabindex="6" class="appointment-inputbox" /></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
             <tr><td class="appointment-label"><p>Inspection ZIP Code:</p></td>
-            <td class="appointment-input"><input class="appointment-inputbox" /></td>
+            <td class="appointment-input"><input tabindex="7" class="appointment-inputbox" /></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
             <tr><td class="appointment-label"><p>Number of Bedrooms:</p></td>
-            <td class="appointment-input"><input class="spinner" name="bedrooms" value="2"/></td>
+            <td class="appointment-input"><input tabindex="8" class="spinner" name="bedrooms" value="2"/></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
             <tr><td class="appointment-label"><p>Number of Bathrooms:</p></td>
-            <td class="appointment-input"><input class="spinner" name="bathrooms" value="2"/></td>
+            <td class="appointment-input"><input tabindex="9" class="spinner" name="bathrooms" value="2"/></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
             <tr><td class="appointment-label"><p>Listing Square Footage:</p></td>
-            <td class="appointment-input"><input class="spinner-footage" name="square-footage" value="1000"/></td>
+            <td class="appointment-input"><input tabindex="10" class="spinner-footage" name="square-footage" value="1000"/></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
             <tr><td class="appointment-label"><p>Time Requested:</p></td>
-            <td class="appointment-input"><input class="spinner-time" name="bathrooms" value="8:00 AM"/></td>
+            <td class="appointment-input"><input tabindex="11" class="spinner-time" name="bathrooms" value="8:00 AM"/></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
-            <tr><td class="appointment-label"><p>Date Requested:</p></td>
-                <td class="appointment-input"><div class="datepicker"></div></td>
+           <tr><td class="appointment-label"><p>Date Requested:</p></td>
+                <td class="appointment-input"><div tabindex="1" class="datepicker"></div></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
 <!--TODO - Add custom textarea -->
             <tr><td class="appointment-label"><p>Notes and Special Requirements:</p></td>
-            <td class="appointment-input"><textarea rows="15" cols="60" class="appointment-textarea"></textarea></td>
+            <td class="appointment-input"><textarea tabindex="12" rows="15" cols="60" class="appointment-textarea"></textarea></td>
             <td class="appointment-image"><img src="images/help-about.svg" width="24" height="24"/></td></tr>
             <tr style="padding-top:5px"><td colspan="3" align="right" style="background:black; padding:5px"><input type="reset" value="Reset"><input type="submit" class="button" ></td></tr>
         </form>
     </table>
 <!--  Load all javascript at the end to the file to reduce load time -->
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.10.1.custom.js"></script>
+<script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="js/globalize.js"></script>
 <script type="text/javascript" src="js/tooltip.js"></script>
+<script type="text/javascript" src="js/spinner-buttons.js"></script>
 <script type="text/javascript" src="js/sb.js"> </script>
-<script>
-    $.widget( "ui.timespinner", $.ui.spinner, {
-        options: {
-            // seconds
-            step: 60 * 10000,
-            // hours
-            page: 60
-    },
-
-    _parse: function( value ) {
-        if ( typeof value === "string" ) {
-        // already a timestamp
-        if ( Number( value ) == value ) {
-            return Number( value );
-        }
-        return +Globalize.parseDate( value );
-        }
-        return value;
-    },
-
-    _format: function( value ) {
-        return Globalize.format( new Date(value), "t" );
-        }
-    });
-
-    $(function() {
-        $( ".datepicker" ).datepicker();
-    });
-
-    $(function() {
-        $( ".spinner" ).spinner({
-            spin: function( event, ui ) {
-                if ( ui.value > 20 ) {
-                    $( this ).spinner( "value", 0 );
-                    return false;
-                } else if ( ui.value < 0 ) {
-                    $( this ).spinner( "value", 20 );
-                return false;
-                }
-            }
-        });
-
-        $( ".spinner-footage" ).spinner({
-            step: 100,
-            spin: function( event, ui ) {
-                if ( ui.value > 10000 ) {
-                    $( this ).spinner( "value", 0 );
-                    return false;
-                } else if ( ui.value < 0 ) {
-                    $( this ).spinner( "value", 10000 );
-                return false;
-                }
-            }
-        });
-
-        $( ".spinner-time").timespinner();
-
-        $( "#culture" ).change(function() {
-                var current = $( ".spinner-time" ).timespinner( "value" );
-                Globalize.culture( $(this).val() );
-            $( ".spinner-time" ).timespinner( "value", current );
-        });
-    });
-</script>
 </body>
 </html>
