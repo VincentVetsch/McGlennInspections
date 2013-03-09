@@ -1,4 +1,14 @@
 McGlennInspections
 
-• TODO — Run syncdb on McGlennInspections
-• TODO — Add Appointment applications
+The McGlenn Home Inspections, LLC website shall be a Django Application with a clean look and feel.  The reason behind using Django is it’s scalablility and speed.  Some of the application will be static in nature, such as the index page, contact information, and links(I will revisit this if links.html becomes unmanagable).
+
+Tasks:
+   • TODO — Complete all models
+   • TODO — Complete all admins
+   • TODO — Complete all views
+   • TODO — Run syncdb on McGlennInspections
+   • TODO — Add Appointment applications
+
+Ideas:
+   • Create a report application, where the Appointment application creates a template for a checklist and the final report.
+   • Create a friendly way to allow the customer to get a copy of a final report from the website.
