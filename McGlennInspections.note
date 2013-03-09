@@ -7,6 +7,7 @@ page, contact information, and links(I will revisit this if links.html becomes
 unmanagable).
 
 Tasks:
+   • TODO — Move all static files to static/ and refactor code
    • TODO — Complete all models
    • TODO — Complete all admins
    • TODO — Complete all views
