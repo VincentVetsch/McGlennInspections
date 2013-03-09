@@ -14,7 +14,13 @@ Tasks:
    • TODO — Add Appointment applications
    • TODO — Google or Yahoo Calendar to site.  This will allow customers to see
    our current schedule and workload.
-
+Competed Tasks:
+   • DONE — Add project to github
+   • DONE — Add Django support
+   • DONE — Create static files
+   • DONE — Add Stylesheets
+   • DONE — Add custom scrollbars
+   • DONE — Add Slideshow
 Ideas:
    • Create a report application, where the Appointment application creates a
    template for a checklist and the final report.
