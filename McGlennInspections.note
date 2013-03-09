@@ -8,6 +8,7 @@ unmanagable).
 
 Tasks:
    • TODO — Move all static files to static/ and refactor code
+   • TODO — Added Terms.csv to database.  May need to reformat file
    • TODO — Complete all models
    • TODO — Complete all admins
    • TODO — Complete all views
