@@ -1,23 +1,24 @@
 """
-Django settings for McGlennInspections project.
+    Django settings for McGlennInspections project.
 
-For more information on this file, see
-https://docs.djangoproject.com/en/dev/topics/settings/
+    For more information on this file, see
+    https://docs.djangoproject.com/en/dev/topics/settings/
 
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/dev/ref/settings/
+    For the full list of settings and their values, see
+    https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+'''
+    Quick-start development settings - unsuitable for production
 
-# Quick-start development settings - unsuitable for production
-
-# SECURITY WARNING: keep the secret key used in production secret!
-# Hardcoded values can leak through source control. Consider loading
-# the secret key from an environment variable or a file instead.
+    SECURITY WARNING: keep the secret key used in production secret!
+    Hardcoded values can leak through source control. Consider loading
+    the secret key from an environment variable or a file instead.
+'''
 SECRET_KEY = 'hbs*t#g76q7un&=w8734v4c3=4+0dko_#_7i*o5a5=fxcn0(%a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -35,6 +36,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog',
+    'appointment',
+    'glossary',
+    'rvalues',
 )
 
 MIDDLEWARE_CLASSES = (
