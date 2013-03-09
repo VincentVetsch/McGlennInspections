@@ -10,4 +10,21 @@
 - Appointments
 - R-Values
 - Tips
+- Glossary of building terms
 - Report builder
+- Links
+
+##Team Members
+- Vincent Vetsch
+- Sam McCart
+
+##Technologies
+- Apache
+- Django
+- Javascript
+- Jquery
+- Jquery UI
+- HTML 5
+- CSS 3
+
+##Usage
