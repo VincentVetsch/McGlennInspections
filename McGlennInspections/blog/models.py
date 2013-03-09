@@ -5,12 +5,6 @@ from taggit.managers import TaggableManager
 # Create your models here.
 class Posts(models.Model):
     '''Fields for Posts Table'''
-    '''
-        S:LAf,m;lsamf;als,mf
-        laskmflaskfmals;fkm
-        m;lasmf;lasfm;
-
-    '''
     author = models.CharField(max_length=30)
     title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)

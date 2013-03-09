@@ -19,7 +19,7 @@
 - Sam McCart
 
 ##Technologies
-- Apache
+- finally have a variation of clipboard=unnamed option which allows you to alias unnamed register to the + Apache
 - Django
 - Javascript
 - Jquery
