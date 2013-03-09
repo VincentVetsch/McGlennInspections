@@ -7,7 +7,6 @@ page, contact information, and links(I will revisit this if links.html becomes
 unmanagable).
 
 Tasks:
-   • TODO — Move all static files to static/ and refactor code
    • TODO — Added Terms.csv to database.  May need to reformat file
    • TODO — Complete all models
    • TODO — Complete all admins
@@ -17,6 +16,7 @@ Tasks:
    • TODO — Google or Yahoo Calendar to site.  This will allow customers to see
    our current schedule and workload.
 Competed Tasks:
+   • DONE — Move all static files to static and refactor code
    • DONE — Add project to github
    • DONE — Add Django support
    • DONE — Create static files
