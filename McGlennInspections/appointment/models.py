@@ -12,5 +12,8 @@ class Appointment(models.Model):
     bodytext = models.TextField()
     timestamp = models.DateTimeField()
 
+    def string(self):
+        pass
+
     def __unicode__(self):
         return self.title
