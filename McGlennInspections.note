@@ -8,6 +8,7 @@ unmanagable).
 
 Tasks:
    • TODO — Added Terms.csv to database.  May need to reformat files
+   • TODO — Clean up jquery libraries
    • TODO — Create the application for slideshow
       ◦ TODO — Create models
       ◦ TODO — Create views
