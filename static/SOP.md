@@ -1,7 +1,7 @@
 <!-- Convert to markdown -->
 #Table of Contents
 
-1. [Definitions and Scope] [1]
+1. Definitions and Scope
 
 2. Limitations, Exceptions & Exclusions
 
@@ -17,7 +17,7 @@
      * 3.9.   Attic, Insulation & Ventilation
      * 3.10.  Doors, Windows & Interior
 
-#[1]1. Definitions and Scope
+#1. Definitions and Scope
 ##1.1. General Home Inspection
 A general home inspection is a non-invasive, visual examination of the accessible areas of a residential property (as delineated below), performed for a fee, which is designed to identify defects within specific systems and components defined by these Standards that are both observed and deemed material by the inspector.  The scope of work may be modified by the Client and Inspector prior to the inspection process.
 
