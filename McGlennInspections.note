@@ -7,7 +7,11 @@ page, contact information, and links(I will revisit this if links.html becomes
 unmanagable).
 
 Tasks:
-   • TODO — Added Terms.csv to database.  May need to reformat file
+   • TODO — Added Terms.csv to database.  May need to reformat files
+   • TODO — Create the application for slideshow
+      ◦ TODO — Create models
+      ◦ TODO — Create views
+      ◦ TODO — Create admin
    • TODO — Complete all views
       ◦ TODO — Complete appointment view
       ◦ TODO — Complete blog view
