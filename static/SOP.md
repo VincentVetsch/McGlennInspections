@@ -1,5 +1,6 @@
 <!-- Convert to markdown -->
-#Table of Contents
+#Standards of Practice
+##Table of Contents
 
 1. Definitions and Scope
 
@@ -108,8 +109,8 @@ A general home inspection report shall identify, in written format, defects with
 - Perform or offer Phase 1 or environmental audits.
 - Inspect any system or component that is not included in these Standards.
 
-##3. Standards of Practice
-###3.1. Roof
+#3. Standards of Practice
+##3.1. Roof
 
 ####I. The inspector shall inspect from ground level or the eaves:
 
@@ -133,7 +134,7 @@ A general home inspection report shall identify, in written format, defects with
 - Warrant or certify the roof.
 - Confirm proper fastening or installation of any roof-covering material.
 
-###3.2. Exterior
+##3.2. Exterior
 
 ####I. The inspector shall inspect:
 
@@ -163,7 +164,7 @@ A general home inspection report shall identify, in written format, defects with
 - Inspect drainfields or dry wells.
 - Determine the integrity of multiple-pane window glazing or thermal window seals.
 
-###3.3. Basement, Foundation, Crawlspace & Structure
+##3.3. Basement, Foundation, Crawlspace & Structure
 
 ####I. The inspector shall inspect:
 
@@ -184,7 +185,7 @@ A general home inspection report shall identify, in written format, defects with
 - Provide any engineering or architectural service.
 - Report on the adequacy of any structural system or component.
 
-###3.4. Heating
+##3.4. Heating
 
 ####I. The inspector shall inspect:
 
@@ -203,7 +204,7 @@ A general home inspection report shall identify, in written format, defects with
 - Evaluate fuel quality.
 - Verify thermostat calibration, heat anticipation, or automatic setbacks, timers, programs or clocks.
 
-###3.5. Cooling
+##3.5. Cooling
 
 ####I. The inspector shall inspect:
 
@@ -217,7 +218,7 @@ A general home inspection report shall identify, in written format, defects with
 - Inspect or determine thermostat calibration, cooling anticipation, or automatic setbacks or clocks.
 - Examine electrical current, coolant fluids or gases, or coolant leakage.
 
-###3.6. Plumbing
+##3.6. Plumbing
 
 ####I. The inspector shall:
 
@@ -260,7 +261,7 @@ A general home inspection report shall identify, in written format, defects with
 - Examine ancillary systems or components, such as, but not limited to, those related to solar water heating and hot water circulation.
 - Determine the existence or condition of polybutylene plumbing.
 
-###3.7. Electrical
+##3.7. Electrical
 
 ####I. The inspector shall inspect:
 
@@ -299,7 +300,7 @@ A general home inspection report shall identify, in written format, defects with
 - Determine the accuracy of labeling.
 - Inspect exterior lighting.
 
-###3.8. Fireplace
+##3.8. Fireplace
 
 ####I. The inspector shall inspect:
 
@@ -327,7 +328,7 @@ A general home inspection report shall identify, in written format, defects with
 - Perform a National Fire Protection Association (NFPA)-style inspection.
 - Perform a Phase I fireplace and chimney inspection.
 
-###3.9. Attic, Insulation & Ventilation
+##3.9. Attic, Insulation & Ventilation
 
 ####I. The inspector shall inspect:
 
@@ -347,7 +348,7 @@ A general home inspection report shall identify, in written format, defects with
 - Determine the types of materials used in insulation or wrapping of pipes, ducts, jackets, boilers or wiring.
 - Determine the adequacy of ventilation.
 
-###3.10. Doors, Windows & Interior
+##3.10. Doors, Windows & Interior
 
 ####I. The inspector shall inspect:
 
