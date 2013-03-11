@@ -5,7 +5,7 @@ from appointment.models import Appointment
 # Register your models here.
 class AppointmentAdmin(admin.ModelAdmin):
     ''' Admin module for appointment model '''
-    prepopulated_fields = {'slug': ('last_name', 'first_name')}
+    prepopulated_fields = {'slug': ('last_name', 'first_name',)}
     list_display = (
         'first_name',
         'last_name',
