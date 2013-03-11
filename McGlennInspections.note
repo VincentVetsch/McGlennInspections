@@ -10,15 +10,15 @@ Tasks:
    • TODO — Added Terms.csv to database.  May need to reformat files
    • TODO — Clean up jquery libraries
    • TODO — Create the application for slideshow
-      ◦ TODO — Create models
+      ◦ DONE — Create models
       ◦ TODO — Create views
-      ◦ TODO — Create admin
+      ◦ DONE — Create admin
    • TODO — Complete all views
       ◦ TODO — Complete appointment view
       ◦ TODO — Complete blog view
       ◦ TODO — Complete glossary view
       ◦ TODO — Complete rvalues view
-   • TODO — Run syncdb on McGlennInspections
+   • TODO — Run syncdb on McGlennInspections.  I want to make sure that the tables are correct before I run syncdb.  Not that it is that big of deal, tables can be dropped and recreated.
    • TODO — Google or Yahoo Calendar to site.  This will allow customers to see
    our current schedule and workload.
 Competed Tasks:
