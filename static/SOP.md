@@ -6,18 +6,16 @@
 2. Limitations, Exceptions & Exclusions
 
 3. Standards of Practice
-3.1.   Roof
-3.2.   Exterior
-3.3.   Basement, Foundation, Crawlspace & Structure
-3.4.   Heating
-3.5.   Cooling
-3.6.   Plumbing
-3.7.   Electrical
-3.8.   Fireplace
-3.9.   Attic, Insulation & Ventilation
-3.10.  Doors, Windows & Interior
-
-4. Glossary of Terms
+- 3.1.   Roof
+- 3.2.   Exterior
+- 3.3.   Basement, Foundation, Crawlspace & Structure
+- 3.4.   Heating
+- 3.5.   Cooling
+- 3.6.   Plumbing
+- 3.7.   Electrical
+- 3.8.   Fireplace
+- 3.9.   Attic, Insulation & Ventilation
+- 3.10.  Doors, Windows & Interior
 
 #1. Definitions and Scope
 ##1.1. General Home Inspection
@@ -92,100 +90,109 @@ A general home inspection report shall identify, in written format, defects with
 
 ###III. The inspector is not required to:
 
-move any personal items or other obstructions, such as, but not limited to, throw rugs, carpeting, wall coverings, furniture, ceiling tiles, window coverings, equipment, plants, ice, debris, snow, water, dirt, pets, or anything else that might restrict the visual inspection.
-dismantle, open or uncover any system or component.
-enter or access any area that may, in the opinion of the inspector, be unsafe. 
-enter crawlspaces or other areas that may be unsafe or not readily accessible. 
-inspect underground items, such as, but not limited to, lawn-irrigation systems, underground storage tanks or other indications of their presence, whether abandoned or actively used. 
-do anything which may, in the inspector's opinion, be unsafe or dangerous to the inspector or others, or damage property, such as, but not limited to: walking on roof surfaces, climbing ladders, entering attic spaces, or negotiating with pets. 
-inspect decorative items. 
-inspect common elements or areas in multi-unit housing. 
-inspect intercoms, speaker systems or security systems.
-offer guarantees or warranties. 
-offer or perform any engineering services. 
-offer or perform any trade or professional service other than general home inspection. 
-research the history of the property, report on its potential for alteration, modification, extendibility or suitability for a specific or proposed use for occupancy. 
-determine the age of construction or installation of any system structure or component of a building, or differentiate between original construction and subsequent additions, improvements, renovations or replacements. 
-determine the insurability of a property.
-perform or offer Phase 1 or environmental audits.
-inspect any system or component that is not included in these Standards.
+- Move any personal items or other obstructions, such as, but not limited to, throw rugs, carpeting, wall coverings, furniture, ceiling tiles, window coverings, equipment, plants, ice, debris, snow, water, dirt, pets, or anything else that might restrict the visual inspection.
+- Dismantle, open or uncover any system or component.
+- Enter or access any area that may, in the opinion of the inspector, be unsafe. 
+- Enter crawlspaces or other areas that may be unsafe or not readily accessible. 
+- Inspect underground items, such as, but not limited to, lawn-irrigation systems, underground storage tanks or other indications of their presence, whether abandoned or actively used. 
+- Do anything which may, in the inspector's opinion, be unsafe or dangerous to the inspector or others, or damage property, such as, but not limited to: walking on roof surfaces, climbing ladders, entering attic spaces, or negotiating with pets. 
+- Inspect decorative items. 
+- Inspect common elements or areas in multi-unit housing. 
+- Inspect intercoms, speaker systems or security systems.
+- Offer guarantees or warranties. 
+- Offer or perform any engineering services. 
+- Offer or perform any trade or professional service other than general home inspection. 
+- Research the history of the property, report on its potential for alteration, modification, extendibility or suitability for a specific or proposed use for occupancy. 
+- Determine the age of construction or installation of any system structure or component of a building, or differentiate between original construction and subsequent additions, improvements, renovations or replacements. 
+- Determine the insurability of a property.
+- Perform or offer Phase 1 or environmental audits.
+- Inspect any system or component that is not included in these Standards.
 
 ##3. Standards of Practice
 ###3.1. Roof
 
-I. The inspector shall inspect from ground level or the eaves:
+####I. The inspector shall inspect from ground level or the eaves:
 
-the roof-covering materials;
-the gutters;
-the downspouts;
-the vents, flashing, skylights, chimney and other roof penetrations; and 
-the general structure of the roof from the readily accessible panels, doors or stairs.
-II. The inspector is not required to:
+- The roof-covering materials;
+- The gutters;
+- The downspouts;
+- The vents, flashing, skylights, chimney and other roof penetrations; and 
+- The general structure of the roof from the readily accessible panels, doors or stairs.
 
-walk on any roof surface.
-predict the service life expectancy. 
-inspect underground downspout diverter drainage pipes. 
-remove snow, ice, debris or other conditions that prohibit the observation of the roof surfaces.
-move insulation. 
-inspect antennae, satellite dishes, lightning arresters, de-icing equipment, or similar attachments.
-walk on any roof areas that appear, in the opinion of the inspector, to be unsafe.
-walk on any roof areas if it might, in the opinion of the inspector, cause damage. 
-perform a water test.
-warrant or certify the roof.
-confirm proper fastening or installation of any roof-covering material.
-3.2. Exterior
-I. The inspector shall inspect:
+####II. The inspector is not required to:
 
-the exterior wall-covering material, flashing and trim;
-all exterior doors, decks, stoops, steps, stairs, ramps, porches, railings, eaves, soffits and fascias;
-and report as in need of repair any improper spacing between intermediate balusters, spindles and rails for steps, stairways, ramps, balconies and railings;
-a representative number of windows; 
-the vegetation, surface drainage, retaining walls and grading of the property when they may adversely affect the structure, especially due to moisture intrusion; 
-and describe the exterior wall covering.
-II. The inspector is not required to:
+- Walk on any roof surface.
+- Predict the service life expectancy. 
+- Inspect underground downspout diverter drainage pipes. 
+- Remove snow, ice, debris or other conditions that prohibit the observation of the roof surfaces.
+- Move insulation. 
+- Inspect antennae, satellite dishes, lightning arresters, de-icing equipment, or similar attachments.
+- Walk on any roof areas that appear, in the opinion of the inspector, to be unsafe.
+- Walk on any roof areas if it might, in the opinion of the inspector, cause damage. 
+- Perform a water test.
+- Warrant or certify the roof.
+- Confirm proper fastening or installation of any roof-covering material.
 
-inspect or operate screens, storm windows, shutters, awnings, fences, outbuildings, or exterior accent lighting.
-inspect items that are not visible or readily accessible from the ground, including window and door flashing. 
-inspect or identify geological, geotechnical, hydrological or soil conditions. 
-inspect recreational facilities or playground equipment. 
-inspect seawalls, breakwalls or docks. 
-inspect erosion-control or earth-stabilization measures. 
-inspect for safety-type glass. 
-inspect underground utilities. 
-inspect underground items. 
-inspect wells or springs. 
-inspect solar, wind or geothermal systems. 
-inspect swimming pools or spas. 
-inspect wastewater treatment systems, septic systems or cesspools. 
-inspect irrigation or sprinkler systems. 
-inspect drainfields or dry wells. 
-determine the integrity of multiple-pane window glazing or thermal window seals.
-3.3. Basement, Foundation, Crawlspace & Structure
+###3.2. Exterior
 
-I. The inspector shall inspect:
+####I. The inspector shall inspect:
 
-the foundation;
-the basement;
-the crawlspace; 
-and report observed indications of active water penetration; 
-for wood in contact with or near soil;
-and report observed indications of possible foundation movement, such as sheetrock cracks, brick cracks, out-of-square door frames, and unlevel floors;
-and report on any observed cutting, notching and boring of framing members that may, in the inspector's opinion, present a structural or safety concern.
-II. The inspector is not required to:
+- The exterior wall-covering material, flashing and trim;
+- All exterior doors, decks, stoops, steps, stairs, ramps, porches, railings, eaves, soffits and fascias;
+- And report as in need of repair any improper spacing between intermediate balusters, spindles and rails for steps, stairways, ramps, balconies and railings;
+- A representative number of windows; 
+- The vegetation, surface drainage, retaining walls and grading of the property when they may adversely affect the structure, especially due to moisture intrusion; 
+- And describe the exterior wall covering.
 
-enter any crawlspaces that are not readily accessible or where entry could cause damage or pose a hazard to the inspector.
-move stored items or debris. 
-operate sump pumps with inaccessible floats. 
-identify size, spacing, span or location or determine the adequacy of foundation bolting, bracing, joists, joist spans or support systems. 
-provide any engineering or architectural service. 
-report on the adequacy of any structural system or component.
-3.4. Heating
-I. The inspector shall inspect:
+####II. The inspector is not required to:
 
-the heating systems, using normal operating controls, and describe the energy source and heating method;
-and report as in need of repair heating systems that do not operate;
-and report if the heating systems are deemed inaccessible.
-II. The inspector is not required to:
+- Inspect or operate screens, storm windows, shutters, awnings, fences, outbuildings, or exterior accent lighting.
+- Inspect items that are not visible or readily accessible from the ground, including window and door flashing. 
+- Inspect or identify geological, geotechnical, hydrological or soil conditions. 
+- Inspect recreational facilities or playground equipment. 
+- Inspect seawalls, breakwalls or docks. 
+- Inspect erosion-control or earth-stabilization measures. 
+- Inspect for safety-type glass. 
+- Inspect underground utilities. 
+- Inspect underground items. 
+- Inspect wells or springs. 
+- Inspect solar, wind or geothermal systems. 
+- Inspect swimming pools or spas. 
+- Inspect wastewater treatment systems, septic systems or cesspools. 
+- Inspect irrigation or sprinkler systems. 
+- Inspect drainfields or dry wells. 
+- Determine the integrity of multiple-pane window glazing or thermal window seals.
+
+###3.3. Basement, Foundation, Crawlspace & Structure
+
+####I. The inspector shall inspect:
+
+- The foundation
+- The basement
+- The crawlspace
+- And report observed indications of active water penetration
+- For wood in contact with or near soil
+- And report observed indications of possible foundation movement, such as sheetrock cracks, brick cracks, out-of-square door frames, and unlevel floors
+- And report on any observed cutting, notching and boring of framing members that may, in the inspector's opinion, present a structural or safety concern.
+
+####II. The inspector is not required to:
+
+- Enter any crawlspaces that are not readily accessible or where entry could cause damage or pose a hazard to the inspector.
+- Move stored items or debris. 
+- Operate sump pumps with inaccessible floats. 
+- Identify size, spacing, span or location or determine the adequacy of foundation bolting, bracing, joists, joist spans or support systems. 
+- Provide any engineering or architectural service. 
+- Report on the adequacy of any structural system or component.
+
+###3.4. Heating
+
+####I. The inspector shall inspect:
+
+- The heating systems, using normal operating controls, and describe the energy source and heating method;
+- And report as in need of repair heating systems that do not operate;
+- And report if the heating systems are deemed inaccessible.
+
+####II. The inspector is not required to:
 
 inspect or evaluate the interior of flues or chimneys, fire chambers, heat exchangers, combustion air systems, fresh-air intakes, humidifiers, dehumidifiers, electronic air filters, geothermal systems, or solar heating systems.
 inspect fuel tanks or underground or concealed fuel supply systems. 
@@ -195,21 +202,24 @@ activate heating, heat pump systems or other heating systems when ambient temper
 override electronic thermostats. 
 evaluate fuel quality.
 verify thermostat calibration, heat anticipation, or automatic setbacks, timers, programs or clocks.
-3.5. Cooling
 
-I. The inspector shall inspect:
+###3.5. Cooling
+
+####I. The inspector shall inspect:
 
 the central cooling equipment using normal operating controls.
-II. The inspector is not required to:
+
+####II. The inspector is not required to:
 
 determine the uniformity, temperature, flow, balance, distribution, size, capacity, BTU, or supply adequacy of the cooling system.
 inspect portable window units, through-wall units, or electronic air filters. 
 operate equipment or systems if the exterior temperature is below 65° Fahrenheit, or when other circumstances are not conducive to safe operation or may damage the equipment. 
 inspect or determine thermostat calibration, cooling anticipation, or automatic setbacks or clocks. 
 examine electrical current, coolant fluids or gases, or coolant leakage.
-3.6. Plumbing
 
-I. The inspector shall:
+###3.6. Plumbing
+
+####I. The inspector shall:
 
 determine and report whether the water supply is public or private;
 verify the presence and identify the location of the main water shut-off valve; 
@@ -225,7 +235,8 @@ inspect and report as in need of repair deficiencies in the water supply by view
 inspect and report as in need of repair deficiencies in installation of hot and cold water faucets; 
 inspect and report as in need of repair any mechanical drain stops that are missing or do not operate if installed in sinks, lavatories and tubs; and
 inspect and report any evidence that toilets are damaged, have loose connections to the floor, leak, or have tank components that do not operate.
-II. The inspector is not required to:
+
+####II. The inspector is not required to:
 
 light or ignite pilot flames.
 determine the size, temperature, age, life expectancy or adequacy of the water heater. 
@@ -248,9 +259,10 @@ evaluate or determine the adequacy of combustion air.
 test, operate, open or close safety controls, manual stop valves and/or temperature or pressure-relief valves. 
 examine ancillary systems or components, such as, but not limited to, those related to solar water heating and hot water circulation.
 determine the existence or condition of polybutylene plumbing.
-3.7. Electrical
 
-I. The inspector shall inspect:
+###3.7. Electrical
+
+####I. The inspector shall inspect:
 
 the service drop/lateral;
 the meter socket enclosures; 
@@ -266,7 +278,8 @@ and report on any tested receptacles in which power was not present, polarity wa
 the service entrance conductors and the condition of the conductor insulation; 
 for the general absence of smoke or carbon monoxide detectors; and 
 service entrance cables, and report as in need of repair deficiencies in the integrity of the insulation, drip loop, or separation of conductors at weatherheads and clearances from grade and rooftops.
-II. The inspector is not required to:
+
+####II. The inspector is not required to:
 
 insert any tool, probe or device into the main panelboard, sub-panels, distribution panelboards, or electrical fixtures.
 operate electrical systems that are shut down. 
@@ -285,15 +298,17 @@ inspect or test de-icing equipment.
 conduct voltage-drop calculations. 
 determine the accuracy of labeling.
 inspect exterior lighting. 
-3.8. Fireplace
 
-I. The inspector shall inspect:
+###3.8. Fireplace
+
+####I. The inspector shall inspect:
 
 and describe the fireplace;
 and open and close the damper door, if readily accessible and operable;
 hearth extensions and other permanently installed components; 
 and report as in need of repair deficiencies in the lintel, hearth and material surrounding the fireplace, including the fireplace opening's clearance from visible combustible materials.
-II. The inspector is not required to:
+
+####II. The inspector is not required to:
 
 inspect the flue or vent system.
 inspect the interior of chimneys or flues, fire doors or screens, seals or gaskets, or mantels. 
@@ -311,15 +326,16 @@ perform a smoke test.
 dismantle or remove any component.
 perform a National Fire Protection Association (NFPA)-style inspection.
 perform a Phase I fireplace and chimney inspection.
-3.9. Attic, Insulation & Ventilation
 
-I. The inspector shall inspect:
+###3.9. Attic, Insulation & Ventilation
+
+####I. The inspector shall inspect:
 
 the insulation in unfinished spaces;
 for the presence of attic ventilation; 
 mechanical ventilation systems; 
 and report on the general absence or lack of insulation or ventilation in unfinished spaces.
-II. The inspector is not required to:
+####II. The inspector is not required to:
 
 enter the attic or any unfinished spaces that are not readily accessible, or where entry could cause damage or, in the inspector's opinion, pose a safety hazard.
 move, touch or disturb insulation. 
@@ -329,9 +345,10 @@ identify the composition or R-value of insulation material.
 activate thermostatically operated fans. 
 determine the types of materials used in insulation or wrapping of pipes, ducts, jackets, boilers or wiring.
 determine the adequacy of ventilation.
-3.10. Doors, Windows & Interior
 
-I. The inspector shall inspect:
+###3.10. Doors, Windows & Interior
+
+####I. The inspector shall inspect:
 
 a representative number of doors and windows by opening and closing them;
 the walls, ceilings, steps, stairways and railings; 
@@ -340,7 +357,8 @@ the garage doors and garage door openers' operation using the installed automati
 and report as improper any photo-electric safety sensor that fails to respond adequately to testing; 
 and report as in need of repair any door locks or side ropes that have not been removed or disabled when the garage door opener is in use;
 and report as in need of repair any windows that are obviously fogged or display other evidence of broken seals.
-II. The inspector is not required to:
+
+####II. The inspector is not required to:
 
 inspect paint, wallpaper, window treatments or finish treatments.
 inspect central vacuum systems. 
