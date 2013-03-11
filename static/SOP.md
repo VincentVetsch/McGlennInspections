@@ -1,4 +1,4 @@
-<!-- Convert to markdown -->
+<!-- Convert to HTML -->
 #Standards of Practice
 ##Table of Contents
 
