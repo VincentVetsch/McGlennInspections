@@ -8,14 +8,14 @@ unmanagable).
 
 Tasks:
    • TODO — Added Terms.csv to database.  May need to reformat file
-   • TODO — Complete all models
-   • TODO — Complete all admins
    • TODO — Complete all views
    • TODO — Run syncdb on McGlennInspections
-   • TODO — Add Appointment applications
    • TODO — Google or Yahoo Calendar to site.  This will allow customers to see
    our current schedule and workload.
 Competed Tasks:
+   • DONE — Add Appointment applications
+   • DONE — Complete all models
+   • DONE — Complete all admins
    • DONE — Move all static files to static and refactor code
    • DONE — Add project to github
    • DONE — Add Django support
