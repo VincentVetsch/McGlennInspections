@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'appointment',
     'glossary',
     'rvalues',
+    'slideshow',
 )
 
 MIDDLEWARE_CLASSES = (
