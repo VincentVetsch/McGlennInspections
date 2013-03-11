@@ -1,37 +1,36 @@
-Table of Contents     
+<!-- Convert to markdown -->
+#Table of Contents
 
-1. Definitions and Scope
+- 1. Definitions and Scope
 
-2. Limitations, Exceptions & Exclusions
- 
-3. Standards of Practice
-3.1.   Roof 
-3.2.   Exterior 
-3.3.   Basement, Foundation, Crawlspace & Structure 
-3.4.   Heating 
-3.5.   Cooling 
-3.6.   Plumbing 
-3.7.   Electrical 
-3.8.   Fireplace 
-3.9.   Attic, Insulation & Ventilation 
-3.10. Doors, Windows & Interior
+- 2. Limitations, Exceptions & Exclusions
 
-4. Glossary of Terms
+- 3. Standards of Practice
+   - 3.1.   Roof
+   - 3.2.   Exterior
+   - 3.3.   Basement, Foundation, Crawlspace & Structure
+   - 3.4.   Heating
+   - 3.5.   Cooling
+   - 3.6.   Plumbing
+   - 3.7.   Electrical
+   - 3.8.   Fireplace
+   - 3.9.   Attic, Insulation & Ventilation
+   - 3.10.  Doors, Windows & Interior
 
- 
+- 4. Glossary of Terms
 
-1. Definitions and Scope
-1.1.  A general home inspection is a non-invasive, visual examination of the accessible areas of a residential property (as delineated below), performed for a fee, which is designed to identify defects within specific systems and components defined by these Standards that are both observed and deemed material by the inspector.  The scope of work may be modified by the Client and Inspector prior to the inspection process.
+#1. Definitions and Scope
+- 1.1.  A general home inspection is a non-invasive, visual examination of the accessible areas of a residential property (as delineated below), performed for a fee, which is designed to identify defects within specific systems and components defined by these Standards that are both observed and deemed material by the inspector.  The scope of work may be modified by the Client and Inspector prior to the inspection process.
 
 The general home inspection is based on the observations made on the date of the inspection, and not a prediction of future conditions. 
 
 The general home inspection will not reveal every issue that exists or ever could exist, but only those material defects observed on the date of the inspection.
-1.2.  A material defect is a specific issue with a system or component of a residential property that may have a significant, adverse impact on the value of the property, or that poses an unreasonable risk to people.  The fact that a system or component is near, at or beyond the end of its normal useful life is not, in itself, a material defect.
+- 1.2.  A material defect is a specific issue with a system or component of a residential property that may have a significant, adverse impact on the value of the property, or that poses an unreasonable risk to people.  The fact that a system or component is near, at or beyond the end of its normal useful life is not, in itself, a material defect.
 
-1.3.  A general home inspection report shall identify, in written format, defects within specific systems and components defined by these Standards that are both observed and deemed material by the inspector.  Inspection reports may include additional comments and recommendations.
- 
-2. Limitations, Exceptions & Exclusions
-2.1. Limitations:
+- 1.3.  A general home inspection report shall identify, in written format, defects within specific systems and components defined by these Standards that are both observed and deemed material by the inspector.  Inspection reports may include additional comments and recommendations.
+
+#2. Limitations, Exceptions & Exclusions
+##2.1. Limitations:
 
 An inspection is not technically exhaustive.
 An inspection will not identify concealed or latent defects. 
@@ -43,7 +42,8 @@ An inspection does not determine the advisability or inadvisability of the purch
 An inspection does not determine the life expectancy of the property or any components or systems therein. 
 An inspection does not include items not permanently installed. 
 These Standards of Practice apply only to properties with four or fewer residential units.
-2.2. Exclusions:
+
+#2.2. Exclusions:
 
 I. The inspector is not required to determine:
 
