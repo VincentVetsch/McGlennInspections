@@ -6,29 +6,32 @@
 2. Limitations, Exceptions & Exclusions
 
 3. Standards of Practice
-   3.1.   Roof
-   3.2.   Exterior
-   3.3.   Basement, Foundation, Crawlspace & Structure
-   3.4.   Heating
-   3.5.   Cooling
-   3.6.   Plumbing
-   3.7.   Electrical
-   3.8.   Fireplace
-   3.9.   Attic, Insulation & Ventilation
-   3.10.  Doors, Windows & Interior
+3.1.   Roof
+3.2.   Exterior
+3.3.   Basement, Foundation, Crawlspace & Structure
+3.4.   Heating
+3.5.   Cooling
+3.6.   Plumbing
+3.7.   Electrical
+3.8.   Fireplace
+3.9.   Attic, Insulation & Ventilation
+3.10.  Doors, Windows & Interior
 
 4. Glossary of Terms
 
 #1. Definitions and Scope
-1.1.  A general home inspection is a non-invasive, visual examination of the accessible areas of a residential property (as delineated below), performed for a fee, which is designed to identify defects within specific systems and components defined by these Standards that are both observed and deemed material by the inspector.  The scope of work may be modified by the Client and Inspector prior to the inspection process.
+##1.1. General Home Inspection
+A general home inspection is a non-invasive, visual examination of the accessible areas of a residential property (as delineated below), performed for a fee, which is designed to identify defects within specific systems and components defined by these Standards that are both observed and deemed material by the inspector.  The scope of work may be modified by the Client and Inspector prior to the inspection process.
 
 The general home inspection is based on the observations made on the date of the inspection, and not a prediction of future conditions.
 
 The general home inspection will not reveal every issue that exists or ever could exist, but only those material defects observed on the date of the inspection.
 
-1.2.  A material defect is a specific issue with a system or component of a residential property that may have a significant, adverse impact on the value of the property, or that poses an unreasonable risk to people.  The fact that a system or component is near, at or beyond the end of its normal useful life is not, in itself, a material defect.
+##1.2. Material Defects
+A material defect is a specific issue with a system or component of a residential property that may have a significant, adverse impact on the value of the property, or that poses an unreasonable risk to people.  The fact that a system or component is near, at or beyond the end of its normal useful life is not, in itself, a material defect.
 
-1.3.  A general home inspection report shall identify, in written format, defects within specific systems and components defined by these Standards that are both observed and deemed material by the inspector.  Inspection reports may include additional comments and recommendations.
+##1.3. Home Inspection Report
+A general home inspection report shall identify, in written format, defects within specific systems and components defined by these Standards that are both observed and deemed material by the inspector.  Inspection reports may include additional comments and recommendations.
 
 #2. Limitations, Exceptions & Exclusions
 ##2.1. Limitations:
@@ -48,44 +51,44 @@ The general home inspection will not reveal every issue that exists or ever coul
 
 ###I. The inspector is not required to determine:
 
-- property boundary lines or encroachments.
-- the condition of any component or system that is not readily accessible. 
-- the service life expectancy of any component or system. 
-- the size, capacity, BTU, performance or efficiency of any component or system. 
-- the cause or reason of any condition. 
-- the cause for the need of repair or replacement of any system or component. 
-- future conditions. 
-- compliance with codes or regulations. 
-- the presence of evidence of rodents, birds, animals, insects, or other pests. 
-- the presence of mold, mildew or fungus.
-- the presence of airborne hazards, including radon. 
-- the air quality. 
-- the existence of environmental hazards, including lead paint, asbestos or toxic drywall.
-- the existence of electromagnetic fields. 
-- any hazardous waste conditions. 
-- any manufacturers' recalls or conformance with manufacturer installation, or any information included for consumer protection purposes.
-- acoustical properties.
-- replacement or repair cost estimates. 
-- estimates of the cost to operate any given system.
+- Property boundary lines or encroachments.
+- The condition of any component or system that is not readily accessible. 
+- The service life expectancy of any component or system. 
+- The size, capacity, BTU, performance or efficiency of any component or system. 
+- The cause or reason of any condition. 
+- The cause for the need of repair or replacement of any system or component. 
+- Future conditions. 
+- Compliance with codes or regulations. 
+- The presence of evidence of rodents, birds, animals, insects, or other pests. 
+- The presence of mold, mildew or fungus.
+- The presence of airborne hazards, including radon. 
+- The air quality. 
+- The existence of environmental hazards, including lead paint, asbestos or toxic drywall.
+- The existence of electromagnetic fields. 
+- Any hazardous waste conditions. 
+- Any manufacturers' recalls or conformance with manufacturer installation, or any information included for consumer protection purposes.
+- Acoustical properties.
+- Replacement or repair cost estimates. 
+- Estimates of the cost to operate any given system.
 
 ###II. The inspector is not required to operate:
 
-- any system that is shut down.
-- any system that does not function properly. 
-- or evaluate low-voltage electrical systems such as, but not limited to: 
+- Any system that is shut down.
+- Any system that does not function properly. 
+- Or evaluate low-voltage electrical systems such as, but not limited to: 
 
-      1. phone lines; 
-      2. cable lines; 
-      3. satellite dishes;
-      4. antennae;  
-      5. lights; or 
-      6. remote controls. 
+      1. phone lines
+      2. cable lines
+      3. satellite dishes
+      4. antennae
+      5. lights
+      6. remote controls
 
-- any system that does not turn on with the use of normal operating controls. 
-- any shut-off valves or manual stop valves. 
-- any electrical disconnect or over-current protection devices. 
-- any alarm systems. 
-- moisture meters, gas detectors or similar equipment.
+- Any system that does not turn on with the use of normal operating controls. 
+- Any shut-off valves or manual stop valves. 
+- Any electrical disconnect or over-current protection devices. 
+- Any alarm systems. 
+- Moisture meters, gas detectors or similar equipment.
 
 ###III. The inspector is not required to:
 
