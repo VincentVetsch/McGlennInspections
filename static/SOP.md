@@ -6,16 +6,16 @@
 2. Limitations, Exceptions & Exclusions
 
 3. Standards of Practice
-     3.1.   Roof
-     3.2.   Exterior
-     3.3.   Basement, Foundation, Crawlspace & Structure
-     3.4.   Heating
-     3.5.   Cooling
-     3.6.   Plumbing
-     3.7.   Electrical
-     3.8.   Fireplace
-     3.9.   Attic, Insulation & Ventilation
-     3.10.  Doors, Windows & Interior
+     * 3.1.   Roof
+     * 3.2.   Exterior
+     * 3.3.   Basement, Foundation, Crawlspace & Structure
+     * 3.4.   Heating
+     * 3.5.   Cooling
+     * 3.6.   Plumbing
+     * 3.7.   Electrical
+     * 3.8.   Fireplace
+     * 3.9.   Attic, Insulation & Ventilation
+     * 3.10.  Doors, Windows & Interior
 
 #1. Definitions and Scope
 ##1.1. General Home Inspection
