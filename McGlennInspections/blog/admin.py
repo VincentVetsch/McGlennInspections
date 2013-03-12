@@ -1,12 +1,12 @@
 from django.contrib import admin
-from blog.models import Post
+from blog.models import Posts
 # Register your models here.
 
 
-class PostAdmin(admin.ModelAdmin):
+class PostsAdmin(admin.ModelAdmin):
     ''' Admin module for post model '''
     prepopulated_fields = {'slug': ('title',)}
-    list_display = ('title', 'author', 'bodytext', 'timestamp')
+    list_display = ('title', 'author', 'bodytext', 'timestamp', 'tags')
     search_fields = ['title']
 
-admin.site.register(Post, PostAdmin)
+admin.site.register(Posts, PostsAdmin)

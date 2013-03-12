@@ -5,7 +5,6 @@ from slideshow.models import Slide
 # Register your models here.
 class SlideAdmin(admin.ModelAdmin):
     ''' Admin module for appointment model '''
-    prepopulated_fields = {'slug': ('title',)}
     list_display = (
         'author',
         'title',
