@@ -31,7 +31,7 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
-
+INTERNAL_IPS = ('127.0.0.1',)
 # Application definition
 
 INSTALLED_APPS = (
