@@ -25,7 +25,12 @@ SECRET_KEY = 'hbs*t#g76q7un&=w8734v4c3=4+0dko_#_7i*o5a5=fxcn0(%a'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
-
+TEMPLATE_DIRS = (
+    "blog/templates",
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+)
 
 # Application definition
 
@@ -36,6 +41,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admindocs',
+    'django_extensions',
     'taggit',
     'blog',
     'appointment',
