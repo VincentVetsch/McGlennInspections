@@ -5,3 +5,4 @@ from django.shortcuts import render
 '''
     This is the view for blog
 '''
+
