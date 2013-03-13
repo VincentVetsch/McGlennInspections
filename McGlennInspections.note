@@ -6,8 +6,10 @@ speed.  Some of the application will be static in nature, such as the index
 page, contact information, and links(I will revisit this if links.html becomes
 unmanagable).
 
+The site needs to be completed by 01Apr13
+
 Tasks:
-   • TODO — Added Terms.csv to database.  May need to reformat files
+   • TODO — Clean up slug field in terms
    • TODO — Clean up jquery libraries
    • TODO — Create the application for slideshow
       ◦ DONE — Create models
@@ -21,6 +23,7 @@ Tasks:
    • TODO — Google or Yahoo Calendar to site.  This will allow customers to see
    our current schedule and workload.
 Competed Tasks:
+   • DONE — Added Terms.csv to database.  May need to reformat files
    • DONE — Run syncdb on McGlennInspections.  I want to make sure that the tables are correct before I run syncdb.  Not that it is that big of deal, tables can be dropped and recreated.
    • DONE — Add Appointment applications
    • DONE — Complete all models
