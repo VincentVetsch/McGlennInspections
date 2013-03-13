@@ -6,4 +6,9 @@ def blog_page(request):
     '''
         This is the view for blog
     '''
-    return render_to_response("blog.html")
+    # TODO - Start adding the content to the page
+    return render_to_response("blog.html", {'blog': Posts})
+
+
+def blog_page_details(request):
+    pass
