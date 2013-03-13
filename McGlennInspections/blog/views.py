@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render_to_response
+from blog.models import Posts
 
-#Create your views here.
-#TODO - Create view
-'''
-    This is the view for blog
-'''
 
+def blog(request):
+    '''
+        This is the view for blog
+    '''
+    return render_to_response("blog.html")
