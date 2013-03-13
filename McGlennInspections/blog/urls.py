@@ -1,5 +1,7 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import patterns, url
+from blog import views
+
 
 urlpatterns = patterns('',
-             url(r'^blog/', '', name='blog'),
+             url(r'^$', views.blog_page, name='blog'),
 )
