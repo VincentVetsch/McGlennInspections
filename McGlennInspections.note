@@ -6,17 +6,14 @@ speed.  Some of the application will be static in nature, such as the index
 page, contact information, and links(I will revisit this if links.html becomes
 unmanagable).
 
-The site needs to be completed by 01Apr13
+The site needs to be completed by 01APR13
 
 Tasks:
    • TODO — Clean up slug field in terms
    • TODO — Clean up jquery libraries
-   • TODO — Add all templates to the applications
-   • TODO — Create the application for slideshow
-      ◦ DONE — Create models
-      ◦ TODO — Create views
-      ◦ DONE — Create admin
+   • TODO — Create base.html for the project
    • TODO — Complete all views
+      ◦ TODO — Complete slideshow view
       ◦ TODO — Complete appointment view
       ◦ TODO — Complete blog view
       ◦ TODO — Complete glossary view
@@ -24,6 +21,10 @@ Tasks:
    • TODO — Google or Yahoo Calendar to site.  This will allow customers to see
    our current schedule and workload.
 Competed Tasks:
+   • DONE — Create the application for slideshow
+      ◦ DONE — Create models
+      ◦ DONE — Create admin
+   • DONE — Add all templates to the applications
    • DONE — Added Terms.csv to database.  May need to reformat files
    • DONE — Run syncdb on McGlennInspections.  I want to make sure that the tables are correct before I run syncdb.  Not that it is that big of deal, tables can be dropped and recreated.
    • DONE — Add Appointment applications
