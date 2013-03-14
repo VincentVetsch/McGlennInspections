@@ -8,7 +8,8 @@ def blog_page(request):
         Returns: Page with content values
     '''
     # TODO - Start adding the content to the page
-    return render_to_response("blog.html", {'blog': Posts})
+    entries = Posts.objects.all()
+    return render_to_response("blog.html", {'blog': entries})
 
 
 def blog_page_details(request):
