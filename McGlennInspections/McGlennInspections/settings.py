@@ -36,6 +36,7 @@ TEMPLATE_DIRS = (
     'glossary/templates',
     'rvalues/templates',
     'slideshow/templates',
+    'cust_feedback/templates',
 )
 INTERNAL_IPS = ('127.0.0.1',)
 
@@ -55,6 +56,7 @@ INSTALLED_APPS = (
     'glossary',
     'rvalues',
     'slideshow',
+    'cust_feedback',
 )
 
 MIDDLEWARE_CLASSES = (

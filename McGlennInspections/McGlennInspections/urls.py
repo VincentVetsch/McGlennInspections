@@ -20,4 +20,5 @@ urlpatterns = patterns('',
     url(r'^glossary/', include('glossary.urls')),
     url(r'^slideshow/', include('slideshow.urls')),
     url(r'^rvalues/', include('rvalues.urls')),
+    url(r'^cust_feedback/', include('cust_feedback.urls')),
 )
