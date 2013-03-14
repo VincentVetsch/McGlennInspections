@@ -16,4 +16,5 @@ def blog_page_details(request):
         This is the detail view for each blog entries
         Returns: Page with content values
     '''
+    # TODO - Start adding the content to the page
     pass
