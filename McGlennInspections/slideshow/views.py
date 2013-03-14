@@ -8,7 +8,7 @@ def slideshow_page(request):
         Returns: Page with content values
     '''
     # TODO - Start adding the content to the page
-    return render_to_response("slideshow_page.html", {'slideshow': Slide})
+    return render_to_response("slideshow.html", {'slideshow': Slide})
 
 
 def slideshow_page_details(request):

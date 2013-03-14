@@ -8,7 +8,7 @@ def cust_feedback_page(request):
         Returns: Page with content values
     '''
     # TODO - Start adding the content to the page
-    return render_to_response("cust_feedback_page.html", {'cust_feedback': Feedback})
+    return render_to_response("cust_feedback.html", {'cust_feedback': Feedback})
 
 
 def cust_feedback_page_details(request):

@@ -8,7 +8,7 @@ def appointment_page(request):
         Returns: Page with content values
     '''
     # TODO - Start adding the content to the page
-    return render_to_response("appointment_page.html", {'appointment': Appointment})
+    return render_to_response("appointment.html", {'appointment': Appointment})
 
 
 def appointment_page_details(request):
