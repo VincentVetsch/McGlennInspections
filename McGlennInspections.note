@@ -11,6 +11,7 @@ The site needs to be completed by 01Apr13
 Tasks:
    • TODO — Clean up slug field in terms
    • TODO — Clean up jquery libraries
+   • TODO — Add all templates to the applications
    • TODO — Create the application for slideshow
       ◦ DONE — Create models
       ◦ TODO — Create views
