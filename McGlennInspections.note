@@ -9,7 +9,6 @@ unmanagable).
 The site needs to be completed by 01APR13
 
 Tasks:
-   • TODO — Add customer feedback application
    • TODO — Clean up slug field in terms
    • TODO — Clean up jquery libraries
    • TODO — Create base.html for the project
@@ -19,9 +18,11 @@ Tasks:
       ◦ TODO — Complete blog view
       ◦ TODO — Complete glossary view
       ◦ TODO — Complete rvalues view
+      ◦ TODO — Complete cust_feedback view
    • TODO — Google or Yahoo Calendar to site.  This will allow customers to see
    our current schedule and workload.
 Competed Tasks:
+   • DONE — Add customer feedback application
    • DONE — Create the application for slideshow
       ◦ DONE — Create models
       ◦ DONE — Create admin
