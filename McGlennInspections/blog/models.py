@@ -11,6 +11,7 @@ class Posts(models.Model):
     bodytext = models.TextField()
     timestamp = models.DateTimeField()
     tags = models.CharField(max_length=50)
+    # TODO - Make image1 field to blob field
     image1 = models.ImageField(upload_to="images/blogthumbs/", help_text="256x256px image")
 
     def __unicode__(self):
