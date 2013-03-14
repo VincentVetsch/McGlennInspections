@@ -10,6 +10,8 @@ The site needs to be completed by 01APR13
 
 Tasks:
    • TODO — Clean up slug field in terms
+   • TODO — Add 404 error page
+   • TODO — Add 500 error page
    • TODO — Clean up jquery libraries
    • TODO — Create base.html for the project
    • TODO — Complete all views
