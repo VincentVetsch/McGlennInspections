@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response
-from rvalues.models import Rvalues
+from rvalues.models import RValue
 
 
 def rvalues_page(request):
@@ -8,7 +8,7 @@ def rvalues_page(request):
         Returns: Page with content values
     '''
     # TODO - Start adding the content to the page
-    return render_to_response("rvalues.html", {'rvalues': Rvalues})
+    return render_to_response("rvalues.html", {'rvalues': RValue})
 
 
 def rvalues_page_details(request):

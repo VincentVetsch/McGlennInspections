@@ -11,7 +11,7 @@ def cust_feedback_page(request):
     return render_to_response("cust_feedback_page.html", {'cust_feedback': Feedback})
 
 
-def cust_feedback_details(request):
+def cust_feedback_page_details(request):
     '''
         This is the detail view for each appointment entries
         Returns: Page with content values

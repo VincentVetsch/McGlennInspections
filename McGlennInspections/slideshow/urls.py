@@ -4,5 +4,5 @@ from slideshow import views
 
 urlpatterns = patterns('',
     url(r'^$', views.slideshow_page, name='slideshow'),
-    url(r'^details', views.slideshow_detail_page, name='slideshow_details'),
+    url(r'^details', views.slideshow_page_details, name='slideshow_details'),
 )
