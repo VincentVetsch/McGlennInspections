@@ -9,6 +9,7 @@ unmanagable).
 The site needs to be completed by 01APR13
 
 Tasks:
+   • TODO — Add customer feedback application
    • TODO — Clean up slug field in terms
    • TODO — Clean up jquery libraries
    • TODO — Create base.html for the project
