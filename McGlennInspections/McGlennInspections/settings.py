@@ -105,7 +105,20 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
-STATIC_URL = 'static/'
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+)
+MEDIA_ROOT = '/home/vince/Projects/McInspWork/static/'
+MEDIA_URL = '/media/'
+STATIC_URL = '/static/'
+STATIC_ROOT = '/home/vince/Projects/McInspWork/static'
+#STATICFILES_DIRS = (
+#    "/home/vince/Projects/McInspWork/McGlennInspections/static/",
+#    "/home/vince/Projects/McInspWork/McGlennInspections/blog/static",
+#    "/home/vince/Projects/**/static",
+#    "/opt/webfiles/common",
+#
+#)
