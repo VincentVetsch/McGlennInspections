@@ -1,6 +1,8 @@
 from django.shortcuts import render_to_response
 from blog.models import Posts
 
+sitename = "McGlenn Home Inspections"
+
 
 def blog_page(request):
     '''
@@ -9,7 +11,8 @@ def blog_page(request):
     '''
     # TODO - Start adding the content to the page
     entries = Posts.objects.all()
-    return render_to_response("blog.html", {'blog': entries})
+    content = {'blog': entries, 'site': sitename}
+    return render_to_response("blog.html", content)
 
 
 def blog_page_details(request):
