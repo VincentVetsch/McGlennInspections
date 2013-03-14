@@ -1,3 +1,12 @@
+'''
+    Django settings for McGlennInspections project.
+
+    For more information on this file, see
+    https://docs.djangoproject.com/en/dev/ref/urls/
+
+    For the full list of settings and their values, see
+    https://docs.djangoproject.com/en/dev/ref/settings/
+'''
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
