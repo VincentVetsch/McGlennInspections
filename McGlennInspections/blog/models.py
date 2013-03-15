@@ -14,8 +14,6 @@ class Posts(models.Model):
     # TODO - Make image1 field to blob field
     image1 = models.ImageField(
         upload_to="images/blogthumbs/",
-        width_field=256,
-        height_field=256,
         help_text="256x256px image"
     )
 

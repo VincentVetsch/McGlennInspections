@@ -11,6 +11,7 @@ def blog_page(request):
         Returns: Page with content values
     '''
     # TODO - Start adding the content to the page
+    # TODO - Order by date
     entries = Posts.objects.all()
     content = {'blog': entries, 'site': sitename}
     return render_to_response("blog.html", content, context_instance=RequestContext(request))
