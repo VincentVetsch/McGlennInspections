@@ -26,18 +26,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-# Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-# Always use forward slashes, even on Windows.
-# Don't forget to use absolute paths, not relative paths.
-TEMPLATE_DIRS = (
-    'templates',
-    'blog/templates',
-    'application/templates',
-    'glossary/templates',
-    'rvalues/templates',
-    'slideshow/templates',
-    'cust_feedback/templates',
-)
+
 INTERNAL_IPS = ('127.0.0.1',)
 
 # Site Name
@@ -76,10 +65,11 @@ ROOT_URLCONF = 'McGlennInspections.urls'
 
 WSGI_APPLICATION = 'McGlennInspections.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/dev/ref/settings/#databases
-# TODO - Change password for production server
+'''
+    Database
+    https://docs.djangoproject.com/en/dev/ref/settings/#databases
+    TODO - Change password for production server
+'''
 
 DATABASES = {
     'default': {
@@ -92,33 +82,42 @@ DATABASES = {
     }
 }
 
-# Internationalization
-# https://docs.djangoproject.com/en/dev/topics/i18n/
+'''
+    Internationalization
+    https://docs.djangoproject.com/en/dev/topics/i18n/
+'''
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/dev/howto/static-files/
+'''
+    Static files (CSS, JavaScript, Images)
+    https://docs.djangoproject.com/en/dev/howto/static-files/
+'''
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 )
-MEDIA_ROOT = '/home/vince/Projects/McInspWork/static/'
+MEDIA_ROOT = '/home/vince/Projects/McInspWork/sites/www.McGlennInspections.com/htdocs/media/'
 MEDIA_URL = '/media/'
+STATIC_ROOT = '/home/vince/Projects/McInspWork/sites/www.McGlennInspections.com/htdocs/static/'
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/vince/Projects/McInspWork/static'
-#STATICFILES_DIRS = (
-#    "/home/vince/Projects/McInspWork/McGlennInspections/static/",
-#    "/home/vince/Projects/McInspWork/McGlennInspections/blog/static",
-#    "/home/vince/Projects/**/static",
-#    "/opt/webfiles/common",
-#
-#)
+
+'''
+    Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    Always use forward slashes, even on Windows.
+    Don't forget to use absolute paths, not relative paths.
+'''
+TEMPLATE_DIRS = (
+    'templates',
+    'blog/templates',
+    'application/templates',
+    'glossary/templates',
+    'rvalues/templates',
+    'slideshow/templates',
+    'cust_feedback/templates',
+)
+ADMIN_MEDIA_PREFIX = '/static/admin'
