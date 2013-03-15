@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 {% block title %}{{ site }}{% endblock %}
 
-    {% block content %}
-    <h1>{{ site }} - BLOG</h1>
+{% block content %}
+  <h1>{{ site }} - BLOG</h1>
+    <hr />
+    {% for post in blog %}
+      <div class="post">
+        <h2>{{ post.title }}</h2>
+        <img src="{{ post.image1.url }}" height="128" width="128" />
+        <h3>Posted on {{ post.timestamp }} by {{ post.author }}</h3>
+        <p>{{ post.bodytext }}</p>
+      </div>
       <hr />
-      {% for post in blog %}
-        <div class="post">
-          <img src="{{ post.image1.url }}" />
-          <h2>{{ post.title }}</h2>
-          <h3>Posted on {{ post.timestamp }} by {{ post.author }}</h3>
-          <p>{{ post.bodytext }}</p>
-        </div>
-        <hr />
-      {% endfor %}
-    {%  endblock %}
+    {% endfor %}
+{%  endblock %}
