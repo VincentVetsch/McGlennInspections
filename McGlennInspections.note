@@ -9,7 +9,6 @@ unmanagable).
 The site needs to be completed by 01APR13
 
 Tasks:
-   • TODO — Clean up slug field in terms
    • TODO — Add 404 error page
    • TODO — Add 500 error page
    • TODO — Clean up jquery libraries
@@ -23,6 +22,7 @@ Tasks:
    • TODO — Google or Yahoo Calendar to site.  This will allow customers to see
    our current schedule and workload.
 Competed Tasks:
+   • DONE — Clean up slug field in terms
    • DONE — Create base.html for the project
    • DONE — Add customer feedback application
    • DONE — Create the application for slideshow
