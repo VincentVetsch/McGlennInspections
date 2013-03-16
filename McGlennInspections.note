@@ -9,6 +9,7 @@ unmanagable).
 The site needs to be completed by 01APR13
 
 Tasks:
+   • TODO — Merge cust_feedback with appointment use fk
    • TODO — Add 404 error page
    • TODO — Add 500 error page
    • TODO — Clean up jquery libraries
