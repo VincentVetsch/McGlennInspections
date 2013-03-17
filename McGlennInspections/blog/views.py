@@ -1,10 +1,9 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from blog.models import Posts
+from McGlennInspections.settings import SITENAME
 #import vimpdb
 #vimpdb.set_trace()
-
-sitename = "McGlenn Home Inspections"
 
 
 def blog_page(request):
@@ -17,7 +16,7 @@ def blog_page(request):
     '''
     # TODO - Start adding the content to the page
     entries = Posts.objects.order_by('-timestamp')
-    content = {'blog': entries, 'site': sitename}
+    content = {'blog': entries, 'site': SITENAME}
     return render_to_response("blog.html", content, context_instance=RequestContext(request))
 
 

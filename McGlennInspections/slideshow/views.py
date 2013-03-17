@@ -1,5 +1,6 @@
 from django.shortcuts import render_to_response
 from slideshow.models import Slide
+from McGlennInspections.settings import SITENAME
 
 
 def slideshow_page(request):

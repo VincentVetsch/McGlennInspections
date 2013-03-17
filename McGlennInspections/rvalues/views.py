@@ -1,5 +1,6 @@
 from django.shortcuts import render_to_response
 from rvalues.models import RValue
+from McGlennInspections.settings import SITENAME
 
 
 def rvalues_page(request):

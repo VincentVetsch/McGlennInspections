@@ -1,5 +1,6 @@
 from django.shortcuts import render_to_response
 from appointment.models import Appointment
+from McGlennInspections.settings import SITENAME
 
 
 def appointment_page(request):

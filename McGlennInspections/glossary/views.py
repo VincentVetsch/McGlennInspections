@@ -1,5 +1,6 @@
 from django.shortcuts import render_to_response
 from glossary.models import Terms
+from McGlennInspections.settings import SITENAME
 
 
 def glossary_page(request):

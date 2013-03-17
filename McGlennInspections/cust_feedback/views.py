@@ -1,5 +1,6 @@
 from django.shortcuts import render_to_response
 from cust_feedback.models import Feedback
+from McGlennInspections.settings import SITENAME
 
 
 def cust_feedback_page(request):
