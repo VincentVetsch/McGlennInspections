@@ -13,7 +13,7 @@ def blog_page(request):
              request
         Returns: Page with content values
     '''
-    # TODO - Start adding the content to the page
+    # DONE - Start adding the content to the page
     entries = Posts.objects.order_by('-timestamp')
     content = {'blog': entries, 'site': SITENAME}
     print content
