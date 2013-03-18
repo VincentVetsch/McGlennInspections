@@ -3,8 +3,6 @@ from django.template import RequestContext
 from blog.models import Posts
 #This might not be proper but does work
 from McGlennInspections.settings import SITENAME
-#import vimpdb
-#vimpdb.set_trace()
 
 
 def blog_page(request):
