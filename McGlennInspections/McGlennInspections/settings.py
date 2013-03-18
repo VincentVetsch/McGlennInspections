@@ -23,14 +23,13 @@ SECRET_KEY = 'hbs*t#g76q7un&=w8734v4c3=4+0dko_#_7i*o5a5=fxcn0(%a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 TEMPLATE_DEBUG = True
-
-
 INTERNAL_IPS = ('127.0.0.1',)
 
-# Site Name
+# Site Name, author, and email  -- Not standard configuration
 SITENAME = "McGlenn Home Inspections"
+AUTHOR = "Vincent Vetsch"
+EMAIL = "vincent.vetsch@gmail.com"
 
 # Application definition
 INSTALLED_APPS = (
@@ -62,14 +61,13 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'McGlennInspections.urls'
-
 WSGI_APPLICATION = 'McGlennInspections.wsgi.application'
 
 '''
     Database
     https://docs.djangoproject.com/en/dev/ref/settings/#databases
-    TODO - Change password for production server
 '''
+# TODO - Change password for production server
 
 DATABASES = {
     'default': {
@@ -94,7 +92,7 @@ USE_L10N = True
 USE_TZ = True
 
 '''
-    Static files (CSS, JavaScript, Images)
+    Static and Media files (CSS, JavaScript, Images)
     https://docs.djangoproject.com/en/dev/howto/static-files/
 '''
 STATICFILES_FINDERS = (
