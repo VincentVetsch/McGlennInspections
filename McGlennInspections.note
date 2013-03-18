@@ -1,10 +1,10 @@
 McGlennInspections
 
-The McGlenn Home Inspections, LLC website shall be a Django Application with a
-clean look and feel.  The reason behind using Django is it’s scalablility and
-speed.  Some of the application will be static in nature, such as the index
-page, contact information, and links(I will revisit this if links.html becomes
-unmanagable).
+   The McGlenn Home Inspections, LLC website shall be a Django Application with
+   a clean look and feel.  The reason behind using Django is it’s scalablility
+   and speed.  Some of the application will be static in nature, such as the
+   index page, contact information, and links(I will revisit this if links.html
+   becomes unmanagable).
 
 The site needs to be completed by 01APR13
 
