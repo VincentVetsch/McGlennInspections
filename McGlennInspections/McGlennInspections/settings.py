@@ -118,5 +118,6 @@ TEMPLATE_DIRS = (
     'rvalues/templates',
     'slideshow/templates',
     'cust_feedback/templates',
+    'navigation/templates',
 )
 ADMIN_MEDIA_PREFIX = '/static/admin'
