@@ -17,11 +17,16 @@ class Navigation(models.Model):
         admin.py.
     '''
 
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100,
+                             help_text="This is the title for the link"
+                            )
     slug = models.SlugField(unique=True)
     # TODO - Research models.UrlField for links
-    link = models.CharField(max_length=200, blank=True)
-    # Type is either parent or child
+    link = models.CharField(max_length=200,
+                            blank=True,
+                            help_text="This is the http link"
+                           )
+    # Type is either parent, individual or child
     type_of_link = models.CharField(max_length=1, choices=TYPE_CHOICE)
     # Parent of link
     parent = models.CharField(max_length=100, blank=True)
