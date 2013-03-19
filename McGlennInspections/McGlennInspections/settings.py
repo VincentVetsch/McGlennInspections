@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'rvalues',
     'slideshow',
     'cust_feedback',
+    'navigation',
 )
 
 MIDDLEWARE_CLASSES = (

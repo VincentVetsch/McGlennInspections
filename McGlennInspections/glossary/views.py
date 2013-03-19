@@ -7,9 +7,13 @@ from McGlennInspections.settings import SITENAME
 def glossary_page(request):
     '''
         This is the main view for all glossary entries
-        Returns: Page with content values
+
+        Arguments:
+            request:
+        Returns:
+            Page with content values
     '''
-    # TODO - Start adding the content to the page
+    # DONE - Start adding the content to the page
     entries = Terms.objects.order_by('-timestamp')
     content = {'terms': entries, 'site': SITENAME}
     return render_to_response(
@@ -22,7 +26,11 @@ def glossary_page(request):
 def glossary_page_details(request):
     '''
         This is the detail view for each glossary entries
-        Returns: Page with content values
+
+        Arguments:
+            request:
+        Returns:
+            Page with details of the current term
     '''
     # TODO - Start adding the content to the page
     pass
