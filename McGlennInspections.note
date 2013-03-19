@@ -9,6 +9,8 @@ McGlennInspections
 The site needs to be completed by 01APR13
 
 Tasks:
+   • TODO — Study pagination and create a template for it
+   • TODO — Start working on forms
    • TODO — Merge cust_feedback with appointment use fk
    • TODO — Add 404 error page
    • TODO — Add 500 error page
