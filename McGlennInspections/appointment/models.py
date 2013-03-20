@@ -6,6 +6,7 @@ class CustomerInformation(models.Model):
     '''
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
+    slug = models.SlugField(unique=True)
     email = models.EmailField(max_length=200, unique=True)
     phone = models.CharField(max_length=20, unique=True)
     mobile = models.CharField(max_length=20, unique=True)
@@ -18,6 +19,7 @@ class InspectionAddress(models.Model):
     ''' The address of the inspection
     '''
     full_name = models.ForeignKey(CustomerInformation)
+    slug = models.SlugField(unique=True)
     inspection_address = models.CharField(max_length=100)
     inspection_city = models.CharField(max_length=50)
     inspection_state = models.CharField(max_length=50)
@@ -31,6 +33,7 @@ class HouseInformation(models.Model):
     ''' House information
     '''
     full_name = models.ForeignKey(CustomerInformation)
+    slug = models.SlugField(unique=True)
     address = models.ForeignKey(InspectionAddress)
     square_footage = models.IntegerField()
     basement = models.BooleanField()
