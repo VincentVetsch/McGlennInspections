@@ -43,10 +43,10 @@ class Navigation(models.Model):
     level = models.IntegerField()
     div_class = models.CharField(max_length=20)
     icon_field = models.ImageField(
-        upload_to="images/navigation/",
-        help_text="32x32px image",
-        blank=True
-    )
+                                    upload_to="images/navigation/",
+                                    help_text="32x32px image",
+                                    blank=True
+                                )
 
     def __unicode__(self):
         return self.title
