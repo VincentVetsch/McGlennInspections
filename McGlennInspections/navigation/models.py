@@ -6,9 +6,9 @@ TYPE_CHOICE = (
 )
 
 
-# TODO - run syncdb, after you have verified the fields
-# TODO - look at ways of using a second table as a fk
-# TODO - look at nano apps
+# TODO - Run syncdb, after you have verified the fields
+# TODO - Look at ways of using a second table as a fk
+# TODO - Look at nano apps
 # Create your models here.
 class Navigation(models.Model):
     '''

@@ -9,9 +9,16 @@ McGlennInspections
 The site needs to be completed by 01APR13
 
 Tasks:
+   • TODO — Add test fixtures
+   • TODO — Add like field to blog app and migrate using South
    • TODO — Study pagination and create a template for it
+      ◦ TODO — Insure that it is as extendable to other sections of code.
+      ◦ TODO — Insure that its variables are capable of being overwritten.
+   • TODO — Add tinyMCE to the project.
+   • TODO — Add South to the project.
    • TODO — Start working on forms
-   • TODO — Merge cust_feedback with appointment use fk
+   • TODO — Merge cust_feedback with appointment use fk use South to migrate
+   the changes.
    • TODO — Add 404 error page
    • TODO — Add 500 error page
    • TODO — Clean up jquery libraries
