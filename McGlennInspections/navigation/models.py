@@ -26,7 +26,7 @@ class Navigation(models.Model):
     slug = models.SlugField(unique=True)
     # DONE - Research models.UrlField for links
     # FIXME - Doesn't seem to allow Django links
-    link = models.URLField(max_length=200,
+    link = models.CharField(max_length=200,
                             blank=True,
                             help_text="This is the http link"
                            )
