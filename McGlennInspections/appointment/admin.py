@@ -35,7 +35,7 @@ class FeedbackAdmin(admin.ModelAdmin):
 class CustomerInformationAdmin(admin.ModelAdmin):
     ''' Admin for Feedback model
     '''
-    prepopulated_fields = {'slug': ('full_name',)}
+    prepopulated_fields = {'slug': ('first_name', 'last_name',)}
     list_display = (
         'full_name',
         'phone',
