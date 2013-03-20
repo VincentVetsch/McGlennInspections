@@ -15,6 +15,7 @@ class CustomerInformation(models.Model):
         return self.first_name + " " + self.last_name
 
 
+# DONE - Merge InspectionAddress and HouseInformation together
 class InspectionAddress(models.Model):
     ''' The address of the inspection
     '''
@@ -24,16 +25,6 @@ class InspectionAddress(models.Model):
     inspection_city = models.CharField(max_length=50)
     inspection_state = models.CharField(max_length=50)
     inspection_zip = models.IntegerField()
-
-    def __unicode__(self):
-        return self.inspection_address
-
-
-class HouseInformation(models.Model):
-    ''' House information
-    '''
-    full_name = models.ForeignKey(CustomerInformation)
-    slug = models.SlugField(unique=True)
     square_footage = models.IntegerField()
     basement = models.BooleanField()
     crawlspace = models.BooleanField()
@@ -46,7 +37,10 @@ class HouseInformation(models.Model):
     number_of_bathrooms = models.IntegerField()
 
     def __unicode__(self):
-        return self.slug
+        return self.inspection_address
+
+    def get_city(self):
+        return self.inspection_city
 
 
 class Appointment(models.Model):
@@ -56,25 +50,29 @@ class Appointment(models.Model):
     full_name = models.ForeignKey(CustomerInformation)
     slug = models.SlugField(unique=True)
     #Inspection Address
-    address = models.ForeignKey(InspectionAddress)
+    inspection_address = models.ForeignKey(InspectionAddress)
     #Inspection details
-    home_information = models.ForeignKey(HouseInformation)
     date_requested = models.DateField(auto_now=False, auto_now_add=False)
     time_requested = models.TimeField(auto_now=False, auto_now_add=False)
     #Notes
     notes = models.TextField()
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=True)
+    accepted = models.BooleanField()
+    pre_aggrement_meeting = models.BooleanField()
+    inspection_completed = models.BooleanField()
+    report_completed = models.BooleanField()
 
     def __unicode__(self):
         return self.slug
 
 
 # FIXME - CustomerInformation doesn't have a __getitem__
+# FIXME - Email field pulls the first and last name
 class Feedback(models.Model):
     '''Fields for Feedback table
     '''
     full_name = models.ForeignKey(CustomerInformation)
-    email = models.ForeignKey(CustomerInformation, to_field='email', related_name='+')
+    email = models.ForeignKey(CustomerInformation, related_name='customer_email')
     slug = models.SlugField(unique=True)
     #Address
     inspection_address = models.ForeignKey(InspectionAddress)

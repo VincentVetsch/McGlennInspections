@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from glossary.models import Terms
+from glossary.models import Term
 from McGlennInspections.settings import SITENAME
 
 
@@ -14,8 +14,8 @@ def glossary_page(request):
             Page with content values
     '''
     # DONE - Start adding the content to the page
-    entries = Terms.objects.order_by('-timestamp')
-    content = {'terms': entries, 'site': SITENAME}
+    entries = Term.objects.order_by('-timestamp')
+    content = {'term': entries, 'site': SITENAME}
     return render_to_response(
         "glossary.html",
         content,
