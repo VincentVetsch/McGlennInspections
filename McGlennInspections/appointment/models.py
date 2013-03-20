@@ -34,7 +34,6 @@ class HouseInformation(models.Model):
     '''
     full_name = models.ForeignKey(CustomerInformation)
     slug = models.SlugField(unique=True)
-    address = models.ForeignKey(InspectionAddress)
     square_footage = models.IntegerField()
     basement = models.BooleanField()
     crawlspace = models.BooleanField()
@@ -47,11 +46,11 @@ class HouseInformation(models.Model):
     number_of_bathrooms = models.IntegerField()
 
     def __unicode__(self):
-        return self.inspection_address
+        return self.slug
 
 
 class Appointment(models.Model):
-    ''' Fields for Posts Table
+    ''' Fields for Appointment Table
     '''
     #Customer information
     full_name = models.ForeignKey(CustomerInformation)
@@ -59,7 +58,7 @@ class Appointment(models.Model):
     #Inspection Address
     address = models.ForeignKey(InspectionAddress)
     #Inspection details
-    home = models.ForeignKey(HouseInformation)
+    home_information = models.ForeignKey(HouseInformation)
     date_requested = models.DateField(auto_now=False, auto_now_add=False)
     time_requested = models.TimeField(auto_now=False, auto_now_add=False)
     #Notes
@@ -67,11 +66,12 @@ class Appointment(models.Model):
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=True)
 
     def __unicode__(self):
-        return self.title
+        return self.slug
 
 
+# FIXME - CustomerInformation doesn't have a __getitem__
 class Feedback(models.Model):
-    '''Fields for Posts Table
+    '''Fields for Feedback table
     '''
     full_name = models.ForeignKey(CustomerInformation)
     email = models.ForeignKey(CustomerInformation, to_field='email', related_name='+')
@@ -84,4 +84,4 @@ class Feedback(models.Model):
     approve = models.BooleanField()
 
     def __unicode__(self):
-        return self.title
+        return self.email

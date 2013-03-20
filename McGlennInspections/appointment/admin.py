@@ -7,7 +7,7 @@ from appointment.models import Appointment, Feedback, CustomerInformation, Inspe
 class AppointmentAdmin(admin.ModelAdmin):
     ''' Admin module for appointment model
     '''
-    prepopulated_fields = {'slug': ('full_name',)}
+    prepopulated_fields = {'slug': ('date_requested',)}
     list_display = (
         'full_name',
         'date_requested',
@@ -37,12 +37,13 @@ class CustomerInformationAdmin(admin.ModelAdmin):
     '''
     prepopulated_fields = {'slug': ('first_name', 'last_name',)}
     list_display = (
-        'full_name',
+        'first_name',
+        'last_name',
         'phone',
         'mobile',
         'email',
     )
-    search_fields = ['full_name']
+    search_fields = ['first_name', 'last_name']
 
 
 # DONE - Add preview fields for list view
@@ -66,7 +67,6 @@ class HouseInformationAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('full_name',)}
     list_display = (
         'full_name',
-        'address',
         'square_footage',
     )
     search_fields = ['full_name']
