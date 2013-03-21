@@ -6,9 +6,10 @@ McGlennInspections
    index page, contact information, and links(I will revisit this if links.html
    becomes unmanagable).
 
-The site needs to be completed by 01APR13
+The site needs to be completed by 01APR13.  It’s not going to happen.
 
 Tasks:
+   • TODO — Fix up the model for appointment app
    • TODO — Add test fixtures
    • TODO — Add like field to blog app and migrate using South
    • TODO — Study pagination and create a template for it
