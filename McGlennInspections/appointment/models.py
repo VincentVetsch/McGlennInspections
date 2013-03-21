@@ -1,6 +1,8 @@
 from django.db import models
 
 
+# TODO - Use django Auth User database for first_name, last_name,
+# and email fields
 class CustomerInformation(models.Model):
     ''' Customer Information
     '''
@@ -12,14 +14,13 @@ class CustomerInformation(models.Model):
     mobile = models.CharField(max_length=20, unique=True)
 
     def __unicode__(self):
-        return self.first_name + " " + self.last_name
+        return self.email
 
 
 # DONE - Merge InspectionAddress and HouseInformation together
 class InspectionAddress(models.Model):
     ''' The address of the inspection
     '''
-    full_name = models.ForeignKey(CustomerInformation)
     slug = models.SlugField(unique=True)
     inspection_address = models.CharField(max_length=100)
     inspection_city = models.CharField(max_length=50)
@@ -39,9 +40,6 @@ class InspectionAddress(models.Model):
     def __unicode__(self):
         return self.inspection_address
 
-    def get_city(self):
-        return self.inspection_city
-
 
 class Appointment(models.Model):
     ''' Fields for Appointment Table
@@ -57,6 +55,7 @@ class Appointment(models.Model):
     #Notes
     notes = models.TextField()
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=True)
+    #Tracking
     accepted = models.BooleanField()
     pre_aggrement_meeting = models.BooleanField()
     inspection_completed = models.BooleanField()
@@ -66,13 +65,14 @@ class Appointment(models.Model):
         return self.slug
 
 
-# FIXME - CustomerInformation doesn't have a __getitem__
-# FIXME - Email field pulls the first and last name
+# DONE - CustomerInformation doesn't have a __getitem__
+# DONE - Email field pulls the first and last name
+# TODO - Feedback is a little quarky, It needs to be revisited
 class Feedback(models.Model):
     '''Fields for Feedback table
     '''
-    full_name = models.ForeignKey(CustomerInformation)
-    email = models.ForeignKey(CustomerInformation, related_name='customer_email')
+    email = models.ForeignKey(CustomerInformation)
+    #last_name = models.ForeignKey(CustomerInformation)
     slug = models.SlugField(unique=True)
     #Address
     inspection_address = models.ForeignKey(InspectionAddress)
@@ -82,4 +82,4 @@ class Feedback(models.Model):
     approve = models.BooleanField()
 
     def __unicode__(self):
-        return self.email
+        return self.slug

@@ -7,7 +7,7 @@
     For the full list of settings and their values, see
     https://docs.djangoproject.com/en/dev/ref/settings/
 '''
-from django.conf.urls import patterns, include, url
+from django.conf.urls import patterns, include
 from django.contrib import admin
 from McGlennInspections import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -15,7 +15,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 admin.autodiscover()
 urlpatterns = patterns('',
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    (r'^admin_tools/', include('admin_tools.urls')),
+    (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),
     (r'^blog/', include('blog.urls')),
     (r'^appointment/', include('appointment.urls')),

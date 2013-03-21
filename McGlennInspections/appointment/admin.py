@@ -2,7 +2,8 @@ from django.contrib import admin
 from appointment.models import Appointment, Feedback, CustomerInformation, InspectionAddress
 
 
-# Register your models here.
+# TODO - Research howto make Admin classes more user friendly.  And
+# how to give more detailed information.
 # DONE - Add preview fields for list view
 class AppointmentAdmin(admin.ModelAdmin):
     ''' Admin module for appointment model
@@ -21,14 +22,12 @@ class AppointmentAdmin(admin.ModelAdmin):
 class FeedbackAdmin(admin.ModelAdmin):
     ''' Admin for Feedback model
     '''
-    prepopulated_fields = {'slug': ('full_name',)}
+    prepopulated_fields = {'slug': ('email',)}
     list_display = (
-        'full_name',
-        'timestamp',
         'email',
+        'timestamp',
         'approve',
     )
-    search_fields = ['full_name']
 
 
 # DONE - Add preview fields for list view
@@ -50,9 +49,8 @@ class CustomerInformationAdmin(admin.ModelAdmin):
 class InspectionAddressAdmin(admin.ModelAdmin):
     ''' Admin for Feedback model
     '''
-    prepopulated_fields = {'slug': ('full_name',)}
+    prepopulated_fields = {'slug': ('inspection_city',)}
     list_display = (
-        'full_name',
         'inspection_address',
         'inspection_city',
         'inspection_zip',
