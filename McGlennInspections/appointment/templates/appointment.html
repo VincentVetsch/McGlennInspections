@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
-    {% block content %}
-      <h1>Appintment</h1>
-      <hr />
-    {%  endblock %}
+{% block content %}
+<h1>{{ site }} - Appointment</h1>
+  <hr />
+  {% for appoint in appointment %}
+  <H2>{{ appoint.slug }}</H2>
+  <p>{{appoint.full_name}}</p>
+  {% endfor %}
+{%  endblock %}

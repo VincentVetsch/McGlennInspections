@@ -1,8 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
-# TODO - Use django Auth User database for first_name, last_name,
-# and email fields
+# TODO - Use django Auth User database for first_name, last_name, and email fields.
 # TODO - Educate yourself on the META class
 class CustomerInformation(models.Model):
     ''' Customer Information
@@ -16,6 +16,15 @@ class CustomerInformation(models.Model):
 
     def __unicode__(self):
         return self.email
+
+
+# TODO - Test of user
+class TestUser(models.Model):
+    user_email = models.ForeignKey(User, related_name='email+')
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return self.user_name
 
 
 # DONE - Merge InspectionAddress and HouseInformation together
@@ -72,15 +81,14 @@ class Appointment(models.Model):
 class Feedback(models.Model):
     '''Fields for Feedback table
     '''
-    email = models.ForeignKey(CustomerInformation)
-    #last_name = models.ForeignKey(CustomerInformation)
+    customer = models.ForeignKey(CustomerInformation)
     slug = models.SlugField(unique=True)
     #Address
     inspection_address = models.ForeignKey(InspectionAddress)
     #Notes
     comments = models.TextField()
     timestamp = models.DateTimeField()
-    approve = models.BooleanField()
+    approved = models.BooleanField()
 
     def __unicode__(self):
         return self.slug

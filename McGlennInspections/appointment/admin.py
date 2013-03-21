@@ -1,5 +1,11 @@
 from django.contrib import admin
-from appointment.models import Appointment, Feedback, CustomerInformation, InspectionAddress
+from appointment.models import Appointment, Feedback, CustomerInformation, InspectionAddress, TestUser
+
+
+class TestUserAdmin(admin.ModelAdmin):
+    list_display = (
+        'user_email',
+    )
 
 
 # TODO - Research howto make Admin classes more user friendly.  And
@@ -22,11 +28,11 @@ class AppointmentAdmin(admin.ModelAdmin):
 class FeedbackAdmin(admin.ModelAdmin):
     ''' Admin for Feedback model
     '''
-    prepopulated_fields = {'slug': ('email',)}
+    prepopulated_fields = {'slug': ('customer',)}
     list_display = (
-        'email',
+        'customer',
         'timestamp',
-        'approve',
+        'approved',
     )
 
 
@@ -62,3 +68,4 @@ admin.site.register(Appointment, AppointmentAdmin)
 admin.site.register(Feedback, FeedbackAdmin)
 admin.site.register(InspectionAddress, InspectionAddressAdmin)
 admin.site.register(CustomerInformation, CustomerInformationAdmin)
+admin.site.register(TestUser, TestUserAdmin)
