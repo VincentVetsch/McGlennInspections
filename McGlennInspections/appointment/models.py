@@ -3,6 +3,7 @@ from django.db import models
 
 # TODO - Use django Auth User database for first_name, last_name,
 # and email fields
+# TODO - Educate yourself on the META class
 class CustomerInformation(models.Model):
     ''' Customer Information
     '''

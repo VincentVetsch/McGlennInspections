@@ -60,5 +60,5 @@ class InspectionAddressAdmin(admin.ModelAdmin):
 
 admin.site.register(Appointment, AppointmentAdmin)
 admin.site.register(Feedback, FeedbackAdmin)
-admin.site.register(CustomerInformation, CustomerInformationAdmin)
 admin.site.register(InspectionAddress, InspectionAddressAdmin)
+admin.site.register(CustomerInformation, CustomerInformationAdmin)
