@@ -14,6 +14,7 @@ def glossary_page(request):
             Page with content values
     '''
     # DONE - Start adding the content to the page
+    # TODO - Add pagination
     entries = Term.objects.order_by('-timestamp')
     content = {'term': entries, 'site': SITENAME}
     return render_to_response(
