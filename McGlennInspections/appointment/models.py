@@ -17,6 +17,7 @@ class CustomerName(models.Model):
 class CustomerEmail(models.Model):
     ''' Customer Email
     '''
+    # TODO - Add field to back link to CustomerName
     email = models.EmailField(max_length=200, unique=True)
     slug = models.SlugField(unique=True)
 
@@ -27,6 +28,7 @@ class CustomerEmail(models.Model):
 class CustomerPhone(models.Model):
     ''' Customer Phone
     '''
+    # TODO - Add field to back link to CustomerName
     slug = models.SlugField(unique=True)
     phone = models.CharField(max_length=20, unique=True)
     mobile = models.CharField(max_length=20, unique=True)
@@ -39,6 +41,7 @@ class CustomerPhone(models.Model):
 class InspectionAddress(models.Model):
     ''' The address of the inspection
     '''
+    # TODO - Add field to back link to CustomerName
     slug = models.SlugField(unique=True)
     inspection_address = models.CharField(max_length=100)
     inspection_city = models.CharField(max_length=50)

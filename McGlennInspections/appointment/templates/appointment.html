@@ -40,9 +40,11 @@
       <td><a href="Mailto:{{ a.email }}">{{ a.full_name }}</a></td>
       <td>{{ a.phone }}</td>
       <!-- TODO - Add link to inspection_address detial view.-->
+      <!-- TODO - Use Google maps in the inspection_address detail view. -->
       <td>{{ a.inspection_address }}</td>
       <td>{{ a.date_requested }} at {{ a.time_requested }}</td>
       <td>{{ a.timestamp }}</td>
+      <!-- TODO - Try to  make these into submit buttons to change status -->
       <td class="image"><img src="/media/images/{{a.accepted}}.png" height="24" width="24" /></td>
       <td class="image"><img src="/media/images/{{a.pre_aggrement_meeting}}.png" height="24" width="24"/></td>
       <td class="image"><img src="/media/images/{{a.inspection_completed}}.png" height="24" width="24"/></td>
