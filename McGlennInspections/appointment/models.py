@@ -1,13 +1,13 @@
 from django.db import models
 from inspector.models import Inspector
 PHONE_TYPE = (
-    ('Mobile', 'm'),
-    ('Home', 'h'),
-    ('Work', 'w'),
+    ('M', 'Mobile'),
+    ('H', 'Home'),
+    ('W', 'Work'),
 )
 EMAIL_TYPE = (
-    ('Personal', 'p'),
-    ('Work', 'w'),
+    ('P', 'Personal'),
+    ('W', 'Work'),
 )
 
 
@@ -83,7 +83,7 @@ class Appointment(models.Model):
     full_name = models.ForeignKey(CustomerName)
     email = models.ForeignKey(CustomerEmail)
     phone = models.ForeignKey(CustomerPhone)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(blank=True)
     #Inspection Address
     inspection_address = models.ForeignKey(InspectionAddress)
     #Inspection details
@@ -100,6 +100,12 @@ class Appointment(models.Model):
 
     def __unicode__(self):
         return self.slug
+
+    def save(self, *args, **kwargs):
+        # Creates the slug, including the foreign key's slug.
+        self.slug = str(self.full_name.slug)
+        # Calls the parent save()
+        super(Appointment, self).save(*args, **kwargs)
 
 
 # DONE - Add fields and link to Appointment

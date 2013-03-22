@@ -8,7 +8,7 @@ from appointment.models import Appointment, Feedback, CustomerName, InspectionAd
 class AppointmentAdmin(admin.ModelAdmin):
     ''' Admin module for appointment model
     '''
-    prepopulated_fields = {'slug': ('full_name',)}
+    #prepopulated_fields = {'slug': ('full_name',)}
     list_display = (
         'full_name',
         'date_requested',
