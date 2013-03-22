@@ -1,30 +1,38 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 
 # TODO - Use django Auth User database for first_name, last_name, and email fields.
 # TODO - Educate yourself on the META class
-class CustomerInformation(models.Model):
+class CustomerName(models.Model):
     ''' Customer Information
     '''
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     slug = models.SlugField(unique=True)
+
+    def __unicode__(self):
+        return self.first_name + ' ' + self.last_name
+
+
+class CustomerEmail(models.Model):
+    ''' Customer Email
+    '''
     email = models.EmailField(max_length=200, unique=True)
-    phone = models.CharField(max_length=20, unique=True)
-    mobile = models.CharField(max_length=20, unique=True)
+    slug = models.SlugField(unique=True)
 
     def __unicode__(self):
         return self.email
 
 
-# TODO - Test of user
-class TestUser(models.Model):
-    user_email = models.ForeignKey(User, related_name='email+')
-    timestamp = models.DateTimeField(auto_now_add=True)
+class CustomerPhone(models.Model):
+    ''' Customer Phone
+    '''
+    slug = models.SlugField(unique=True)
+    phone = models.CharField(max_length=20, unique=True)
+    mobile = models.CharField(max_length=20, unique=True)
 
     def __unicode__(self):
-        return self.user_name
+        return 'Home Phone: ' + self.phone + '\nCell Phone: ' + self.mobile
 
 
 # DONE - Merge InspectionAddress and HouseInformation together
@@ -48,14 +56,16 @@ class InspectionAddress(models.Model):
     number_of_bathrooms = models.IntegerField()
 
     def __unicode__(self):
-        return self.inspection_address
+        return self.inspection_address + '\n' + self.inspection_city + ', ' + self.inspection_state + ' ' + str(self.inspection_zip)
 
 
 class Appointment(models.Model):
     ''' Fields for Appointment Table
     '''
     #Customer information
-    full_name = models.ForeignKey(CustomerInformation)
+    full_name = models.ForeignKey(CustomerName)
+    email = models.ForeignKey(CustomerEmail)
+    phone = models.ForeignKey(CustomerPhone)
     slug = models.SlugField(unique=True)
     #Inspection Address
     inspection_address = models.ForeignKey(InspectionAddress)
@@ -81,7 +91,8 @@ class Appointment(models.Model):
 class Feedback(models.Model):
     '''Fields for Feedback table
     '''
-    customer = models.ForeignKey(CustomerInformation)
+    customer = models.ForeignKey(CustomerName)
+    email = models.ForeignKey(CustomerEmail)
     slug = models.SlugField(unique=True)
     #Address
     inspection_address = models.ForeignKey(InspectionAddress)

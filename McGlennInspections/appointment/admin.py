@@ -1,5 +1,5 @@
 from django.contrib import admin
-from appointment.models import Appointment, Feedback, CustomerInformation, InspectionAddress, TestUser
+from appointment.models import Appointment, Feedback, CustomerName, InspectionAddress, CustomerEmail, CustomerPhone
 
 
 class TestUserAdmin(admin.ModelAdmin):
@@ -64,8 +64,27 @@ class InspectionAddressAdmin(admin.ModelAdmin):
     search_fields = ['full_name', 'inspection_city', 'inspection_zip']
 
 
+class CustomerNameAdmin(admin.ModelAdmin):
+    ''' Admin for Feedback model
+    '''
+    prepopulated_fields = {'slug': ('first_name', 'last_name',)}
+
+
+class CustomerEmailAdmin(admin.ModelAdmin):
+    ''' Admin for Feedback model
+    '''
+    prepopulated_fields = {'slug': ('email',)}
+
+
+class CustomerPhoneAdmin(admin.ModelAdmin):
+    ''' Admin for Feedback model
+    '''
+    prepopulated_fields = {'slug': ('phone',)}
+
+
+admin.site.register(CustomerPhone, CustomerPhoneAdmin)
+admin.site.register(CustomerEmail, CustomerEmailAdmin)
+admin.site.register(CustomerName, CustomerNameAdmin)
 admin.site.register(Appointment, AppointmentAdmin)
 admin.site.register(Feedback, FeedbackAdmin)
 admin.site.register(InspectionAddress, InspectionAddressAdmin)
-admin.site.register(CustomerInformation, CustomerInformationAdmin)
-admin.site.register(TestUser, TestUserAdmin)
