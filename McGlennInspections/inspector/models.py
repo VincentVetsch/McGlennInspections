@@ -19,6 +19,16 @@ class Email(models.Model):
         return self.email
 
 
+# TODO - Add fields
+class Credentials(models.Model):
+    ''' Inspector Credentials
+    '''
+    slug = models.SlugField(unique=True)
+
+    def __unicode__(self):
+        return self.slug
+
+
 class Inspector(models.Model):
     ''' Inspector Information
     '''
@@ -26,6 +36,7 @@ class Inspector(models.Model):
     last_name = models.CharField(max_length=20)
     phone = models.ForeignKey(Phone)
     email = models.ForeignKey(Email)
+    credentials = models.ForeignKey(Credentials)
     slug = models.SlugField(unique=True)
 
     def __unicode__(self):

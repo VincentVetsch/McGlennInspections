@@ -1,5 +1,10 @@
 from django.db import models
 from inspector.models import Inspector
+PHONE_TYPE = (
+    ('Mobile', 'm'),
+    ('Home', 'h'),
+    ('Work', 'w'),
+)
 
 
 # TODO - Use django Auth User database for first_name, last_name, and email fields.
@@ -34,7 +39,7 @@ class CustomerPhone(models.Model):
     name = models.ForeignKey(CustomerName)
     slug = models.SlugField(unique=True)
     phone = models.CharField(max_length=20, unique=True)
-    mobile = models.CharField(max_length=20, unique=True)
+    type = models.CharField(max_length=1, choices=PHONE_TYPE)
 
     def __unicode__(self):
         return self.phone
