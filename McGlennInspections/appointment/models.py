@@ -66,16 +66,6 @@ class InspectionAddress(models.Model):
         return self.inspection_address + ' ' + self.inspection_city + ', ' + self.inspection_state + ' ' + str(self.inspection_zip)
 
 
-# TODO - Add fields and link to Appointment
-# DONE - Create Inspector Application
-class InspectorNotes(models.Model):
-    '''Notes from the inspector assigned
-    '''
-    name = models.ForeignKey(Inspector)
-    slug = models.SlugField(unique=True)
-    contact_notes = models.TextField()
-
-
 class Appointment(models.Model):
     ''' Fields for Appointment Table
     '''
@@ -100,6 +90,20 @@ class Appointment(models.Model):
 
     def __unicode__(self):
         return self.slug
+
+
+# DONE - Add fields and link to Appointment
+# DONE - Create Inspector Application
+class InspectorNotes(models.Model):
+    '''Notes from the inspector assigned
+    '''
+    name = models.ForeignKey(Inspector)
+    slug = models.SlugField(unique=True)
+    appointment = models.ForeignKey(Appointment)
+    contact_notes = models.TextField()
+
+    def __unicode__(self):
+        return self.contact_notes
 
 
 # DONE - CustomerInformation doesn't have a __getitem__

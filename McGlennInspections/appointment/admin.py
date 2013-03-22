@@ -14,7 +14,7 @@ class TestUserAdmin(admin.ModelAdmin):
 class AppointmentAdmin(admin.ModelAdmin):
     ''' Admin module for appointment model
     '''
-    prepopulated_fields = {'slug': ('date_requested',)}
+    prepopulated_fields = {'slug': ('full_name',)}
     list_display = (
         'full_name',
         'date_requested',
