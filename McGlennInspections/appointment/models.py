@@ -66,7 +66,7 @@ class InspectionAddress(models.Model):
 
 
 # TODO - Add fields and link to Appointment
-# TODO - Create Inspector Application
+# DONE - Create Inspector Application
 class InspectorNotes(models.Model):
     '''Notes from the inspector assigned
     '''
