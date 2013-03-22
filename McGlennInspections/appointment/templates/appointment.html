@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>{{ site }} - Appointment</h1>
+<h1>{{ site }} - Appointments</h1>
   <hr />
-  {% for appoint in appointment %}
-  <H2>{{ appoint.slug }}</H2>
-  <p>{{ appoint.full_name }}</p>
+  {% for a in appointment %}
+    <h2><a href="Mailto:{{ a.email }}">{{ a.full_name }}</a></h2>
+    <p>Phone: {{ a.phone }}</p>
+    <p>Address: {{ a.inspection_address }}</p>
+    <p>Date and Time Requested: {{ a.date_requested }} at {{ a.time_requested }}</p>
+    <p>Date of Requested: {{ a.timestamp }}</p>
+    <hr />
   {% endfor %}
-{%  endblock %}
+{% endblock %}

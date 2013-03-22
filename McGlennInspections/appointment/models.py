@@ -32,7 +32,7 @@ class CustomerPhone(models.Model):
     mobile = models.CharField(max_length=20, unique=True)
 
     def __unicode__(self):
-        return 'Home Phone: ' + self.phone + '\nCell Phone: ' + self.mobile
+        return self.phone
 
 
 # DONE - Merge InspectionAddress and HouseInformation together
@@ -56,7 +56,7 @@ class InspectionAddress(models.Model):
     number_of_bathrooms = models.IntegerField()
 
     def __unicode__(self):
-        return self.inspection_address + '\n' + self.inspection_city + ', ' + self.inspection_state + ' ' + str(self.inspection_zip)
+        return self.inspection_address + ' ' + self.inspection_city + ', ' + self.inspection_state + ' ' + str(self.inspection_zip)
 
 
 class Appointment(models.Model):
