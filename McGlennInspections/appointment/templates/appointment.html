@@ -35,6 +35,7 @@
     <th>Pre Aggrement Meeting</th>
     <th>Inspection Completed</th>
     <th>Report Completed</th>
+    <th>Add Inspector</th>
   {% for a in appointment %}
     <tr>
       <td><a href="Mailto:{{ a.email }}">{{ a.full_name }}</a></td>
@@ -49,6 +50,7 @@
       <td class="image"><img src="/media/images/{{a.pre_aggrement_meeting}}.png" height="24" width="24"/></td>
       <td class="image"><img src="/media/images/{{a.inspection_completed}}.png" height="24" width="24"/></td>
       <td class="image"><img src="/media/images/{{a.report_completed}}.png" height="24" width="24"/></td>
+      <td>Add Inspection</td>
     </tr>
   {% endfor %}
   </table>
