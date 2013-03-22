@@ -1,4 +1,5 @@
 from django.db import models
+from inspector.models import Inspector
 
 
 # TODO - Use django Auth User database for first_name, last_name, and email fields.
@@ -70,7 +71,9 @@ class InspectionAddress(models.Model):
 class InspectorNotes(models.Model):
     '''Notes from the inspector assigned
     '''
-    pass
+    name = models.ForeignKey(Inspector)
+    slug = models.SlugField(unique=True)
+    contact_notes = models.TextField()
 
 
 class Appointment(models.Model):
