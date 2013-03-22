@@ -20,8 +20,8 @@ class Email(models.Model):
 
 
 # TODO - Add fields
-class Credentials(models.Model):
-    ''' Inspector Credentials
+class Credential(models.Model):
+    ''' Inspector Credential
     '''
     slug = models.SlugField(unique=True)
 
@@ -36,7 +36,7 @@ class Inspector(models.Model):
     last_name = models.CharField(max_length=20)
     phone = models.ForeignKey(Phone)
     email = models.ForeignKey(Email)
-    credentials = models.ForeignKey(Credentials)
+    credentials = models.ForeignKey(Credential)
     slug = models.SlugField(unique=True)
 
     def __unicode__(self):
