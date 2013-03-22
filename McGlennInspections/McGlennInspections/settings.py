@@ -34,10 +34,6 @@ EMAIL = "vincent.vetsch@gmail.com"
 
 # Application definition
 INSTALLED_APPS = (
-   # 'admin_tools',
-   # 'admin_tools.theming',
-   # 'admin_tools.menu',
-   # 'admin_tools.dashboard',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,6 +49,7 @@ INSTALLED_APPS = (
     'rvalues',
     'slideshow',
     'navigation',
+    'inspector',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -132,5 +129,6 @@ TEMPLATE_DIRS = (
     'slideshow/templates',
     'cust_feedback/templates',
     'navigation/templates',
+    'inspector/templates',
 )
 ADMIN_MEDIA_PREFIX = '/static/admin'
