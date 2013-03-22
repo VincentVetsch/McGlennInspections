@@ -3,12 +3,31 @@
 {% block content %}
 <h1>{{ site }} - Appointments</h1>
   <hr />
+  <table>
+    <th>Customer</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>Date and Time of Request</th>
+    <th>Date of Request</th>
+    <th>Accepted</th>
+    <th>Pre Aggrement Meeting</th>
+    <th>Inspection Completed</th>
+    <th>Report Completed</th>
   {% for a in appointment %}
-    <h2><a href="Mailto:{{ a.email }}">{{ a.full_name }}</a></h2>
-    <p>Phone: {{ a.phone }}</p>
-    <p>Address: {{ a.inspection_address }}</p>
-    <p>Date and Time Requested: {{ a.date_requested }} at {{ a.time_requested }}</p>
-    <p>Date of Requested: {{ a.timestamp }}</p>
-    <hr />
+    <!-- TODO - Add <tr class="alt"> if statement for alternating colors -->
+    <tr>
+      <td><a href="Mailto:{{ a.email }}">{{ a.full_name }}</a></td>
+      <td>{{ a.phone }}</td>
+      <!-- TODO - Add link to inspection_address detial view.-->
+      <td>{{ a.inspection_address }}</td>
+      <td>{{ a.date_requested }} at {{ a.time_requested }}</td>
+      <td>{{ a.timestamp }}</td>
+      <td>{{ a.accepted }}</td>
+      <td>{{ a.pre_aggrement_meeting }}</td>
+      <td>{{ a.inspection_completed }}</td>
+      <td>{{ a.report_completed }}</td>
+    </tr>
   {% endfor %}
+  </table>
+  <!-- TODO - Add pagination -->
 {% endblock %}

@@ -16,10 +16,8 @@ def appointment_page(request):
     # TODO - Start adding the content to the page
     entries = Appointment.objects.order_by('-timestamp')
     # TODO - Add basic CustomerInformation
-    #customer = CustomerName.objects.all()
     content = {'appointment': entries,
                'site': SITENAME,
-               #'customer': customer,
               }
     return render_to_response(
         "appointment.html",
