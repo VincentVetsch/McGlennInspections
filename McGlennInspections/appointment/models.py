@@ -5,6 +5,10 @@ PHONE_TYPE = (
     ('Home', 'h'),
     ('Work', 'w'),
 )
+EMAIL_TYPE = (
+    ('Personal', 'p'),
+    ('Work', 'w'),
+)
 
 
 # TODO - Use django Auth User database for first_name, last_name, and email fields.
@@ -26,6 +30,7 @@ class CustomerEmail(models.Model):
     # DONE - Add field to back link to CustomerName
     name = models.ForeignKey(CustomerName)
     email = models.EmailField(max_length=200, unique=True)
+    email_type = models.CharField(max_length=50, choices=EMAIL_TYPE)
     slug = models.SlugField(unique=True)
 
     def __unicode__(self):
@@ -39,7 +44,7 @@ class CustomerPhone(models.Model):
     name = models.ForeignKey(CustomerName)
     slug = models.SlugField(unique=True)
     phone = models.CharField(max_length=20, unique=True)
-    type = models.CharField(max_length=1, choices=PHONE_TYPE)
+    phone_type = models.CharField(max_length=50, choices=PHONE_TYPE)
 
     def __unicode__(self):
         return self.phone

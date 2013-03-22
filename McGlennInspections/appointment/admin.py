@@ -2,19 +2,13 @@ from django.contrib import admin
 from appointment.models import Appointment, Feedback, CustomerName, InspectionAddress, CustomerEmail, CustomerPhone
 
 
-class TestUserAdmin(admin.ModelAdmin):
-    list_display = (
-        'user_email',
-    )
-
-
-# TODO - Research howto make Admin classes more user friendly.  And
+# DONE - Research howto make Admin classes more user friendly.  And
 # how to give more detailed information.
 # DONE - Add preview fields for list view
 class AppointmentAdmin(admin.ModelAdmin):
     ''' Admin module for appointment model
     '''
-    prepopulated_fields = {'slug': ('full_name',)}
+    prepopulated_fields = {'slug': ('date_requested',)}
     list_display = (
         'full_name',
         'date_requested',
@@ -57,6 +51,7 @@ class InspectionAddressAdmin(admin.ModelAdmin):
     '''
     prepopulated_fields = {'slug': ('inspection_address',)}
     list_display = (
+        'name',
         'inspection_address',
         'inspection_city',
         'inspection_zip',
@@ -68,18 +63,32 @@ class CustomerNameAdmin(admin.ModelAdmin):
     ''' Admin for Feedback model
     '''
     prepopulated_fields = {'slug': ('first_name', 'last_name',)}
+    list_display = (
+        'first_name',
+        'last_name',
+    )
 
 
 class CustomerEmailAdmin(admin.ModelAdmin):
     ''' Admin for Feedback model
     '''
     prepopulated_fields = {'slug': ('email',)}
+    list_display = (
+        'name',
+        'email',
+        'email_type',
+    )
 
 
 class CustomerPhoneAdmin(admin.ModelAdmin):
     ''' Admin for Feedback model
     '''
     prepopulated_fields = {'slug': ('phone',)}
+    list_display = (
+        'name',
+        'phone',
+        'phone_type',
+    )
 
 
 admin.site.register(CustomerPhone, CustomerPhoneAdmin)
