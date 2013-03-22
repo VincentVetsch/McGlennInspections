@@ -55,7 +55,7 @@ class CustomerInformationAdmin(admin.ModelAdmin):
 class InspectionAddressAdmin(admin.ModelAdmin):
     ''' Admin for Feedback model
     '''
-    prepopulated_fields = {'slug': ('inspection_city',)}
+    prepopulated_fields = {'slug': ('inspection_address',)}
     list_display = (
         'inspection_address',
         'inspection_city',

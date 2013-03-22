@@ -59,6 +59,14 @@ class InspectionAddress(models.Model):
         return self.inspection_address + ' ' + self.inspection_city + ', ' + self.inspection_state + ' ' + str(self.inspection_zip)
 
 
+# TODO - Add fields and link to Appointment
+# TODO - Create Inspector Application
+class InspectorNotes(models.Model):
+    '''Notes from the inspector assigned
+    '''
+    pass
+
+
 class Appointment(models.Model):
     ''' Fields for Appointment Table
     '''

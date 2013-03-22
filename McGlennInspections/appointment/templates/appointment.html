@@ -1,8 +1,30 @@
 {% extends "base.html" %}
-
 {% block content %}
 <h1>{{ site }} - Appointments</h1>
   <hr />
+<style>
+  table {
+    margin:10px;
+    border: 2px solid #000000;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 8px #000000;
+    -moz-box-shadow: 0px 0px 8px #000000;
+    box-shadow: 0px 0px 8px #000000;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse:collapse;
+  }
+  td, th {
+    font-size:1em;
+    border:1px solid #555;
+    padding:3px 7px 2px 7px;
+  }
+  td.image {vertical-align: middle; text-align:center; }
+  th { background-color:#999; }
+  tr:nth-child(odd) { background-color:#ddd; }
+  tr:nth-child(even) { background-color:#fff; }
+</style>
   <table>
     <th>Customer</th>
     <th>Phone</th>
@@ -14,7 +36,6 @@
     <th>Inspection Completed</th>
     <th>Report Completed</th>
   {% for a in appointment %}
-    <!-- TODO - Add <tr class="alt"> if statement for alternating colors -->
     <tr>
       <td><a href="Mailto:{{ a.email }}">{{ a.full_name }}</a></td>
       <td>{{ a.phone }}</td>
@@ -22,10 +43,10 @@
       <td>{{ a.inspection_address }}</td>
       <td>{{ a.date_requested }} at {{ a.time_requested }}</td>
       <td>{{ a.timestamp }}</td>
-      <td>{{ a.accepted }}</td>
-      <td>{{ a.pre_aggrement_meeting }}</td>
-      <td>{{ a.inspection_completed }}</td>
-      <td>{{ a.report_completed }}</td>
+      <td class="image"><img src="/media/images/{{a.accepted}}.png" height="24" width="24" /></td>
+      <td class="image"><img src="/media/images/{{a.pre_aggrement_meeting}}.png" height="24" width="24"/></td>
+      <td class="image"><img src="/media/images/{{a.inspection_completed}}.png" height="24" width="24"/></td>
+      <td class="image"><img src="/media/images/{{a.report_completed}}.png" height="24" width="24"/></td>
     </tr>
   {% endfor %}
   </table>
