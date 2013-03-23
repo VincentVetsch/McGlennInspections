@@ -41,7 +41,7 @@
       <td><a href="Mailto:{{ a.email }}">{{ a.full_name }}</a></td>
       <td>{{ a.phone }}</td>
       <!-- DONE - Add link to inspection_address detial view.-->
-      <td><a href="details/">{{ a.inspection_address }}</a></td>
+      <td><a href="{{ a.slug }}">{{ a.inspection_address }}</a></td>
       <td>{{ a.date_requested }} at {{ a.time_requested }}</td>
       <td>{{ a.timestamp }}</td>
       <!-- DONE - Try to  make these into submit buttons to change status -->

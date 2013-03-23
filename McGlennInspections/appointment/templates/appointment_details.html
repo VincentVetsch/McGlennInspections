@@ -2,6 +2,20 @@
 {% block content %}
 <!-- TODO - Use Google maps in the inspection_address detail view. -->
 
-<h1>{{ site }} - Inspection Details</h1>
+<h1>{{ site }} - Inspection Details for {{ detail.full_name }}</h1>
 <hr />
+<p><b>Inspection Addresss:  </b>{{ detail.inspection_address }}</p>
+  <p><b>Customer Phone:  </b>{{ detail.phone }}</p>
+  <p><b>Customer Email:  </b><a href="mailto:{{detail.email}}">{{ detail.full_name}}</a></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
 {% endblock %}

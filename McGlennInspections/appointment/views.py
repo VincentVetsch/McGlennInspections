@@ -2,6 +2,8 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from appointment.models import Appointment
 from McGlennInspections.settings import SITENAME
+from django.contrib import admin
+admin.autodiscover()
 
 
 def appointment(request):
@@ -13,7 +15,7 @@ def appointment(request):
     '''
     # TODO - Insure that this page is only available to admin users
     # TODO - Start adding the content to the page
-    entries = Appointment.objects.order_by('-timestamp')
+    entries = Appointment.objects.order_by('-date_requested')
     # TODO - Add basic CustomerInformation
     content = {'appointment': entries,
                'site': SITENAME,
@@ -67,7 +69,7 @@ def appointment_add_inspector(request):
     )
 
 
-def appointment_details(request):
+def appointment_details(request, appointment_slug):
     ''' appointment_details:  This is the detail view for each appointment entries
 
         Arguments:
@@ -75,8 +77,8 @@ def appointment_details(request):
         Returns: Page with content values
     '''
     # TODO - Start adding the content to the page
-    entry = Appointment.objects.all()
-    content = {'appointment': entry,
+    entry = Appointment.objects.get(slug=appointment_slug)
+    content = {'detail': entry,
                'site': SITENAME,
               }
     return render_to_response(

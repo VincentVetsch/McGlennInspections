@@ -18,6 +18,9 @@ class CustomerName(models.Model):
     '''
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
+    # TODO - uncomment email and phone
+    #phone = models.ManyToManyField(CustomerPhone)
+    #email = models.ManyToManyField(CustomerEmail)
     slug = models.SlugField(unique=True)
 
     def __unicode__(self):
@@ -42,9 +45,9 @@ class CustomerPhone(models.Model):
     '''
     # DONE - Add field to back link to CustomerName
     name = models.ForeignKey(CustomerName)
-    slug = models.SlugField(unique=True)
     phone = models.CharField(max_length=20, unique=True)
     phone_type = models.CharField(max_length=50, choices=PHONE_TYPE)
+    slug = models.SlugField(unique=True)
 
     def __unicode__(self):
         return self.phone
@@ -81,6 +84,7 @@ class Appointment(models.Model):
     '''
     #Customer information
     full_name = models.ForeignKey(CustomerName)
+    # TODO - remove email and phone
     email = models.ForeignKey(CustomerEmail)
     phone = models.ForeignKey(CustomerPhone)
     slug = models.SlugField(blank=True)
@@ -93,6 +97,9 @@ class Appointment(models.Model):
     notes = models.TextField()
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=True)
     #Tracking
+    # TODO - Add the commented fields
+    #inspector = models.ForeignKey(Inspector)
+    #inspector_notes = models.ForeignKey(InspectorNotes)
     accepted = models.BooleanField()
     pre_aggrement_meeting = models.BooleanField()
     inspection_completed = models.BooleanField()
