@@ -1,4 +1,5 @@
 from django.db import models
+#from appointment.models import Appointment
 
 
 class Phone(models.Model):

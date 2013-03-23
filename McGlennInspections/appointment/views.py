@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from appointment.models import Appointment
+from appointment.models import Appointment, CustomerEmail
 from McGlennInspections.settings import SITENAME
 from django.contrib import admin
 admin.autodiscover()
@@ -78,7 +78,9 @@ def appointment_details(request, appointment_slug):
     '''
     # TODO - Start adding the content to the page
     entry = Appointment.objects.get(slug=appointment_slug)
+    email = CustomerEmail.objects.filter(name=entry.pk)
     content = {'detail': entry,
+               'email': email,
                'site': SITENAME,
               }
     return render_to_response(

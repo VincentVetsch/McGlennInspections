@@ -94,12 +94,12 @@ class Appointment(models.Model):
     date_requested = models.DateField(auto_now=False, auto_now_add=False)
     time_requested = models.TimeField(auto_now=False, auto_now_add=False)
     #Notes
-    notes = models.TextField()
-    timestamp = models.DateTimeField(auto_now=True, auto_now_add=True)
+    notes = models.TextField(blank=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
     #Tracking
-    # TODO - Add the commented fields
-    #inspector = models.ForeignKey(Inspector)
-    #inspector_notes = models.ForeignKey(InspectorNotes)
+    # DONE - Add the commented fields
+    inspector = models.ForeignKey(Inspector, blank=True)
+    inspector_notes = models.TextField(blank=True)
     accepted = models.BooleanField()
     pre_aggrement_meeting = models.BooleanField()
     inspection_completed = models.BooleanField()
@@ -113,20 +113,6 @@ class Appointment(models.Model):
         self.slug = str(self.full_name.slug)
         # Calls the parent save()
         super(Appointment, self).save(*args, **kwargs)
-
-
-# DONE - Add fields and link to Appointment
-# DONE - Create Inspector Application
-class InspectorNotes(models.Model):
-    '''Notes from the inspector assigned
-    '''
-    name = models.ForeignKey(Inspector)
-    slug = models.SlugField(unique=True)
-    appointment = models.ForeignKey(Appointment)
-    contact_notes = models.TextField()
-
-    def __unicode__(self):
-        return self.contact_notes
 
 
 # DONE - CustomerInformation doesn't have a __getitem__

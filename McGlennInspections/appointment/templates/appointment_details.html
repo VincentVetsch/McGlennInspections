@@ -5,8 +5,18 @@
 <h1>{{ site }} - Inspection Details for {{ detail.full_name }}</h1>
 <hr />
 <p><b>Inspection Addresss:  </b>{{ detail.inspection_address }}</p>
-  <p><b>Customer Phone:  </b>{{ detail.phone }}</p>
-  <p><b>Customer Email:  </b><a href="mailto:{{detail.email}}">{{ detail.full_name}}</a></p>
+  <p><b>Customer Phone:</p>
+    <ol>
+      {% for p in phone %}
+      <li>{{p.phone_type}}: {{ p }}</li>
+      {% endfor %}
+    </ol>
+  <p><b>Customer Email:</p>
+    <ol>
+      {% for e in email %}
+      <li>{{e.email_type}}: <a href="mailto:{{e}}">{{ e }}</a></li>
+      {% endfor %}
+    </ol>
   <p></p>
   <p></p>
   <p></p>

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from appointment.models import Appointment, Feedback, CustomerName, InspectionAddress, CustomerEmail, CustomerPhone, InspectorNotes
+from appointment.models import Appointment, Feedback, CustomerName, InspectionAddress, CustomerEmail, CustomerPhone
 
 
 # DONE - Research howto make Admin classes more user friendly.  And
@@ -100,7 +100,6 @@ class InspectorNotesAdmin(admin.ModelAdmin):
     )
 
 
-admin.site.register(InspectorNotes, InspectorNotesAdmin)
 admin.site.register(CustomerPhone, CustomerPhoneAdmin)
 admin.site.register(CustomerEmail, CustomerEmailAdmin)
 admin.site.register(CustomerName, CustomerNameAdmin)
