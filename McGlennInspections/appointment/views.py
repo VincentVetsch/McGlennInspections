@@ -34,10 +34,22 @@ def post_callback(request, theDataSet):
             record.save()
         return True
     elif ('Inspection_completed' in thePost.keys()):
-        print theDataSet.get(pk=thePost['Inspection_completed'])
+        record = theDataSet.get(pk=thePost['Inspection_completed'])
+        if (record.inspection_completed):
+            record.inspection_completed = False
+            record.save()
+        else:
+            record.inspection_completed = True
+            record.save()
         return True
     elif ('Report_completed' in thePost.keys()):
-        print theDataSet.get(pk=thePost['Report_completed'])
+        record = theDataSet.get(pk=thePost['Report_completed'])
+        if (record.report_completed):
+            record.report_completed = False
+            record.save()
+        else:
+            record.report_completed = True
+            record.save()
         return True
     elif ('Delete' in thePost.keys()):
         # TODO - Need to redirect to a confirmation window
