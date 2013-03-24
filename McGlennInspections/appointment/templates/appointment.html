@@ -62,12 +62,51 @@
       <td>{{ a.date_requested }} at {{ a.time_requested }}</td>
       <td>{{ a.timestamp }}</td>
       <!-- DONE - Try to  make these into submit buttons to change status -->
-      <td class="image" width="55px"><img src="/media/images/{{a.accepted}}.png" height="18" width="18" /></td>
-      <td class="image" width="55px"><img src="/media/images/{{a.pre_aggrement_meeting}}.png" height="18" width="18"/></td>
-      <td class="image" width="55px"><img src="/media/images/{{a.inspection_completed}}.png" height="18" width="18"/></td>
-      <td class="image" width="55px"><img src="/media/images/{{a.report_completed}}.png" height="18" width="18"/></td>
+      <td class="image" width="55px">
+        <form method="post">
+          {% csrf_token %}
+          <input type="hidden" name="Accepted" value="{{a.pk}}" />
+          <button type="submit" />
+          <img src="/media/images/{{a.accepted}}.png" height="18" width="18" />
+        </form>
+      </td>
+      <td class="image" width="55px">
+        <form method="post">
+          {% csrf_token %}
+          <input type="hidden" name="Pre_aggrement_meeting" value="{{a.pk}}" />
+          <button type="submit" />
+            <img src="/media/images/{{a.pre_aggrement_meeting}}.png" height="18" width="18"/>
+        </form>
+      </td>
+      <td class="image" width="55px">
+        <form method="post">
+          {% csrf_token %}
+          <input type="hidden" name="Inspection_completed" value="{{a.pk}}" />
+          <button type="submit" />
+          <img src="/media/images/{{a.inspection_completed}}.png" height="18" width="18"/>
+        </form>
+      </td>
+      <td class="image" width="55px">
+        <form method="post">
+          {% csrf_token %}
+          <input type="hidden" name="Report_completed" value="{{a.pk}}" />
+          <button type="submit" />
+          <img src="/media/images/{{a.report_completed}}.png" height="18" width="18"/>
+        </form>
+      </td>
       <!-- TODO - add Bubble help -->
-      <td class="image"><a href="add_inspector/"><img src="/media/images/Man.png"  height="18" width="18"/></a><a href="change_status/"><img src="/media/images/Edit.png"  height="18" width="18"/></a></td>
+      <td class="image" width="130px">
+          <button type="button" />
+          <a href="add_inspector/"><img src="/media/images/Man.png"  height="18" width="18"/></a>
+          <button type="button" />
+          <a href="change_status/"><img src="/media/images/Edit.png"  height="18" width="18" /></a>
+          <form id="Delete" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="delete" value="{{a.pk}}" />
+            <button type="submit" />
+            <img src="/media/images/Delete.png" height="18" width="18" />
+          </form>
+      </td>
     </tr>
   {% endfor %}
     <tr class="footer"><td colspan="10" class="footer">Add Pagination</td></tr>

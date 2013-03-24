@@ -2,19 +2,21 @@
 {% block content %}
 <!-- TODO - Use Google maps in the inspection_address detail view. -->
 
-<h1>{{ site }} - Inspection Details for {{ detail.full_name }}</h1>
+<h1>{{ site }} </h1><h3>Inspection Details for {{ detail.full_name }}</h3>
+<a href="/appointment/"><img src="/media/images/Arrow-Left.png" alt="Back" height="24" width="24" /></a>
 <hr />
-<p><b>Inspection Addresss:  </b>{{ detail.inspection_address }}</p>
+<p><b>Inspection Addresss:  </b><a href="https://maps.google.com/maps?q={{ detail.inspection_address }}">{{ detail.inspection_address }}</a>
+<a href="http://www.homefacts.com/?q={{ detail.inspection_address }}">Home Facts</a></p>
   <p><b>Customer Phone:</p>
     <ol>
       {% for p in phone %}
-      <li>{{p.phone_type}}: {{ p }}</li>
+      <li>{{ p.get_phone_type_display }}: {{ p }}</li>
       {% endfor %}
     </ol>
   <p><b>Customer Email:</p>
     <ol>
       {% for e in email %}
-      <li>{{e.email_type}}: <a href="mailto:{{e}}">{{ e }}</a></li>
+      <li>{{ e.get_email_type_display }}: <a href="mailto:{{e}}">{{ e }}</a></li>
       {% endfor %}
     </ol>
   <p></p>

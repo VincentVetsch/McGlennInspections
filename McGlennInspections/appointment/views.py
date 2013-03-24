@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from appointment.models import Appointment, CustomerEmail
+from appointment.models import Appointment, CustomerEmail, CustomerPhone
 from McGlennInspections.settings import SITENAME
 from django.contrib import admin
 admin.autodiscover()
@@ -15,6 +15,9 @@ def appointment(request):
     '''
     # TODO - Insure that this page is only available to admin users
     # TODO - Start adding the content to the page
+    if request.method == 'POST':
+        print request.POST
+
     entries = Appointment.objects.order_by('-date_requested')
     # TODO - Add basic CustomerInformation
     content = {'appointment': entries,
@@ -43,6 +46,27 @@ def appointment_change_status(request):
               }
     return render_to_response(
         'appointment_change_status.html',
+        content,
+        context_instance=RequestContext(request)
+    )
+
+
+def appointment_delete(request):
+    ''' appointment_delete:  This is the view to Delete the appointment
+
+        Arguments:
+            request
+        Return:
+            Returns the render_to_response function
+    '''
+    # TODO - work on passing the object selected
+    if request.method == 'POST':
+        print request.POST
+    content = {
+               'site': SITENAME,
+              }
+    return render_to_response(
+        'appointment_delete.html',
         content,
         context_instance=RequestContext(request)
     )
@@ -79,8 +103,10 @@ def appointment_details(request, appointment_slug):
     # TODO - Start adding the content to the page
     entry = Appointment.objects.get(slug=appointment_slug)
     email = CustomerEmail.objects.filter(name=entry.pk)
+    phone = CustomerPhone.objects.filter(name=entry.pk)
     content = {'detail': entry,
                'email': email,
+               'phone': phone,
                'site': SITENAME,
               }
     return render_to_response(
