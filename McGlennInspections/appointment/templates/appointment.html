@@ -102,14 +102,14 @@
           <a href="change_status/"><img src="/media/images/Edit.png"  height="18" width="18" /></a>
           <form id="Delete" method="post">
             {% csrf_token %}
-            <input type="hidden" name="delete" value="{{a.pk}}" />
+            <input type="hidden" name="Delete" value="{{a.pk}}" />
             <button type="submit" />
             <img src="/media/images/Delete.png" height="18" width="18" />
           </form>
       </td>
     </tr>
   {% endfor %}
+    <!-- TODO - Add pagination -->
     <tr class="footer"><td colspan="10" class="footer">Add Pagination</td></tr>
   </table>
-  <!-- TODO - Add pagination -->
 {% endblock %}
