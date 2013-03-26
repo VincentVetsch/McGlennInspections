@@ -6,59 +6,73 @@ from django.contrib import admin
 admin.autodiscover()
 
 
-def post_callback(request, theDataSet):
-    '''post_callback:  Performs manipulation on the appointment database.
+def accepted(thePost, theDataSet):
+    '''accepted:  Performs manipulation on the appointment database.
         Arguments:
             request:        The POST request from Browser
             theDataSet:     The Data object from view
         Return:
             True if manipulation is complete.
     '''
-    thePost = request.POST
-    if ('Accepted' in thePost.keys()):
-        record = theDataSet.get(pk=thePost['Accepted'])
-        if (record.accepted):
-            record.accepted = False
-            record.save()
-        else:
-            record.accepted = True
-            record.save()
-        return True
-    elif ('Pre_aggrement_meeting' in thePost.keys()):
-        record = theDataSet.get(pk=thePost['Pre_aggrement_meeting'])
-        if (record.pre_aggrement_meeting):
-            record.pre_aggrement_meeting = False
-            record.save()
-        else:
-            record.pre_aggrement_meeting = True
-            record.save()
-        return True
-    elif ('Inspection_completed' in thePost.keys()):
-        record = theDataSet.get(pk=thePost['Inspection_completed'])
-        if (record.inspection_completed):
-            record.inspection_completed = False
-            record.save()
-        else:
-            record.inspection_completed = True
-            record.save()
-        return True
-    elif ('Report_completed' in thePost.keys()):
-        record = theDataSet.get(pk=thePost['Report_completed'])
-        if (record.report_completed):
-            record.report_completed = False
-            record.save()
-        else:
-            record.report_completed = True
-            record.save()
-        return True
-    elif ('Delete' in thePost.keys()):
-        # TODO - Need to redirect to a confirmation window
-        print 'Delete:  ' + thePost['Delete']
-        print theDataSet.get(pk=thePost['Delete'])
-        return True
-    else:
-        print 'Not a valid request, the Post is: ' + str(thePost)
-        return False
+    theDataSet.accepted = [True, False][theDataSet.accepted == True]
+    theDataSet.save()
+    return True
+
+
+def meeting(thePost, theDataSet):
+    '''meeting:  Performs manipulation on the appointment database.
+        Arguments:
+            request:        The POST request from Browser
+            theDataSet:     The Data object from view
+        Return:
+            True if manipulation is complete.
+    '''
+    if theDataSet.accepted:
+        theDataSet.pre_aggrement_meeting = [True, False][theDataSet.pre_aggrement_meeting == True]
+    theDataSet.save()
+    return True
+
+
+def report(thePost, theDataSet):
+    '''report:  Performs manipulation on the appointment database.
+        Arguments:
+            request:        The POST request from Browser
+            theDataSet:     The Data object from view
+        Return:
+            True if manipulation is complete.
+    '''
+    if theDataSet.pre_aggrement_meeting:
+        theDataSet.report_completed = [True, False][theDataSet.report_completed == True]
+    theDataSet.save()
+    return True
+
+
+def inspect(thePost, theDataSet):
+    '''inspect:  Performs manipulation on the appointment database.
+        Arguments:
+            request:        The POST request from Browser
+            theDataSet:     The Data object from view
+        Return:
+            True if manipulation is complete.
+    '''
+    if theDataSet.report_completed:
+        theDataSet.inspection_completed = [True, False][theDataSet.inspection_completed == True]
+    theDataSet.save()
+    return True
+
+
+def delete_record(thePost, theDataSet):
+    '''delete_record:  Performs manipulation on the appointment database.
+        Arguments:
+            request:        The POST request from Browser
+            theDataSet:     The Data object from view
+        Return:
+            True if manipulation is complete.
+    '''
+    # TODO - Need to redirect to a confirmation window
+    print 'Delete:  ' + thePost['delete']
+    print theDataSet
+    return True
 
 
 def appointment(request):
@@ -72,11 +86,23 @@ def appointment(request):
     # DONE - Refactor to function
     # This section of code retrieves the POST from template and changes the values
     # in the database
-    entries = Appointment.objects.order_by('-date_requested')
-    if request.method == 'POST' and post_callback(request, entries):
-        print "Success"
-    else:
-        print "Failure"
+    entries = Appointment.objects.order_by('-date_requested').filter(report_completed=False)
+    if request.method == 'POST':
+        if ('accepted' in request.POST.keys()):
+            f = 'accepted'
+            accepted({f: request.POST[f]}, entries.get(pk=request.POST[f]))
+        elif ('meeting' in request.POST.keys()):
+            f = 'meeting'
+            meeting({f: request.POST[f]}, entries.get(pk=request.POST[f]))
+        elif ('inspection' in request.POST.keys()):
+            f = 'inspection'
+            inspect({f: request.POST[f]}, entries.get(pk=request.POST[f]))
+        elif ('report' in request.POST.keys()):
+            f = 'report'
+            report({f: request.POST[f]}, entries.get(pk=request.POST[f]))
+        elif ('delete' in request.POST.keys()):
+            f = 'delete'
+            delete_record({f: request.POST[f]}, entries.get(pk=request.POST[f]))
 
     # TODO - Add basic CustomerInformation
     content = {'appointment': entries,

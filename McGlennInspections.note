@@ -9,7 +9,7 @@ McGlennInspections
 The site needs to be completed by 01APR13.  It’s not going to happen.
 
 Tasks:
-   • TODO — Fix up the model for appointment app
+   • TODO — After doing initial profiling of appointment view and template, the load speed for the page is 110 to 135ms.  This needs to be faster.
    • TODO — Add test fixtures
    • TODO — Add like field to blog app and migrate using South
    • TODO — Study pagination and create a template for it
@@ -33,6 +33,7 @@ Tasks:
    • TODO — Google or Yahoo Calendar to site.  This will allow customers to see
    our current schedule and workload.
 Competed Tasks:
+   • DONE — Fix up the model for appointment app
    • DONE — Clean up slug field in terms
    • DONE — Create base.html for the project
    • DONE — Add customer feedback application

@@ -82,7 +82,20 @@ DATABASES = {
     }
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:8080',
+    }
+}
 '''
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'mcglenn_cache',
+    }
+}
+
     Internationalization
     https://docs.djangoproject.com/en/dev/topics/i18n/
 '''
