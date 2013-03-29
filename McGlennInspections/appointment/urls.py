@@ -4,9 +4,9 @@ from appointment import views
 
 urlpatterns = patterns('',
     url(r'^$', views.appointment, name='appointment'),
-    url(r'^add_inspector/$', views.appointment_add_inspector, name='add_inspector'),
     url(r'^change_status/$', views.appointment_change_status, name='change_status'),
-    url(r'^delete/$', views.appointment_delete, name='appointment_delete'),
+    url(r'^inspector/(?P<appointment_slug>.*)/$', views.change_inspector, name='change_inspector'),
+    url(r'^inspector_notes/(?P<appointment_slug>.*)/$', views.inspector_notes, name='inspector_notes'),
     url(r'^(?P<appointment_slug>.*)/$', views.appointment_details, name='appointment_details'),
     url(r'^appointment_form/$', views.appointment_form, name='appointment_form'),
 )

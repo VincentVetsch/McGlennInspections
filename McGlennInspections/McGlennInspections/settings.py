@@ -144,4 +144,4 @@ TEMPLATE_DIRS = (
     'navigation/templates',
     'inspector/templates',
 )
-ADMIN_MEDIA_PREFIX = '/static/admin'
+#ADMIN_MEDIA_PREFIX = '/static/admin'

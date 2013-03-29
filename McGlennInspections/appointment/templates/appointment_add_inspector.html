@@ -1,6 +1,15 @@
-{% extends "base.html" %}
+{% extends "forms.base.html" %}
 {% block content %}
-<h1>{{ site }} - Add Inspector</h1>
-<hr />
+<h3><center>{{ site }}</center></h3>
+<form id="#change_inspector" method="post">{% csrf_token %}
+  <p>Please select the inspector name for {{ appointment.full_name }}'s inspection.</p>
+  <hr />
+    {% for i in inspectors %}
+      <input type="radio" name="inspector_id" value="{{ i.pk }}" {% if i.pk == appointment.inspector_id %} checked="Checked" {% endif %} >{{ i }}<br>
+    {% endfor %}
+    <hr />
+    <input type="hidden" name="app_id" value="{{ appointment.pk }}" >
+    <input type="submit" value="Submit">
+</form>
 {% endblock %}
 

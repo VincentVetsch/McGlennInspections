@@ -1,115 +1,115 @@
 {% extends "base.html" %}
+{% load set_var %}
 {% block extrahead %}
-<style>
-  table {
-    margin:10px;
-    border: 1px solid #000000;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 4px #000000;
-    -moz-box-shadow: 0px 0px 4px #000000;
-    box-shadow: 0px 0px 4px #000000;
-    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-  }
-  tr.heading {
-    padding: 5px;
-    font-size:10px;
-    text-shadow: 0px 0px 10px #A6AFFF;
-    background-image: -moz-linear-gradient(top, #191970 13%, #000000 82%);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.13, #191970), color-stop(0.82, #000000));
-    color: #FFFFE0;
-  }
-  td {
-    font-size:10px;
-    border:1px solid #555;
-    padding:3px 7px 2px 7px;
-  }
-  td.image {vertical-align: middle; text-align:center; }
-  tr.footer, td.footer {
-    border: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size:10px;
-    text-shadow: 0px 0px 3px #ffffe0;
-    background-color:#000;
-    color: #fff;
-    text-align: center;
-  }
-  tr.content:nth-child(odd) { background-color:#ddd; }
-  tr.content:nth-child(even) { background-color:#fff; }
-</style>
+<link href="/media/css/appointment.css" rel="stylesheet" type="text/css" media="screen">
+<link href="/media/css/popup.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
 <h1>{{ site }} - Appointments</h1>
+<div class="pagination">
+    <button rel="tooltip" onclick="location.reload(); return TRUE;"><img src="/media/images/Refresh.png" class="mini-buttons"></button>
+    <button ><a href="#"><img class="mini-buttons" src="/media/images/Home.png"/></a></button>
+  {% if appointment.has_previous %}
+    <button><a href="?page={{appointment.previous_page_number}}"><img src="/media/images/Arrow-Left.png" class="mini-buttons"></a></button>
+  {% else %}
+    <button><a href="#"><img src="/media/images/Arrow-Left.png" class="mini-buttons"></a></button>
+  {% endif %}
+  {% for pg in appointment.paginator.page_range %}
+    {% if appointment.number == pg %}
+    <button><a class="active" href="?page={{pg}}">{{ pg }}</a></button>
+    {% else %}
+    <button><a class="inactive" href="?page={{ pg }}">{{pg}}</a></button>
+    {% endif %}
+  {% endfor %}
+  {% if appointment.has_next %}
+    <button><a href="?page={{appointment.next_page_number}}"><img src="/media/images/Arrow-Right.png" class="mini-buttons"></a></button>
+  {% else %}
+    <button><a href="#"><img src="/media/images/Arrow-Right.png" class="mini-buttons"></a></button>
+  {% endif %}
+</div>
   <hr />
   <table border="0" cellpadding="0" cellspacing="0">
     <tr class="heading">
-      <th>Customer</th>
-      <th>Phone</th>
-      <th>Address</th>
-      <th>Date and Time of Request</th>
-      <th>Accepted</th>
-      <th>Aggrement Meeting</th>
-      <th>Inspection Completed</th>
-      <th>Report Completed</th>
-      <th>Edit</th>
+      <th class="tooltip">Customer<span class="custom info"><img src="/media/images/Info.png" height="32" width="32" /><em>Customer Email:</em> Just click the links below and send an email to our customer</span></th>
+      <th class="tooltip">Phone<span class="custom info"><img src="/media/images/Info.png" height="32" width="32" /><em>Phone Number:</em>This should be the customer's primary phone number.</span></th>
+      <th class="tooltip">Address<span class="custom info"><img src="/media/images/Info.png" height="32" width="32" /><em>Inspection Address:</em>This is the inspection address.  Just click the links below and get the house's detailed information.</span></th>
+      <th class="tooltip">Date and Time of Request<span class="custom info"><img src="/media/images/Info.png" height="32" width="32" /><em>Date and Time of Request:</em>This is the date and time of the inspection.</span></th>
+      <th class="tooltip">Inspector<span class="custom info"><img src="/media/images/Info.png" height="32" width="32" /><em>Inspector Name:</em>Click the buttons below to change the inspector.</span></th>
+      <th class="tooltip">Remove<span class="custom critical"><img src="/media/images/Critical.png" height="32" width="32" /><em>Remove:</em> Just click the buttons below and remove the appointment. This doesn't remove it from the database but removes it from the appointment view.  <b>It can be undone.</b></span></th>
+      <th class="tooltip">Accepted<span class="custom info"><img src="/media/images/Info.png" height="32" width="32" /><em>Appointment Accepted:</em> Just click the button below and the appointment will be accepted.</span></th>
+      <th class="tooltip">Aggrement Meeting<span class="custom info"><img src="/media/images/Info.png" height="32" width="32" /><em>Pre-Inspection Meeting:</em> Just click the button below once the Pre-Inspection Aggrement meeting hase been completed and payment is received.</span></th>
+      <th class="tooltip">Inspection Completed<span class="custom info"><img src="/media/images/Info.png" height="32" width="32" /><em>Inspection Completed:</em> Just click the button below once the inspection is complete.</span></th>
+      <th class="tooltip">Report Completed<span class="custom warning"><img src="/media/images/Warning.png" height="32" width="32" /><em>Report Commpeted:</em> When the inspection report is commpleted the report will be removed form the appointments listing</span></th>
     </tr>
-  {% for a in appointment %}
+  {% for a in appointment.object_list %}
     <tr class="content">
-      <td><a href="Mailto:{{ a.email }}">{{ a.full_name }}</a></td>
+      <td><a class="tooltip" href="Mailto:{{ a.email }}" title=>{{ a.full_name }}<span class="classic"><em>Send Email</em> to {{ a.full_name }}?</span></a></td>
       <td>{{ a.phone }}</td>
       <!-- DONE - Add link to inspection_address detial view.-->
       <td><a href="{{ a.slug }}">{{ a.inspection_address }}</a></td>
-      <td>{{ a.date_requested }} at {{ a.time_requested }}</td>
+      <!-- DONE - Do a comparitive of date and time conflicts -->
+        {% ifchanged a.date_requested %}
+          {% if a.date_requested > now %}
+            <td class="clear">{{ a.date_requested }} at {{ a.time_requested }}</td>
+          {% else %}
+          <td class="pastdate">{{ a.date_requested }} at {{ a.time_requested }} <b>(PAST DUE)</b></td>
+          {% endif %}
+        {% else %}
+          {% if a.date_requested > now %}
+          <td class="conflict">{{ a.date_requested }} at {{ a.time_requested }} <b>(DATE CONFLICT)</b></td>
+          {% else %}
+          <td class="conflictPastdate">{{ a.date_requested }} at {{ a.time_requested }} <b>(PAST DUE and DATE CONFLICT)</b></td>
+          {% endif %}
+        {% endifchanged %}
+      <td>
+        <a class="inspector" href="inspector/{{ a.slug }}">{% if a.inspector.first_name == "Default" %} NONE {% else %} {{ a.inspector }} {% endif %}</a>
+      </td>
       <!-- DONE - Try to  make these into submit buttons to change status -->
-      <td class="image" width="55px">
-        <form method="post">
-          {% csrf_token %}
-          <input type="hidden" name="accepted" value="{{a.pk}}" />
-          <button type="submit" />
-          <img src="/media/images/{{a.accepted}}.png" />
+      <td class="image">
+        <form id="Delete" method="post">{% csrf_token %}
+          <input type="hidden" name="app_id" value="{{a.pk}}" />
+          <button type="submit" name="delete" value="{{a.pk}}" onclick="return confirm('Remove appointment for {{ a.full_name}}?');">
+          <img src="/media/images/Delete.png" class="mini-buttons"/>
+          </button>
         </form>
       </td>
-      <td class="image" width="55px">
-        <form method="post">
-          {% csrf_token %}
-          <input type="hidden" name="meeting" value="{{a.pk}}" />
-          <button type="submit" />
-            <img src="/media/images/{{a.pre_aggrement_meeting}}.png" />
+      <td class="image">
+        <form method="post" >{% csrf_token %}
+          <input type="hidden" name="app_id" value="{{a.pk}}" />
+          <button type="submit" name="accepted" value="{{a.pk}}">
+          <img src="/media/images/{{a.accepted}}.png" class="mini-buttons"/>
+          </button>
         </form>
       </td>
-      <td class="image" width="55px">
-        <form method="post">
-          {% csrf_token %}
-          <input type="hidden" name="inspection" value="{{a.pk}}" />
-          <button type="submit" />
-          <img src="/media/images/{{a.inspection_completed}}.png" />
+      <td class="image">
+        <form method="post">{% csrf_token %}
+          <input type="hidden" name="app_id" value="{{a.pk}}" />
+          <button type="submit"  name="meeting" value="{{a.pk}}">
+            <img src="/media/images/{{a.pre_aggrement_meeting}}.png" class="mini-buttons"/>
+          </button>
         </form>
       </td>
-      <td class="image" width="55px">
-        <form method="post">
-          {% csrf_token %}
-          <input type="hidden" name="report" value="{{a.pk}}" />
-          <button type="submit" />
-          <img src="/media/images/{{a.report_completed}}.png" />
+      <td class="image">
+        <form method="post">{% csrf_token %}
+          <input type="hidden" name="app_id" value="{{a.pk}}" />
+          <button type="submit" name="inspection" value="{{a.pk}}">
+          <img src="/media/images/{{a.inspection_completed}}.png" class="mini-buttons"/>
+          </button>
         </form>
       </td>
-      <!-- TODO - add Bubble help -->
-      <td class="image" width="130px">
-          <button type="button" />
-          <a href="add_inspector/"><img src="/media/images/Man.png"  height="18" width="18"/></a>
-          <button type="button" />
-          <a href="change_status/"><img src="/media/images/Edit.png"  height="18" width="18" /></a>
-          <form id="Delete" method="post">
-            {% csrf_token %}
-            <input type="hidden" name="delete" value="{{a.pk}}" />
-            <button type="submit" onclick="return confirm('Are you sure you want to delete {{ a.full_name}}?');"/>
-            <img src="/media/images/Delete.png" height="18" width="18" />
-          </form>
+      <td class="image" >
+        <form method="post">{% csrf_token %}
+          <input type="hidden" name="app_id" value="{{a.pk}}" />
+          <button type="submit" name="report" value="{{a.pk}}">
+          <img src="/media/images/{{a.report_completed}}.png" class="mini-buttons"/>
+          </button>
+        </form>
       </td>
     </tr>
   {% endfor %}
-    <!-- TODO - Add pagination -->
-    <tr class="footer"><td colspan="9" class="footer">Add Pagination</td></tr>
+    <tr class="footer"><td class="footer" colspan="10"></td></tr>
   </table>
+<script type="text/javascript" src="/media/js/jquery-1.9.1.min.js"></script>
+<script src="/media/js/jquery.popup.min.js"></script>
+<script type="text/javascript">$('.inspector').popup();</script>
 {% endblock %}

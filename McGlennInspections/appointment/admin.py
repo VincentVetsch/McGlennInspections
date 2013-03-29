@@ -14,6 +14,7 @@ class AppointmentAdmin(admin.ModelAdmin):
         'date_requested',
         'time_requested',
         'timestamp',
+        'report_completed',
     )
     search_fields = ['full_name']
 

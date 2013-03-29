@@ -104,6 +104,7 @@ class Appointment(models.Model):
     pre_aggrement_meeting = models.BooleanField()
     inspection_completed = models.BooleanField()
     report_completed = models.BooleanField()
+    remove = models.BooleanField()
 
     def __unicode__(self):
         return self.slug

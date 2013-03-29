@@ -1,33 +1,168 @@
 {% extends "base.html" %}
+{% block extrahead %}
+<link href="/media/css/detail.view.css" rel="stylesheet" type="text/css" media="screen">
+<link href="/media/css/popup.css" rel="stylesheet">
+{% endblock %}
 {% block content %}
 <!-- TODO - Use Google maps in the inspection_address detail view. -->
-
-<h1>{{ site }} </h1><h3>Inspection Details for {{ detail.full_name }}</h3>
-<a href="/appointment/"><img src="/media/images/Arrow-Left.png" alt="Back" height="24" width="24" /></a>
+<h1>{{ site }} </h1>
+  <ul class="navbar">
+    <li class="navbar-item">
+      <form method="post">{% csrf_token %}
+        <button type="submit" name="delete" value="{{detail.pk}}" onclick="return confirm('Remove appointment for {{ detail.full_name}}?');"><img src="/media/images/Delete.png" class="mini-buttons"/></button>
+      </form>
+    </li>
+    <li class="navbar-item">
+      <button><a href="/appointment/"><img class="mini-buttons" src="/media/images/Home.png"/></a></button>
+    </li>
+    <li class="navbar-item">
+      <button onclick="location.reload(); return TRUE;"><img src="/media/images/Refresh.png" class="mini-buttons"></button>
+    </li>
+    <li class="navbar-item">
+      <button><a href="/appointment/{{ detail.get_previous_by_date_requested }}"><img class="mini-buttons" src="/media/images/Arrow-Left.png"/></a></button>
+    </li>
+    <li class="navbar-item">
+      <button>
+        <a href="/appointment/{{ detail.get_next_by_date_requested }}"><img class="mini-buttons" src="/media/images/Arrow-Right.png"/></a>
+      </button>
+    </li>
+  </ul>
 <hr />
-<p><b>Inspection Addresss:  </b><a href="https://maps.google.com/maps?q={{ detail.inspection_address }}">{{ detail.inspection_address }}</a>
-<a href="http://www.homefacts.com/?q={{ detail.inspection_address }}">Home Facts</a></p>
-  <p><b>Customer Phone:</p>
-    <ol>
-      {% for p in phone %}
-      <li>{{ p.get_phone_type_display }}: {{ p }}</li>
-      {% endfor %}
-    </ol>
-  <p><b>Customer Email:</p>
-    <ol>
-      {% for e in email %}
-      <li>{{ e.get_email_type_display }}: <a href="mailto:{{e}}">{{ e }}</a></li>
-      {% endfor %}
-    </ol>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
+<div class="appointment-detail">
+  <h2 class="title">Inspection Details for {{ detail.full_name }}</h2>
+  <hr class="doc"/>
+  <table>
+    <tr>
+      <td class="label"><b>Inspection Addresss:</b></td>
+      <td><a href="https://maps.google.com/maps?q={{ detail.inspection_address }}">{{ detail.inspection_address }}</a></td>
+    </tr>
+    <tr>
+      <td class="label"><b>Neighborhood Information:</b></td>
+      <td><a href="http://www.homefacts.com/?q={{ detail.inspection_address }}">Home Facts</a></td>
+    </tr>
+    <tr>
+      <td class="label"><b>Customer Phone:</b></td>
+      <td>
+        {% for p in phone %}
+          <b>{{ p.get_phone_type_display }}: </b>{{ p }}
+          <br />
+        {% endfor %}
+      </td>
+    </tr>
+    <tr>
+      <td class="label"><b>Customer Email:</b></td>
+      <td>
+        {% for e in email %}
+          <b>{{ e.get_email_type_display }}: </b><a href="mailto:{{e}}">{{ e }}</a>
+          <br />
+        {% endfor %}
+      </td>
+    </tr>
+    <tr>
+      <td class="label"><b>Date of Request:</b></td>
+      <td>{{ detail.date_requested }}</td>
+    </tr>
+    <tr>
+      <td class="label"><b>Time of Request:</b></td>
+      <td>{{ detail.time_requested}}</td>
+    </tr>
+  </table>
+  <hr class="doc"/>
+  <h4 class="title">House Details</h4>
+  <table>
+    <tr>
+      <td class="label"><b>Square Footage:</b></td>
+      <td class="values">{{ detail.inspection_address.square_footage }}</td>
+      <td class="label"><b>Number of Bedrooms:</b></td>
+      <td class="values">{{ detail.inspection_address.number_of_bedrooms }}</td>
+    </tr>
+    <tr>
+      <td class="label"><b>Number Of Bathrooms:</b></td>
+      <td class="values">{{ detail.inspection_address.number_of_bathrooms }}</td>
+      <td class="label"><b>Basement:</b></td>
+      <td class="values"><img src="/media/images/{{ detail.inspection_address.basement }}.png" class="mini-buttons"/></td>
+    </tr>
+    <tr>
+      <td class="label"><b>Crawlspace:</b></td>
+      <td class="values"><img src="/media/images/{{ detail.inspection_address.crawlspace }}.png" class="mini-buttons"/></td>
+      <td class="label"><b>Garage:</b></td>
+      <td class="values"><img src="/media/images/{{ detail.inspection_address.garage }}.png" class="mini-buttons"/></td>
+    </tr>
+    <tr>
+      <td class="label"><b>Out Buildings:</b></td>
+      <td class="values"><img src="/media/images/{{ detail.inspection_address.out_buildings }}.png" class="mini-buttons"/></td>
+      <td class="label"><b>Dining Room:</b></td>
+      <td class="values"><img src="/media/images/{{ detail.inspection_address.dining_room }}.png" class="mini-buttons"/></td>
+    </tr>
+    <tr>
+      <td class="label"><b>Living Room:</b></td>
+      <td class="values"><img src="/media/images/{{ detail.inspection_address.living_room }}.png" class="mini-buttons"/></td>
+      <td class="label"><b>Family Room:</b></td>
+      <td class="values"><img src="/media/images/{{ detail.inspection_address.family_room }}.png" class="mini-buttons"/></td>
+    </tr>
+  </table>
+  <hr class="doc"/>
+  <h4 class="title">Appointment Status</h4>
+  <table>
+    <tr>
+      <td class="label">
+        <b>Appointment Accepted:</b>
+      </td>
+      <td>
+        <form method="post" >{% csrf_token %}
+          <button type="submit" name="accepted" value="{{detail.pk}}">
+          <img src="/media/images/{{detail.accepted}}.png" class="mini-buttons"/>
+          </button>
+        </form>
+      </td>
+      <td class="label">
+        <b>Pre Inspection Meeting:</b>
+      </td>
+      <td>
+        <form method="post">{% csrf_token %}
+          <button type="submit"  name="meeting" value="{{detail.pk}}">
+          <img src="/media/images/{{detail.pre_aggrement_meeting}}.png" class="mini-buttons"/>
+          </button>
+        </form>
+      </td>
+    </tr>
+    <tr>
+      <td class="label">
+        <b>Inspection Completed:</b>
+      </td>
+      <td>
+        <form method="post">{% csrf_token %}
+          <button type="submit" name="inspection" value="{{detail.pk}}">
+          <img src="/media/images/{{detail.inspection_completed}}.png" class="mini-buttons"/>
+          </button>
+        </form>
+      </td>
+      <td class="label">
+        <b>Report Completed:</b>
+      </td>
+      <td>
+        <form method="post">{% csrf_token %}
+          <button type="submit" name="report" value="{{detail.pk}}">
+          <img src="/media/images/{{detail.report_completed}}.png" class="mini-buttons"/>
+          </button>
+        </form>
+      </td>
+    </tr>
+  </table>
+  <hr class="doc"/>
+  <h4 class="title">Notes</h4>
+  <table>
+    <tr><td class="label"><b>Customer Notes:</b></td><td>
+        {{ detail.notes }}
+    </td></tr>
+    <tr><td class="label"><b>Inspector:</b></td><td>
+        <a class="inspector" href="/appointment/inspector/{{detail.slug}}">{% if detail.inspector.first_name == "Default" %} NONE {% else %} {{ detail.inspector }} {% endif %}</a>
+    </td></tr>
+    <tr><td class="label"><b>Inspector Notes:</b></td><td>
+        <a class="inspector" href="/appointment/inspector_notes/{{detail.slug}}">Add Note</a></td></tr>
+  </table>
+</div>
+<script type="text/javascript" src="/media/js/jquery-1.9.1.min.js"></script>
+<script src="/media/js/jquery.popup.min.js"></script>
+<script type="text/javascript">$('.inspector').popup();</script>
 {% endblock %}

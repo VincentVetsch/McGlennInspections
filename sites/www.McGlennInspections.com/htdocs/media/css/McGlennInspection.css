@@ -1,0 +1,395 @@
+/*
+    Design by Vincent Vetsch
+    http://www.McGlennInspections.com
+    Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+@font-face {
+    font-family: MyCustomFont;
+    src: url("GREKO__N.eot") /* EOT file for IE */
+}
+@font-face {
+    font-family: MyCustomFont;
+    src: url("GREKO__N.ttf") /* TTF file for CSS3 browsers */
+}
+html, body {
+    height:100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: #7E776F url(images/img01.jpg) repeat left top;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #ffffe0;
+    overflow: auto;
+}
+body>.mCustomScrollBox>.mCSB_scrollTools{
+    top:2%;
+    height:96%;
+}
+/* unvisited link */
+a:link {
+    text-decoration: underline;
+}
+/* visited link */
+a:visited {
+    text-decoration: underline;
+}
+/* mouse over link */
+a:hover {
+    text-decoration: underline;
+}
+/* selected link */
+a:active {
+    text-decoration: underline;
+}
+li {
+    font-size: large;
+}
+p {
+    font-size: large;
+}
+
+.button {
+   background:-moz-linear-gradient(-90deg, #273C4F, #205275);
+   background:-webkit-gradient(linear, left top, left bottom, from(#273C4F), to(#205275));
+   padding:10px 15px;
+   -moz-border-radius:5px;
+   -webkit-border-radius:5px;
+   -moz-box-shadow:3px 3px 5px rgba(0,0,0,0.7);
+   -webkit-box-shadow:3px 3px 5px rgba(0,0,0,0.7);
+   position:relative;
+   text-shadow:1px 1px 1px rgba(0,0,0,0.5);
+}
+.button:active {
+   top:1px;
+   left:1px;
+   -moz-box-shadow:2px 2px 5px rgba(0,0,0,0.7);
+   -webkit-box-shadow:2px 2px 5px rgba(0,0,0,0.7);
+}
+#container table, table.blog-container{
+    width: 98%;
+}
+#container table, table.appointment, table.blog-container{
+    margin:10px;
+    border: 2px solid #000000;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 8px #000000;
+    -moz-box-shadow: 0px 0px 8px #000000;
+    box-shadow: 0px 0px 8px #000000;
+}
+table.appointment {
+    margin-left: 20px;
+}
+td.appointment-label {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: text-top;
+}
+
+td.appointment-input {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+input.appointment-inputbox, textarea.appointment-textarea {
+    border: 1px solid gray;
+    background: #fffbd9;
+    opacity: 0.8;
+    text-shadow: 0px 0px 3px #6A5ACD;
+    color: #000080;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 2px 2px 3px #000000;
+    -webkit-box-shadow: 2px 2px 3px #000000;
+    box-shadow: 2px 2px 3px #000000;
+    font-size: 11px;
+    padding: 4px 7px;
+    outline: 0;
+    -webkit-appearance: none;
+}
+textarea.appointment-textarea {
+    margin-bottom: 10px;
+}
+input.appointment-inputbox:focus {
+    border-color: black;
+}
+td.appointment-image {
+    cursor:help;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: top;
+}
+
+img.blogimg {
+    padding: 10px;
+    float: left;
+}
+
+#copyright{
+    background-color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    //opacity: 0.9;
+    text-shadow: 0px 0px 3px #ffffe0;
+}
+
+#copyright p {
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: normal;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffe0
+}
+
+#copyright a {
+    color: #fffbd9
+}
+#logo, td.appointment-title, td.blog-title {
+    padding: 5px;
+    text-shadow: 0px 0px 10px #A6AFFF;
+    background-image: -moz-linear-gradient(top, #191970 13%, #000000 82%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.13, #191970), color-stop(0.82, #000000));
+    color: #FFFFE0;
+}
+#logo {
+    padding: 10x;
+    text-align: left;
+    height: 154px;
+}
+#logo h1 {
+    font-family: MyCustomFont;
+    font-size: 32px;
+    margin-top: 0;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+#logo h2 {
+    padding-left: 250px;
+    //text-transform: uppercase;
+}
+
+#logo img {
+    float: left;
+    border: 2px solid #000000;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 0px 8px #000000;
+    -moz-box-shadow: 0px 0px 8px #000000;
+    box-shadow: 0px 0px 8px #000000;
+    background: #fffbd9;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+}
+.content {
+    margin: 20px;
+    text-shadow: 1px 1px 3px #000000;
+    font-size: 11pt;
+    overflow: auto;
+}
+p {
+    margin: 0px;
+    margin-left: 5px;
+    padding-bottom: 10px;
+}
+#nav {
+    margin-top: 30px;
+    width: 200px;
+    height: 400px;
+    //opacity: 0.9;
+}
+
+#nav, #McGlenn_Slide {
+    color: #ffffe0;
+    text-shadow: 1px 1px 3px #000000;
+    font-size: 11pt;
+}
+
+#nav p {
+    color: #ffffe0
+}
+#sliding-navigation a {
+    -webkit-border-top-right-radius: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+    -moz-border-radius-topright: 6px;
+    -moz-border-radius-bottomright: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    -webkit-box-shadow: 0px 0px 3px #000000;
+    -moz-box-shadow: 0px 0px 3px #000000;
+    box-shadow: 0px 0px 3px #000000;
+    text-shadow: 0px 0px 3px #000000;
+    background-image: -moz-linear-gradient(left, #000000, #191970);
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0.00, #000000), color-stop(1.0, #191970));
+    //opacity: 0.7;
+    border: 2px solid #000000;
+    background-color: #DDDDDD;
+    padding-right: 20px;
+    text-align: left;
+}
+
+ul#sliding-navigation li.sliding-element a {
+    display: block;
+    text-shadow: 0px 0px 2px #ffffe0;
+    width: 130px;
+    padding: 5px 15px;
+    margin: 0;
+}
+a:hover, #copyright a:hover, ul#sliding-navigation li.sliding-element a:hover {
+    color: #ffff66;
+}
+.social {
+    float: right;
+    padding: 10px;
+}
+#nav ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+table.company_logo {
+    padding: 0px;
+    margin: 10px;
+}
+li.company_logo_li {
+    font-size: 14px;
+}
+h2.organization {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#nav ul li {
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    padding-bottom: 5px;
+    padding-left: 14px;
+    padding-right: 14px;
+    color: #ffffe0
+}
+
+a, #nav a {
+    color: #ffffe0
+}
+
+#McGlenn_Slide {
+    width: 760px;
+    height: 380px;
+    border: 0;
+    margin: 0px;
+    padding: 0px;
+}
+
+#McGlenn_Slide img {
+    height: 360px;
+    width: 500px;
+    margin: 0px;
+    padding: 0px;
+    opacity: 0.9;
+    border: 3px solid #000000;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 0px 5px #000000;
+    -moz-box-shadow: 0px 0px 5px #000000;
+    box-shadow: 0px 0px 5px #000000;
+}
+
+#McGlenn_Slide div {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0px;
+    padding: 0px;
+    display: none;
+}
+
+#McGlenn_Slide table.slidetable {
+    width: 100%;
+    height: 100%;
+    border: 5px;
+    border-color: #000000;
+    margin: 0px;
+    padding: 0px;
+    border-spacing: 0px;
+}
+#McGlenn_Slide td.slidetext {
+    width: 300px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+#McGlenn_Slide td.pic {
+    width: auto;
+}
+/*TODO -- Create styles for r-value table */
+#rvalue {
+    cellspacing: 0px;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    border:1px solid #000000;
+}
+table#r-value td.data {
+    border:1px solid #000000;
+    padding:3px 7px 2px 7px;
+}
+/* Text Bubble*/
+.ui-tooltip, .arrow:after {
+    background: black;
+    border: 1px solid white;
+}
+.ui-tooltip {
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    font: bold 11px "Helvetica Neue", Sans-Serif;
+    text-transform: uppercase;
+    box-shadow: 0 0 5px black;
+}
+.arrow {
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: -16px;
+}
+.arrow.top {
+    top: -16px;
+    bottom: auto;
+}
+.arrow.left {
+    left: 20%;
+}
+.arrow:after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: -20px;
+    width: 25px;
+    height: 25px;
+    box-shadow: 6px 5px 9px -9px black;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    tranform: rotate(45deg);
+}
+.arrow.top:after {
+    bottom: -20px;
+    top: auto;
+}

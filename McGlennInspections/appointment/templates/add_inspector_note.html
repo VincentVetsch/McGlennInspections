@@ -1,0 +1,14 @@
+{% extends "forms.base.html" %}
+{% block content %}
+<h3><center>{{ site }}</center></h3>
+<form id="#add_inspector_note" method="post">{% csrf_token %}
+  <p>Please enter note for {{ appointment.full_name }}'s inspection.</p>
+  <hr />
+<form method="post" >{% csrf_token %}
+  <textarea rows="10" cols="60">{{ detail.inspector_notes }}</textarea>
+  <hr />
+  <input type="hidden" name="app_id" value="{{ appointment.pk }}" >
+  <input type="submit" value="Submit">
+</form>
+{% endblock %}
+
