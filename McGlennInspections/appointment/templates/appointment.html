@@ -45,19 +45,23 @@
       <td><a class="tooltip" href="Mailto:{{ a.email }}" title=>{{ a.full_name }}<span class="classic"><em>Send Email</em> to {{ a.full_name }}?</span></a></td>
       <td>{{ a.phone }}</td>
       <td><a href="{{ a.slug }}">{{ a.inspection_address }}</a></td>
-        {% ifchanged a.date_requested %}
-          {% if a.date_requested > now %}
-            <td class="clear">{{ a.date_requested }} at {{ a.time_requested }}</td>
-          {% else %}
-          <td class="tooltip" id="pastdate">{{ a.date_requested }} at {{ a.time_requested }}<span class="custom critical"><b>Appointment is PAST DUE</b></span></td>
-          {% endif %}
+        {% if a.report_completed == True or a.remove == True %}
+          <td class="clear">{{ a.date_requested }} at {{ a.time_requested }}</td>
         {% else %}
-          {% if a.date_requested > now %}
-          <td class="tooltip" id="conflict">{{ a.date_requested }} at {{ a.time_requested }}<span class="custom critical"><b>Appointment has a DATE CONFLICT</b></span></td>
+          {% ifchanged a.date_requested %}
+            {% if a.date_requested > now %}
+              <td class="clear">{{ a.date_requested }} at {{ a.time_requested }}</td>
+            {% else %}
+            <td class="tooltip" id="pastdate">{{ a.date_requested }} at {{ a.time_requested }}<span class="custom critical"><b>Appointment is PAST DUE</b></span></td>
+            {% endif %}
           {% else %}
-          <td class="tooltip" id="conflictPastdate">{{ a.date_requested }} at {{ a.time_requested }}<span class="custom critical"><b>Appointment is PAST DUE and has a DATE CONFLICT</b></span></td>
-          {% endif %}
-        {% endifchanged %}
+            {% if a.date_requested > now %}
+            <td class="tooltip" id="conflict">{{ a.date_requested }} at {{ a.time_requested }}<span class="custom critical"><b>Appointment has a DATE CONFLICT</b></span></td>
+            {% else %}
+            <td class="tooltip" id="conflictPastdate">{{ a.date_requested }} at {{ a.time_requested }}<span class="custom critical"><b>Appointment is PAST DUE and has a DATE CONFLICT</b></span></td>
+            {% endif %}
+          {% endifchanged %}
+        {% endif %}
       <td>
         <a class="inspector" href="inspector/{{ a.slug }}">{% if a.inspector.first_name == "Default" %} NONE {% else %} {{ a.inspector }} {% endif %}</a>
       </td>

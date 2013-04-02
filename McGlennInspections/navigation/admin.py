@@ -10,13 +10,15 @@ class NavigationAdmin(admin.ModelAdmin):
                            'div_class': ('slug', 'parent')}
     list_display = (
         'title',
+        'admin_flag',
+        'order_in_list',
         'link',
         'type_of_link',
         'parent',
         'div_class',
     )
 
-    search_fields = ['title']
+    search_fields = ['title', 'parent']
 
 admin.site.register(Navigation, NavigationAdmin)
 

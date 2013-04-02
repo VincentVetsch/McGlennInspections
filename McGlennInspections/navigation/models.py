@@ -8,7 +8,6 @@ TYPE_CHOICE = (
 
 # DONE - Run syncdb, after you have verified the fields
 # DONE - Look at ways of using a second table as a fk
-# TODO - Look at nano apps
 # Create your models here.
 class Navigation(models.Model):
     '''
@@ -43,6 +42,8 @@ class Navigation(models.Model):
     # Level of the navigation
     level = models.IntegerField()
     div_class = models.CharField(max_length=20)
+    order_in_list = models.IntegerField()
+    admin_flag = models.BooleanField()
     icon_field = models.ImageField(
                                     upload_to="images/navigation/",
                                     help_text="32x32px image",
@@ -78,9 +79,10 @@ def get_navigation():
     output_string = '<h4 class="nav-title">Main</h4>\n<div>\n'
     output_string += '<ul id="sliding-navigation">\n'
     n = Navigation.objects.all()
-    individuals = n.filter(type_of_link='I')
-    parents = n.filter(type_of_link='P')
-    children = n.filter(type_of_link='C')
+    individuals = n.filter(type_of_link='I').order_by('order_in_list')
+    parents = n.filter(type_of_link='P').order_by('order_in_list')
+    children = n.filter(type_of_link='C').order_by('order_in_list')
+
     for i in individuals:
         output_string += create_link_item(i.title, i.link, 'I')
     output_string += '</ul>\n</div>\n'

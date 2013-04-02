@@ -193,6 +193,45 @@ def appointment(request):
     )
 
 
+def appointment_completed(request):
+    ''' appointment_complete:  This is the main view for all appointment entries
+        Arguments:
+            request:        The POST request from Browser
+        Returns: Page with content values
+    '''
+    # TODO - Insure that this page is only available to admin users
+    # DONE - Start adding the content to the page
+    # DONE - Refactor to function
+    # This section of code retrieves the POST from template and changes the values
+    # in the database
+    entries_list = Appointment.objects.order_by('-date_requested', 'time_requested').filter(report_completed=True, remove=False)
+    inspectors = Inspector.objects.exclude(slug='default-default')
+    paginator = Paginator(entries_list, 5)
+
+    # Pagination
+    try:
+        page = int(request.GET.get('page', '1'))
+    except:
+        page = 1
+    #Assign entries to paginator
+    try:
+        entries = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        entries = paginator.page(paginator.num_pages)
+
+    content = {'appointment': entries,
+               'inspectors': inspectors,
+               'navigation': get_navigation(),
+               'now': date.today(),
+               'site': SITENAME,
+              }
+    return render_to_response(
+        "appointment.html",
+        content,
+        context_instance=RequestContext(request)
+    )
+
+
 # TODO - Delete this function
 def appointment_change_status(request):
     ''' appointment_change_status:  This is the view to change the status of the
