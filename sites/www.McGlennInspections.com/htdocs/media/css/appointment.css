@@ -1,97 +1,42 @@
-/* Text Bubble*/
-.tooltip {
-  /*border-bottom: 1px dotted #000000; color: #000000; outline: none;*/
-  cursor: help;
-  text-decoration: none;
-  position: relative;
-}
-.tooltip span {
-  margin-left: -999em;
-  position: absolute;
-}
-.tooltip:hover span {
-  text-align: left;
-  border-radius: 5px 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
-  font-family: Calibri, Tahoma, Geneva, sans-serif;
-  position: absolute; left: 1em; top: 2em; z-index: 99;
-  margin-left: 0; width: 200px;
-}
-.tooltip:hover img {
-  border: 0; margin: -10px 0 0 -35px;
-  float: left; position: absolute;
-}
-.tooltip:hover em {
-  font-family: Candara, Tahoma, Geneva, sans-serif; font-size: 1.2em; font-weight: bold;
-  display: block; padding: 0.2em 0 0.6em 0;
-}
-.classic { padding: 0.8em 1em; }
-.custom { padding: 0.5em 0.8em 0.8em 2em; }
-* html a:hover { background: transparent; }
-.classic { color: black; background: #ddd; border: 1px solid #444; }
-.critical { color: black; background: #FFCCAA; border: 1px solid #FF3334; }
-.help { color: black; background: #9FDAEE; border: 1px solid #2BB0D7; }
-.info { color: black; background: #9FDAEE; border: 1px solid #2BB0D7; }
-.warning { color: black; background: #FFFFAA; border: 1px solid #FFAD33; }
 // Pagination links
 a.active:visited, a.active:link { color: #00f; text-decoration: none;}
 a.active:hover { color: #0ef; text-decoration: none;}
 a.inactive:visited, a.active:link { color: #aaa; text-decoration: none;}
 a.active:hover { color: #0ef; text-decoration: none;}
+a.tooltip { text-decoration: underline; }
 a.inspector {
-  //margin: 10px;
   color: #111111;
   font: 8px;
   text-decoration: underline;
   text-shadow: 0px 0px 2px #000000;
 }
-a:visited { color: #000066;}
-a:hover {
-  color: #222277;
-}
-a.tooltip {
-  text-decoration: underline;
-}
-button {
-  vertical-align: middle;
-  height: 22px;
-  cursor: pointer;
-}
-img.mini-buttons {
-  height: 14px;
-  width: 14px;
-}
 table {
+  width: auto;
+  margin-left: 10px;
+  margin-bottom: 60px;
+  margin-right: 10px;
+  margin-top: 10px;
   padding-left: 3px;
   padding-right: 3px;
   padding-top: 3px;
   padding-bottom: 3px;
-  margin-left: 10px;
-  margin-right: 10px;
-  background-image: -moz-linear-gradient(top, #ddddee 1%, #888888 11%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #ddddee), color-stop(0.11, #aaaacc));
-  -webkit-border-top-left-radius: 6px;
-  -webkit-border-top-right-radius: 6px;
-  -moz-border-radius-topleft: 6px;
-  -moz-border-radius-topright: 6px;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  background-color: #eee;
+  border-radius: 5px 5px; -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border: 1px solid #000000;
-  width: 95%;
-  -webkit-box-shadow: 0px 0px 2px #000000;
-  -moz-box-shadow: 0px 0px 2px #000000;
-  box-shadow: 0px 0px 2px #000000;
-  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  -webkit-box-shadow: 0px 0px 3px #000000;
+  -moz-box-shadow: 0px 0px 3px #000000;
+  box-shadow: 0px 0px 3px #000000;
 }
 tr {
   font-size: 10px;
   vertical-align: middle;
-  text-shadow: 0px 0px 2px #555555;
 }
 tr.heading, th {
   font-size:10px;
   padding-top: 4px;
   padding-bottom: 4px;
+  border-bottom: 1px solid #888;
   vertical-align: middle;
   color: #00000f;
   text-shadow: 0px 0px 1px #000000;
@@ -102,28 +47,26 @@ td {
   padding-right: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
-  border:1px solid #888;
+  border-left:1px solid #888;
+  border-bottom: 1px solid #888;
   vertical-align: middle;
 }
 td.clear { color: #00F;}
-td.conflict { color: #ff0000;}
-td.conflictPastdate, td.pastdate {color: #000000; background: #ff0000;}
+td#conflict {
+  color: #ff0000;
+  text-shadow: 0px 0px 1px #880000;
+}
+td#conflictPastdate, td#pastdate {
+  color: #ff0000;
+  background-color: #ffcccc;
+  text-shadow: 0px 0px 1px #880000;
+}
 td.image {
   vertical-align: middle;
   padding-left: 5px;
   padding-right: 5px;
   text-align: center;
   width: 55px;
-}
-tr.footer, td.footer {
-  border: 0px;
-  height: 5px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size:10px;
-  text-shadow: 0px 0px 3px #ffffe0;
-  background-color:#000;
-  color: #fff;
-  text-align: center;
 }
 tr.content:nth-child(odd) { background-color:#ddd; }
 tr.content:nth-child(even) { background-color:#fff; }

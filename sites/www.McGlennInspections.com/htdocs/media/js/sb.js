@@ -1,0 +1,19 @@
+$(function($){
+    $(window).load(function(){
+        $("#content").mCustomScrollbar({
+            scrollButtons:{
+                enable:true
+            },
+            theme:"dark-thick"
+        });
+    });
+    $(window).load(function(){
+        $("#nav").mCustomScrollbar({
+            scrollButtons:{
+                enable:true
+            },
+            theme:"dark-thick"
+        });
+    });
+});
+
