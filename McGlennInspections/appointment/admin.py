@@ -5,6 +5,11 @@ from appointment.models import Appointment, Feedback, CustomerName, InspectionAd
 # DONE - Research howto make Admin classes more user friendly.  And
 # how to give more detailed information.
 # DONE - Add preview fields for list view
+class TinyMCEAdmin(admin.ModelAdmin):
+    class Media:
+        js = ('/media/js/tiny_mce/tiny_mce.js', '/media/js/tiny_mce/textareas.js',)
+
+
 class AppointmentAdmin(admin.ModelAdmin):
     ''' Admin module for appointment model
     '''
@@ -107,3 +112,4 @@ admin.site.register(CustomerName, CustomerNameAdmin)
 admin.site.register(Appointment, AppointmentAdmin)
 admin.site.register(Feedback, FeedbackAdmin)
 admin.site.register(InspectionAddress, InspectionAddressAdmin)
+#admin.site.register(TinyMCEAdmin)

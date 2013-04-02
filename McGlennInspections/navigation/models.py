@@ -25,7 +25,7 @@ class Navigation(models.Model):
                             )
     slug = models.SlugField(unique=True)
     # DONE - Research models.UrlField for links
-    # FIXME - Doesn't seem to allow Django links
+    # DONE - Doesn't seem to allow Django links
     link = models.CharField(max_length=200,
                             blank=True,
                             help_text="This is the http link"
@@ -51,3 +51,45 @@ class Navigation(models.Model):
 
     def __unicode__(self):
         return self.title
+
+
+def create_link_item(title, link, link_type):
+    '''create_link_item:  Creates a link item for a sliding menu effect
+       Arguments:
+           title:   The title of the hyperlink
+           link:    The address of the hyperlink
+       Returns:     A list item with achor tags
+    '''
+    if link_type == 'I':
+        listitem = '  <li class="sliding-element">'
+    elif link_type == 'C':
+        listitem = '      <li class="sliding-element">'
+    else:
+        return "<p><b>Failure<b></p>"
+    anchor = '<a href="' + link + '">'
+    endanchor = '</a></li>\n'
+    return listitem + anchor + title + endanchor
+
+
+def get_navigation():
+    '''get_navigation:  Gets the navigation information
+        Returns:  The navigation links A Navigation object
+    '''
+    output_string = '<h4 class="nav-title">Main</h4>\n<div>\n'
+    output_string += '<ul id="sliding-navigation">\n'
+    n = Navigation.objects.all()
+    individuals = n.filter(type_of_link='I')
+    parents = n.filter(type_of_link='P')
+    children = n.filter(type_of_link='C')
+    for i in individuals:
+        output_string += create_link_item(i.title, i.link, 'I')
+    output_string += '</ul>\n</div>\n'
+    for p in parents:
+        output_string += '<h6 class="nav-title">' + p.title + '</h6>\n<div class="nav-div">\n'
+        output_string += '<ul id="sliding-navigation">\n'
+        for c in children:
+            if c.parent == p.div_class:
+                output_string += create_link_item(c.title, c.link, 'C')
+        output_string += '</ul>\n</div>\n'
+    output_string += '</ul>\n'
+    return output_string

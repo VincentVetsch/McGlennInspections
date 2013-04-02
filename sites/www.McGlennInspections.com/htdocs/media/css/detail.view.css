@@ -63,16 +63,23 @@ td {
 
 }
 .appointment-detail {
-  border:1px solid gray;
+  border:1px solid #000000;
   width: 850px;
   background-color: #eee;
   padding-top: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
-  margin-left: 20px;
-  border-radius: 5px 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 4px #000000;
+  -moz-box-shadow: 0px 0px 4px #000000;
+  box-shadow: 0px 0px 4px #000000;
 }
 hr.doc {
   border:1px solid #eee;
@@ -89,8 +96,8 @@ li.navbar-item {
   display: inline-table;
 }
 table {
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
   padding: 10px;
   width: 90%;
 }

@@ -1,16 +1,58 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="McGlenn Home Inspections, LLC, McGlenn home inspection, Home Inspection Services, norfolk, columbus, pierce, omaha, nebraska, ne, home inspectors omaha, home inspectors norfolk, home inspection omaha, home inspectors omaha ne, home inspection omaha ne, radon testing, ne, licensed, certified, national standards, ASHI Certified Home Inspectors, Omaha Nebraska, Member of American Society of Home Inspectors, member of omaha area board of realtors, member of better business bureau, member of bbb, member of american indoor air quality control, order an inspection, inspection report, inspection reports omaha," />
+    <meta name="description" content="" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="icon" type="image/x-icon" href="/media/images/McGlenn.ico" />
+    <link href="/media/css/jquery-ui-1.10.2.custom.css" rel="stylesheet">
+    <link href="/media/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <link href="/media/css/popup.css" rel="stylesheet">
+    <link href="/media/css/base.css" rel="stylesheet">
+    <link href="/media/css/tooltip.css" rel="stylesheet">
+  <head>
     {% block extrahead %} {% endblock %}
-    <title>McGlenn Home Inspections</title>
+    <title> {{ site }} </title>
   </head>
   <body>
-    {% block content %}
-
-    {%  endblock %}
-    <hr />
-    <img src="/media/images/vim_created.png" height="32px"/>
-    <img src="/media/images/django.jpg" height="32px"/>
+    <div class="wrapper">
+      <div class="heading">
+        <img class="logo" src="/media/images/McGlenn.svg"/>
+        <h1 class="head-title"> {{ site }} </h1>
+        <h2 class="head-title">Inspecting Your Investment For Your Peace of Mind</h2>
+        {% block heading %} {% endblock %}
+      </div>
+        <div class="main-app" id="main-app">
+          <div class="nav" id="nav">
+          {{ navigation|safe }}
+          {% block nav %} {% endblock %}
+        </div>
+        <div class="content" id="content">
+          {% block content %} {% endblock %}
+        </div>
+        <div class="footer">
+            <div id="copyright">
+            <center>Copyright (c) 2013 McGlenn Inspections, LCC. All rights reserved. Design by <a href="mailto:vincent.vetsch@gmail.com?Subject=Comments%20On%20McGlenn%20Inspections">McGlenn Inspections</a>.</center>
+          </div>
+        </div>
+        {% block footer %} {% endblock %}
+      </div>
+    </div>
   </body>
+  <!-- Load Scripts here -->
+  <script type="text/javascript" src="/media/js/jquery-1.9.1.min.js"></script>
+  <!--<script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>-->
+  <script type="text/javascript" src="/media/js/jquery-ui-1.10.1.custom.js"></script>
+  <script type="text/javascript" src="/media/js/jquery.mousewheel.js"></script>
+  <script type="text/javascript" src="/media/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script type="text/javascript" src="/media/js/jquery.popup.min.js"></script>
+  <script type="text/javascript" src="/media/js/sb.js"></script>
+  <script>
+    $(function() {
+        $( "#nav" ).accordion({
+        heightStyle: "content"
+        });
+    });
+  </script>
+  {% block javascript %} {% endblock %}
 </html>

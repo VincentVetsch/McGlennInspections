@@ -3,6 +3,7 @@ from django.template import RequestContext
 from blog.models import Posts
 #This might not be proper but does work
 from McGlennInspections.settings import SITENAME
+from navigation.models import get_navigation
 
 
 def blog_page(request):
@@ -15,8 +16,10 @@ def blog_page(request):
     '''
     # DONE - Start adding the content to the page
     entries = Posts.objects.order_by('-timestamp')
-    content = {'blog': entries, 'site': SITENAME}
-    print content
+    content = {'blog': entries,
+               'site': SITENAME,
+               'navigation': get_navigation(),
+              }
     return render_to_response(
         "blog.html",
         content,

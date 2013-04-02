@@ -6,6 +6,7 @@ from McGlennInspections.settings import SITENAME
 from django.contrib import admin
 from datetime import date
 from inspector.models import Inspector
+from navigation.models import get_navigation
 #from django.http import HttpResponseRedirect
 admin.autodiscover()
 
@@ -100,11 +101,26 @@ def inspector(value, theDataSet):
         return False
 
 
+def add_inspector_note(value, theDataSet):
+    '''add_inspector_note:  Performs manipulation on the appointment database.
+        Arguments:
+            value:          The integer value from the POST
+            theDataSet:     The Data object from view
+        Return:
+            True if manipulation is complete.
+    '''
+    theDataSet.inspector_notes = value['add_inspector_note']
+    if theDataSet.save():
+        return True
+    else:
+        return False
+
+
 def route_command(request, entries_list):
     '''route_command:  Performs manipulation on the appointment database.
         Arguments:
             request:        The integer value from the POST
-            theDataSet:     The Data object from view
+            entries_list:   The Data object from view
         Return:
             True if manipulation is complete.
     '''
@@ -126,6 +142,9 @@ def route_command(request, entries_list):
     elif ('delete' in request):
         delete_record(entries_list)
         return True
+    elif ('add_inspector_note' in request):
+        add_inspector_note(request, entries_list)
+        return True
     else:
         return False
 
@@ -143,7 +162,7 @@ def appointment(request):
     # in the database
     entries_list = Appointment.objects.order_by('-date_requested', 'time_requested').filter(report_completed=False, remove=False)
     inspectors = Inspector.objects.exclude(slug='default-default')
-    paginator = Paginator(entries_list, 10)
+    paginator = Paginator(entries_list, 5)
 
     if request.method == 'POST':
         entry = entries_list.get(pk=request.POST['app_id'])
@@ -163,6 +182,7 @@ def appointment(request):
 
     content = {'appointment': entries,
                'inspectors': inspectors,
+               'navigation': get_navigation(),
                'now': date.today(),
                'site': SITENAME,
               }
@@ -219,20 +239,16 @@ def change_inspector(request, appointment_slug):
 
 
 def inspector_notes(request, appointment_slug):
-    ''' change_inspector:  This is the view to add an inspector to the
+    ''' inspector_notes:  This is the view to add an inspector note to the
         appointment.
         Arguments:
             request
         Return:
             Returns the render_to_response function
     '''
-    # TODO - work on passing the object selected
-    # TODO - Add a redirect
     entry = Appointment.objects.get(slug=appointment_slug)
-    inspectors = Inspector.objects.exclude(slug='default-default')
 
-    content = {'appointment': entry,
-               'inspectors': inspectors,
+    content = {'note': entry,
                'site': SITENAME,
               }
     return render_to_response(
@@ -258,6 +274,7 @@ def appointment_details(request, appointment_slug):
     content = {'detail': entry,
                'email': email,
                'phone': phone,
+               'navigation': get_navigation(),
                'site': SITENAME,
               }
     return render_to_response(

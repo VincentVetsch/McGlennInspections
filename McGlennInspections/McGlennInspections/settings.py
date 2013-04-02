@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admindocs',
     'django_extensions',
+    'tinymce',
     'taggit',
     'blog',
     'appointment',
@@ -50,6 +51,7 @@ INSTALLED_APPS = (
     'slideshow',
     'navigation',
     'inspector',
+    'pages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -143,5 +145,6 @@ TEMPLATE_DIRS = (
     'cust_feedback/templates',
     'navigation/templates',
     'inspector/templates',
+    'pages/templates',
 )
 #ADMIN_MEDIA_PREFIX = '/static/admin'

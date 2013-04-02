@@ -15,6 +15,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 admin.autodiscover()
 urlpatterns = patterns('',
+    url(r'^$', 'pages.views.mcglenn'),
+    url(r'^tinymce/', include('tinymce.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^blog/', include('blog.urls')),
     url(r'^appointment/', include('appointment.urls')),

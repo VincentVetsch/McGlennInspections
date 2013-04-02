@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block extrahead %}
 <link href="/media/css/detail.view.css" rel="stylesheet" type="text/css" media="screen">
-<link href="/media/css/popup.css" rel="stylesheet">
+<!-- TODO - Use Google maps in the inspection_address detail view. -->
+{% endblock %}
+{% block heading %}
 {% endblock %}
 {% block content %}
-<!-- TODO - Use Google maps in the inspection_address detail view. -->
-<h1>{{ site }} </h1>
+<div class="tootbar">
   <ul class="navbar">
     <li class="navbar-item">
       <form method="post">{% csrf_token %}
@@ -27,7 +28,7 @@
       </button>
     </li>
   </ul>
-<hr />
+</div>
 <div class="appointment-detail">
   <h2 class="title">Inspection Details for {{ detail.full_name }}</h2>
   <hr class="doc"/>
@@ -155,14 +156,27 @@
     <tr><td class="label"><b>Customer Notes:</b></td><td>
         {{ detail.notes }}
     </td></tr>
-    <tr><td class="label"><b>Inspector:</b></td><td>
-        <a class="inspector" href="/appointment/inspector/{{detail.slug}}">{% if detail.inspector.first_name == "Default" %} NONE {% else %} {{ detail.inspector }} {% endif %}</a>
-    </td></tr>
-    <tr><td class="label"><b>Inspector Notes:</b></td><td>
-        <a class="inspector" href="/appointment/inspector_notes/{{detail.slug}}">Add Note</a></td></tr>
+    <tr>
+      <td class="label"><b>Inspector:</b></td><td>
+        <button>
+          <a class="inspector" href="/appointment/inspector/{{detail.slug}}">{% if detail.inspector.first_name == "Default" %} NONE {% else %} {{ detail.inspector }} {% endif %}</a>
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td class="label"><b>Inspector Notes:</b></td>
+      <td>
+        <p>{{ detail.inspector_notes|safe }}</p>
+          <button>
+          <a class="inspector" href="/appointment/inspector_notes/{{detail.slug}}">Add Note</a>
+        </button>
+      </td>
+    </tr>
   </table>
 </div>
-<script type="text/javascript" src="/media/js/jquery-1.9.1.min.js"></script>
-<script src="/media/js/jquery.popup.min.js"></script>
-<script type="text/javascript">$('.inspector').popup();</script>
+{% endblock %}
+{% block footer %} {% endblock %}
+
+{% block javascript %}
+  <script type="text/javascript">$('.inspector').popup();</script>
 {% endblock %}

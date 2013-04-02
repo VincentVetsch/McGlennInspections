@@ -12,11 +12,6 @@ Tasks:
    • TODO — After doing initial profiling of appointment view and template, the load speed for the page is 110 to 135ms.  This needs to be faster.
    • TODO — Add test fixtures
    • TODO — Add like field to blog app and migrate using South
-   • TODO — Study pagination and create a template for it
-      ◦ TODO — Insure that it is as extendable to other sections of code.
-      ◦ TODO — Insure that its variables are capable of being overwritten.
-   • TODO — Add tinyMCE to the project.
-   • TODO — Add South to the project.
    • TODO — Start working on forms
    • TODO — Merge cust_feedback with appointment use fk use South to migrate
    the changes.
@@ -25,7 +20,7 @@ Tasks:
    • TODO — Clean up jquery libraries
    • TODO — Complete all views
       ◦ TODO — Complete slideshow view
-      ◦ TODO — Complete appointment view
+      ◦ DONE — Complete appointment view
       ◦ TODO — Complete blog view
       ◦ TODO — Complete glossary view
       ◦ TODO — Complete rvalues view
@@ -33,6 +28,11 @@ Tasks:
    • TODO — Google or Yahoo Calendar to site.  This will allow customers to see
    our current schedule and workload.
 Competed Tasks:
+   • DONE — Study pagination and create a template for it
+      ◦ DONE — Insure that it is as extendable to other sections of code.
+      ◦ DONE — Insure that its variables are capable of being overwritten.
+   • DONE — Add tinyMCE to the project.
+   • DONE — Add South to the project.
    • DONE — Fix up the model for appointment app
    • DONE — Clean up slug field in terms
    • DONE — Create base.html for the project
