@@ -1,6 +1,5 @@
 {% extends "base.html" %}
-
-{% block content %}
+{% block heading %}
 <div class="toolbar">
     <button rel="tooltip" onclick="location.reload(); return TRUE;"><img src="/media/images/Refresh.png" class="mini-buttons"></button>
     <button ><a href="/"><img class="mini-buttons" src="/media/images/Home.png"/></a></button>
@@ -24,7 +23,9 @@
     <button><a href="#"><img src="/media/images/Arrow-Right.png" class="mini-buttons"></a></button>
   {% endif %}
 </div>
-<hr />
+{% endblock %}
+
+{% block content %}
   {% for term in terms %}
   <h4>{{ term.title }}</h4>
   <p>{{ term.definition }}</p>

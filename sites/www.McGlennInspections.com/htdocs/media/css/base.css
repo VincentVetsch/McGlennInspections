@@ -18,6 +18,10 @@ a.inspector {
   text-decoration: underline;
   text-shadow: 0px 0px 2px #000000;
 }
+.text_line {
+  clear:both;
+  margin-bottom:2px;
+}
 .true, .false, .delete {
   font: monospace;
   text-align: center;
@@ -41,10 +45,13 @@ a.inspector {
   color: #f00;
   padding-right: 2px;
 }
-.nav, .content, .footer {
+.nav, .content, .footer, .toolbar {
   -webkit-box-shadow: 0px 0px 4px #000000;
   -moz-box-shadow: 0px 0px 4px #000000;
   box-shadow: 0px 0px 4px #000000;
+}
+.toolbar {
+  background-color: #ccc;
 }
 .heading {
   //border-bottom: 2px solid #000;
@@ -230,8 +237,21 @@ li.sliding-element:hover {
   margin-left: 20px;
   margin-right: 20px;
 }
+.toolbar {
+  text-align: right;
+  height: auto;
+  width: auto;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  margin-left: 20px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-right: 20px;
+}
 .nav, .content {
-  height: 73%;
+  height: 70%;
   margin-bottom: 0px;
   margin-top: -10px;
   padding-top: 10px;
@@ -243,7 +263,7 @@ li.sliding-element:hover {
   float: right;
   position: relative;
   width: 20%;
-  height: 68%;
+  height: 65%;
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;

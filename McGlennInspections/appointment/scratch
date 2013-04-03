@@ -1,0 +1,10 @@
+
+CREATE TABLE `appointment_customername` (
+    `id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `user_id` integer NOT NULL UNIQUE,
+    `first_name` varchar(30) NOT NULL,
+    `last_name` varchar(30) NOT NULL,
+    `slug` varchar(50) NOT NULL UNIQUE
+)
+;
+ALTER TABLE `appointment_customername` ADD CONSTRAINT `user_id_refs_id_74df0a37` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`);
