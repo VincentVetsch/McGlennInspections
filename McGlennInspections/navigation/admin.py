@@ -17,7 +17,7 @@ class NavigationAdmin(admin.ModelAdmin):
         'parent',
         'div_class',
     )
-
+    list_filter = ['admin_flag', 'parent', 'type_of_link']
     search_fields = ['title', 'parent']
 
 admin.site.register(Navigation, NavigationAdmin)

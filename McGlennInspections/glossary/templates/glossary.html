@@ -1,32 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Glossary</h1>
-  <p>Number of Pages:  {{ terms.paginator.num_pages  }}</p>
-  <div class="pagination">
-      <button rel="tooltip" onclick="location.reload(); return TRUE;"><img src="/media/images/Refresh.png" class="mini-buttons"></button>
-      <button ><a href="/"><img class="mini-buttons" src="/media/images/Home.png"/></a></button>
-    {% if terms.has_previous %}
-      <button><a href="?page={{terms.previous_page_number}}"><img src="/media/images/Arrow-Left.png" class="mini-buttons"></a></button>
+<div class="toolbar">
+    <button rel="tooltip" onclick="location.reload(); return TRUE;"><img src="/media/images/Refresh.png" class="mini-buttons"></button>
+    <button ><a href="/"><img class="mini-buttons" src="/media/images/Home.png"/></a></button>
+  {% if terms.has_previous %}
+    <button><a href="?page={{terms.previous_page_number}}"><img src="/media/images/Arrow-Left.png" class="mini-buttons"></a></button>
+  {% else %}
+    <button><a href="#"><img src="/media/images/Arrow-Left.png" class="mini-buttons"></a></button>
+  {% endif %}
+  {% for pg in terms.page_range %}
+    {% if terms.number == pg %}
+    <button><a class="active" href="?page={{pg}}">{{ pg }}</a></button>
+    {% elif not pg %}
+    <button><a class="active" href="#">...</a></button>
     {% else %}
-      <button><a href="#"><img src="/media/images/Arrow-Left.png" class="mini-buttons"></a></button>
+    <button><a class="inactive" href="?page={{ pg }}">{{pg}}</a></button>
     {% endif %}
-    {% for pg in terms.page_range %}
-      {% if terms.number == pg %}
-      <button><a class="active" href="?page={{pg}}">{{ pg }}</a></button>
-      {% elif not pg %}
-      <button><a class="active" href="#">...</a></button>
-      {% else %}
-      <button><a class="inactive" href="?page={{ pg }}">{{pg}}</a></button>
-      {% endif %}
-    {% endfor %}
-    {% if terms.has_next %}
-      <button><a href="?page={{terms.next_page_number}}"><img src="/media/images/Arrow-Right.png" class="mini-buttons"></a></button>
-    {% else %}
-      <button><a href="#"><img src="/media/images/Arrow-Right.png" class="mini-buttons"></a></button>
-    {% endif %}
-  </div>
-  <hr />
+  {% endfor %}
+  {% if terms.has_next %}
+    <button><a href="?page={{terms.next_page_number}}"><img src="/media/images/Arrow-Right.png" class="mini-buttons"></a></button>
+  {% else %}
+    <button><a href="#"><img src="/media/images/Arrow-Right.png" class="mini-buttons"></a></button>
+  {% endif %}
+</div>
+<hr />
   {% for term in terms %}
   <h4>{{ term.title }}</h4>
   <p>{{ term.definition }}</p>

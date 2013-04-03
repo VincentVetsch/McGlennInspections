@@ -1,13 +1,14 @@
+from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from appointment.models import Appointment, CustomerEmail, CustomerPhone
+from appointment.forms import RegistrationForm
 from McGlennInspections.settings import SITENAME
 from django.contrib import admin
 from datetime import date
 from inspector.models import Inspector
 from navigation.models import get_navigation
-#from django.http import HttpResponseRedirect
 admin.autodiscover()
 
 
@@ -321,6 +322,23 @@ def appointment_details(request, appointment_slug):
         content,
         context_instance=RequestContext(request)
     )
+
+
+def customer_registration(request):
+    '''
+    '''
+    if request.user.is_authenticated():
+        return HttpResponseRedirect('/profile/')
+    if request.method == 'POST':
+        pass
+    else:
+        form = RegistrationForm()
+        content = {'form': form}
+        return render_to_response(
+            'register.html',
+            content,
+            context_instance=RequestContext(request)
+        )
 
 
 def appointment_form(request):

@@ -32,6 +32,7 @@ SITENAME = "McGlenn Home Inspections"
 AUTHOR = "Vincent Vetsch"
 EMAIL = "vincent.vetsch@gmail.com"
 
+AUTH_PROFILE_MODULE = 'appointment.CustomerName'
 # Application definition
 INSTALLED_APPS = (
     'django.contrib.admin',

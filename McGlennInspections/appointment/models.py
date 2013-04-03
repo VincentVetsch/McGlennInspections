@@ -1,5 +1,7 @@
 from django.db import models
 from inspector.models import Inspector
+from django.db.models.signals import post_save
+from django.contrib.auth.models import User
 PHONE_TYPE = (
     ('M', 'Mobile'),
     ('H', 'Home'),
@@ -16,6 +18,7 @@ EMAIL_TYPE = (
 class CustomerName(models.Model):
     ''' Customer Information
     '''
+    user = models.OneToOneField(User)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     # TODO - uncomment email and phone
@@ -134,3 +137,10 @@ class Feedback(models.Model):
 
     def __unicode__(self):
         return self.slug
+
+
+def create_customer_callback(sender, instance, **kwargs):
+    customer, new = CustomerName.objects.get_or_create(user=instance)
+
+
+post_save.connect(create_customer_callback, User)

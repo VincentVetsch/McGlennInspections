@@ -27,7 +27,7 @@ def sop(request):
         'navigation': get_navigation(),
     }
     return render_to_response(
-        'sop.html',
+        'index.html',
         context,
         context_instance=RequestContext(request)
     )
@@ -41,7 +41,7 @@ def ethics(request):
         'navigation': get_navigation(),
     }
     return render_to_response(
-        'ethics.html',
+        'index.html',
         context,
         context_instance=RequestContext(request)
     )
@@ -55,7 +55,21 @@ def agreement(request):
         'navigation': get_navigation(),
     }
     return render_to_response(
-        'agreement.html',
+        'index.html',
+        context,
+        context_instance=RequestContext(request)
+    )
+
+
+def check_list(request):
+    homepage = HomePage.objects.get(the_url=request.path)
+    context = {
+        'homepage': homepage,
+        'site': SITENAME,
+        'navigation': get_navigation(),
+    }
+    return render_to_response(
+        'index.html',
         context,
         context_instance=RequestContext(request)
     )
