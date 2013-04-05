@@ -1,33 +1,34 @@
 {% extends "base.html" %}
-{% block heading %}
-<div class="toolbar">
-    <button rel="tooltip" onclick="location.reload(); return TRUE;"><img src="/media/images/Refresh.png" class="mini-buttons"></button>
-    <button ><a href="/"><img class="mini-buttons" src="/media/images/Home.png"/></a></button>
-  {% if terms.has_previous %}
-    <button><a href="?page={{terms.previous_page_number}}"><img src="/media/images/Arrow-Left.png" class="mini-buttons"></a></button>
-  {% else %}
-    <button><a href="#"><img src="/media/images/Arrow-Left.png" class="mini-buttons"></a></button>
-  {% endif %}
-  {% for pg in terms.page_range %}
-    {% if terms.number == pg %}
-    <button><a class="active" href="?page={{pg}}">{{ pg }}</a></button>
-    {% elif not pg %}
-    <button><a class="active" href="#">...</a></button>
+{% load util %}
+{% block heading %} {% endblock %}
+{% block toolbar %}
+{% with entries|classname as modelclass %}
+  {% if modelclass == 'DiggPage' %}
+    {% if entries.has_previous %}
+      <button><a href="?page={{entries.previous_page_number}}"><img src="/media/images/Arrow-Left.png" class="mini-buttons"></a></button>
     {% else %}
-    <button><a class="inactive" href="?page={{ pg }}">{{pg}}</a></button>
+      <button><a href="#"><img src="/media/images/Arrow-Left.png" class="mini-buttons"></a></button>
     {% endif %}
-  {% endfor %}
-  {% if terms.has_next %}
-    <button><a href="?page={{terms.next_page_number}}"><img src="/media/images/Arrow-Right.png" class="mini-buttons"></a></button>
-  {% else %}
-    <button><a href="#"><img src="/media/images/Arrow-Right.png" class="mini-buttons"></a></button>
+    {% for entry in entries.page_range %}
+      {% if entries.number == entry %}
+      <button><a class="active" href="?page={{ entry }}">{{ entry }}</a></button>
+      {% elif not entry %}
+      <button><a class="active" href="#">...</a></button>
+      {% else %}
+      <button><a class="inactive" href="?page={{ entry }}">{{ entry }}</a></button>
+      {% endif %}
+    {% endfor %}
+    {% if entries.has_next %}
+      <button><a href="?page={{entries.next_page_number}}"><img src="/media/images/Arrow-Right.png" class="mini-buttons"></a></button>
+    {% else %}
+      <button><a href="#"><img src="/media/images/Arrow-Right.png" class="mini-buttons"></a></button>
+    {% endif %}
   {% endif %}
-</div>
+{% endwith %}
 {% endblock %}
-
 {% block content %}
-  {% for term in terms %}
-  <h4>{{ term.title }}</h4>
-  <p>{{ term.definition }}</p>
+  {% for entry in entries %}
+  <h4 class="term-title">{{ entry.title }}:</h4>
+  <p class="definition">{{ entry.definition }}</p>
   {% endfor %}
 {%  endblock %}

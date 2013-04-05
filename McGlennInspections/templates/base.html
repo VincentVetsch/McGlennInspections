@@ -1,4 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load util %}
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="McGlenn Home Inspections, LLC, McGlenn home inspection, Home Inspection Services, norfolk, columbus, pierce, omaha, nebraska, ne, home inspectors omaha, home inspectors norfolk, home inspection omaha, home inspectors omaha ne, home inspection omaha ne, radon testing, ne, licensed, certified, national standards, ASHI Certified Home Inspectors, Omaha Nebraska, Member of American Society of Home Inspectors, member of omaha area board of realtors, member of better business bureau, member of bbb, member of american indoor air quality control, order an inspection, inspection report, inspection reports omaha," />
@@ -22,6 +23,32 @@
         <h2 class="head-title">Inspecting Your Investment For Your Peace of Mind</h2>
       </div>
       {% block heading %} {% endblock %}
+      <div class="toolbar">
+        <button rel="tooltip" onclick="location.reload(); return TRUE;"><img src="/media/images/Refresh.png" class="mini-buttons"></button>
+        <button ><a href="/"><img class="mini-buttons" src="/media/images/Home.png"/></a></button>
+        {% with entries|classname as modelclass %}
+          {% if modelclass == 'Page' %}
+            {% if entries.has_previous %}
+              <button><a href="?page={{entries.previous_page_number}}"><img src="/media/images/Arrow-Left.png" class="mini-buttons"></a></button>
+            {% else %}
+              <button><a href="#"><img src="/media/images/Arrow-Left.png" class="mini-buttons"></a></button>
+            {% endif %}
+            {% for pg in entries.paginator.page_range %}
+              {% if entries.number == pg %}
+              <button><a class="active" href="?page={{pg}}">{{ pg }}</a></button>
+              {% else %}
+              <button><a class="inactive" href="?page={{ pg }}">{{pg}}</a></button>
+              {% endif %}
+            {% endfor %}
+            {% if entries.has_next %}
+              <button><a href="?page={{entries.next_page_number}}"><img src="/media/images/Arrow-Right.png" class="mini-buttons"></a></button>
+            {% else %}
+              <button><a href="#"><img src="/media/images/Arrow-Right.png" class="mini-buttons"></a></button>
+            {% endif %}
+          {% endif %}
+        {% endwith %}
+      {% block toolbar %} {% endblock toolbar %}
+      </div>
         <div class="main-app" id="main-app">
           <div class="nav" id="nav">
           {{ navigation|safe }}
@@ -41,9 +68,7 @@
   </body>
   <!-- Load Scripts here -->
   <script type="text/javascript" src="/media/js/jquery-1.9.1.min.js"></script>
-  <!--<script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>-->
   <script type="text/javascript" src="/media/js/jquery-ui-1.10.1.custom.js"></script>
-  <script type="text/javascript" src="/media/js/jquery.mousewheel.js"></script>
   <script type="text/javascript" src="/media/js/jquery.mCustomScrollbar.concat.min.js"></script>
   <script type="text/javascript" src="/media/js/jquery.popup.min.js"></script>
   <script type="text/javascript" src="/media/js/sb.js"></script>

@@ -2,6 +2,7 @@ from django.db import models
 from inspector.models import Inspector
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
+from tinymce import models as tinymce_models
 PHONE_TYPE = (
     ('M', 'Mobile'),
     ('H', 'Home'),
@@ -97,12 +98,12 @@ class Appointment(models.Model):
     date_requested = models.DateField(auto_now=False, auto_now_add=False)
     time_requested = models.TimeField(auto_now=False, auto_now_add=False)
     #Notes
-    notes = models.TextField(blank=True)
+    notes = tinymce_models.HTMLField(blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     #Tracking
     # DONE - Add the commented fields
     inspector = models.ForeignKey(Inspector, blank=True)
-    inspector_notes = models.TextField(blank=True)
+    inspector_notes = tinymce_models.HTMLField(blank=True)
     accepted = models.BooleanField()
     pre_aggrement_meeting = models.BooleanField()
     inspection_completed = models.BooleanField()

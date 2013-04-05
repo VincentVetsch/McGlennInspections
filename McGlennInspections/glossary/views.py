@@ -35,7 +35,7 @@ def glossary_page(request):
     except (EmptyPage, InvalidPage):
         entries = paginator.page(paginator.num_pages)
 
-    content = {'terms': entries,
+    content = {'entries': entries,
                'navigation': get_navigation(),
                'site': SITENAME,
               }

@@ -181,7 +181,7 @@ def appointment(request):
     except (EmptyPage, InvalidPage):
         entries = paginator.page(paginator.num_pages)
 
-    content = {'appointment': entries,
+    content = {'entries': entries,
                'inspectors': inspectors,
                'navigation': get_navigation(),
                'now': date.today(),
@@ -220,7 +220,7 @@ def appointment_completed(request):
     except (EmptyPage, InvalidPage):
         entries = paginator.page(paginator.num_pages)
 
-    content = {'appointment': entries,
+    content = {'entries': entries,
                'inspectors': inspectors,
                'navigation': get_navigation(),
                'now': date.today(),

@@ -1,126 +1,106 @@
 {% extends "base.html" %}
-{% load set_var %}
+<!--{% load set_var %}-->
 {% block extrahead %}
   <link href="/media/css/appointment.css" rel="stylesheet" type="text/css" media="screen">
 {% endblock %}
-{% block heading %}
-<div class="toolbar">
-    <button rel="tooltip" onclick="location.reload(); return TRUE;"><img src="/media/images/Refresh.png" class="mini-buttons"></button>
-    <button ><a href="/"><img class="mini-buttons" src="/media/images/Home.png"/></a></button>
-  {% if appointment.has_previous %}
-    <button><a href="?page={{appointment.previous_page_number}}"><img src="/media/images/Arrow-Left.png" class="mini-buttons"></a></button>
-  {% else %}
-    <button><a href="#"><img src="/media/images/Arrow-Left.png" class="mini-buttons"></a></button>
-  {% endif %}
-  {% for pg in appointment.paginator.page_range %}
-    {% if appointment.number == pg %}
-    <button><a class="active" href="?page={{pg}}">{{ pg }}</a></button>
-    {% else %}
-    <button><a class="inactive" href="?page={{ pg }}">{{pg}}</a></button>
-    {% endif %}
-  {% endfor %}
-  {% if appointment.has_next %}
-    <button><a href="?page={{appointment.next_page_number}}"><img src="/media/images/Arrow-Right.png" class="mini-buttons"></a></button>
-  {% else %}
-    <button><a href="#"><img src="/media/images/Arrow-Right.png" class="mini-buttons"></a></button>
-  {% endif %}
-</div>
+{% block heading %} {%endblock%}
+{% block toolbar %}
 {% endblock %}
 {% block content %}
-<div class="appointment-table">
-  <table border="0" cellpadding="0" cellspacing="0">
-    <tr>
-      <th class="tooltip">Customer</th>
-      <th class="tooltip">Phone</th>
-      <th class="tooltip">Address</th>
-      <th class="tooltip">Date and Time of Request</th>
-      <th class="tooltip">Inspector<span class="custom info"><img src="/media/images/Info.png" height="32" width="32" /><em>Inspector Name:</em>Click the buttons below to change the inspector.</span></th>
-      <th class="tooltip">Remove<span class="custom critical"><img src="/media/images/Critical.png" height="32" width="32" /><em>Remove:</em> Just click the buttons below and remove the appointment. This doesn't remove it from the database but removes it from the appointment view.  <b>It can be undone.</b></span></th>
-      <th class="tooltip">Accepted</th>
-      <th class="tooltip">Aggrement Meeting</th>
-      <th class="tooltip">Inspection Completed</th>
-      <th class="tooltip">Report Completed</th>
-    </tr>
-  {% for a in appointment.object_list %}
-    <tr class="content">
-      <td><a class="tooltip" href="Mailto:{{ a.email }}" title=>{{ a.full_name }}<span class="classic"><em>Send Email</em> to {{ a.full_name }}?</span></a></td>
-      <td>{{ a.phone }}</td>
-      <td><a href="{{ a.slug }}">{{ a.inspection_address }}</a></td>
-        {% if a.report_completed == True or a.remove == True %}
-          <td class="clear">{{ a.date_requested }} at {{ a.time_requested }}</td>
-        {% else %}
-          {% ifchanged a.date_requested %}
-            {% if a.date_requested > now %}
-              <td class="clear">{{ a.date_requested }} at {{ a.time_requested }}</td>
+  <div class="appointment-table">
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <th class="tooltip">Customer</th>
+        <th class="tooltip">Phone</th>
+        <th class="tooltip">Address</th>
+        <th class="tooltip">Date and Time of Request</th>
+        <th class="tooltip">Inspector<span class="custom info"><img src="/media/images/Info.png" height="32" width="32" /><em>Inspector Name:</em>Click the buttons below to change the inspector.</span></th>
+        <th class="tooltip">Remove<span class="custom critical"><img src="/media/images/Critical.png" height="32" width="32" /><em>Remove:</em> Just click the buttons below and remove the appointment. This doesn't remove it from the database but removes it from the appointment view.  <b>It can be undone.</b></span></th>
+        <th class="tooltip">Accepted</th>
+        <th class="tooltip">Aggrement Meeting</th>
+        <th class="tooltip">Inspection Completed</th>
+        <th class="tooltip">Report Completed</th>
+      </tr>
+    {% for a in entries.object_list %}
+      <tr class="content">
+        <td><a class="tooltip" href="Mailto:{{ a.email }}" title=>{{ a.full_name }}<span class="classic"><em>Send Email</em> to {{ a.full_name }}?</span></a></td>
+        <td>{{ a.phone }}</td>
+        <td><a href="{{ a.slug }}">{{ a.inspection_address }}</a></td>
+          {% if a.report_completed == True or a.remove == True %}
+            <td class="clear">{{ a.date_requested }} at {{ a.time_requested }}</td>
+          {% else %}
+            {% ifchanged a.date_requested %}
+              {% if a.date_requested > now %}
+                <td class="clear">{{ a.date_requested }} at {{ a.time_requested }}</td>
+              {% else %}
+              <td class="tooltip" id="pastdate">{{ a.date_requested }} at {{ a.time_requested }}<span class="custom critical"><b>Appointment is PAST DUE</b></span></td>
+              {% endif %}
             {% else %}
-            <td class="tooltip" id="pastdate">{{ a.date_requested }} at {{ a.time_requested }}<span class="custom critical"><b>Appointment is PAST DUE</b></span></td>
-            {% endif %}
-          {% else %}
-            {% if a.date_requested > now %}
-            <td class="tooltip" id="conflict">{{ a.date_requested }} at {{ a.time_requested }}<span class="custom critical"><b>Appointment has a DATE CONFLICT</b></span></td>
+              {% if a.date_requested > now %}
+              <td class="tooltip" id="conflict">{{ a.date_requested }} at {{ a.time_requested }}<span class="custom critical"><b>Appointment has a DATE CONFLICT</b></span></td>
+              {% else %}
+              <td class="tooltip" id="conflictPastdate">{{ a.date_requested }} at {{ a.time_requested }}<span class="custom critical"><b>Appointment is PAST DUE and has a DATE CONFLICT</b></span></td>
+              {% endif %}
+            {% endifchanged %}
+          {% endif %}
+        <td>
+          <a class="inspector" href="inspector/{{ a.slug }}">{% if a.inspector.first_name == "Default" %} NONE {% else %} {{ a.inspector }} {% endif %}</a>
+        </td>
+        <!-- DONE - Try to  make these into submit buttons to change status -->
+        <td class="image">
+          <form id="Delete" method="post">{% csrf_token %}
+            <input type="hidden" name="app_id" value="{{a.pk}}" />
+            <button class="delete" type="submit" name="delete" value="{{a.pk}}" onclick="return confirm('Remove appointment for {{ a.full_name}}?');">⊗</button>
+          </form>
+        </td>
+        <td class="image">
+          <form method="post" >{% csrf_token %}
+            <input type="hidden" name="app_id" value="{{a.pk}}" />
+            <input type="hidden" name="accepted" value="{{a.pk}}"/>
+            {% if a.accepted %}
+              <input class="true" type="submit" value="✓" />
             {% else %}
-            <td class="tooltip" id="conflictPastdate">{{ a.date_requested }} at {{ a.time_requested }}<span class="custom critical"><b>Appointment is PAST DUE and has a DATE CONFLICT</b></span></td>
+              <input class="false" type="submit" value="✓" />
             {% endif %}
-          {% endifchanged %}
-        {% endif %}
-      <td>
-        <a class="inspector" href="inspector/{{ a.slug }}">{% if a.inspector.first_name == "Default" %} NONE {% else %} {{ a.inspector }} {% endif %}</a>
-      </td>
-      <!-- DONE - Try to  make these into submit buttons to change status -->
-      <td class="image">
-        <form id="Delete" method="post">{% csrf_token %}
-          <input type="hidden" name="app_id" value="{{a.pk}}" />
-          <button class="delete" type="submit" name="delete" value="{{a.pk}}" onclick="return confirm('Remove appointment for {{ a.full_name}}?');">⊗</button>
-        </form>
-      </td>
-      <td class="image">
-        <form method="post" >{% csrf_token %}
-          <input type="hidden" name="app_id" value="{{a.pk}}" />
-          <input type="hidden" name="accepted" value="{{a.pk}}"/>
-          {% if a.accepted %}
-            <input class="true" type="submit" value="✓" />
-          {% else %}
-            <input class="false" type="submit" value="✓" />
-          {% endif %}
-        </form>
-      </td>
-      <td class="image">
-        <form method="post">{% csrf_token %}
-          <input type="hidden" name="app_id" value="{{a.pk}}" />
-          <input type="hidden" name="meeting" value="{{a.pk}}" />
-          {% if a.pre_aggrement_meeting %}
-            <input class="true" type="submit" value="✓" />
-          {% else %}
-            <input class="false" type="submit" value="✓" />
-          {% endif %}
-        </form>
-      </td>
-      <td class="image">
-        <form method="post">{% csrf_token %}
-          <input type="hidden" name="app_id" value="{{a.pk}}" />
-          <input type="hidden" name="inspection" value="{{a.pk}}" />
-          {% if a.inspection_completed %}
-            <input class="true" type="submit" value="✓" />
-          {% else %}
-            <input class="false" type="submit" value="✓" />
-          {% endif %}
-        </form>
-      </td>
-      <td class="image" >
-        <form method="post">{% csrf_token %}
-          <input type="hidden" name="app_id" value="{{a.pk}}" />
-          <input type="hidden" name="report" value="{{a.pk}}"/>
-          {% if a.report_completed %}
-            <input class="true" type="submit" value="✓" />
-          {% else %}
-            <input class="false" type="submit" value="✓" />
-          {% endif %}
-        </form>
-      </td>
-    </tr>
-  {% endfor %}
-  </table>
-</div>
+          </form>
+        </td>
+        <td class="image">
+          <form method="post">{% csrf_token %}
+            <input type="hidden" name="app_id" value="{{a.pk}}" />
+            <input type="hidden" name="meeting" value="{{a.pk}}" />
+            {% if a.pre_aggrement_meeting %}
+              <input class="true" type="submit" value="✓" />
+            {% else %}
+              <input class="false" type="submit" value="✓" />
+            {% endif %}
+          </form>
+        </td>
+        <td class="image">
+          <form method="post">{% csrf_token %}
+            <input type="hidden" name="app_id" value="{{a.pk}}" />
+            <input type="hidden" name="inspection" value="{{a.pk}}" />
+            {% if a.inspection_completed %}
+              <input class="true" type="submit" value="✓" />
+            {% else %}
+              <input class="false" type="submit" value="✓" />
+            {% endif %}
+          </form>
+        </td>
+        <td class="image" >
+          <form method="post">{% csrf_token %}
+            <input type="hidden" name="app_id" value="{{a.pk}}" />
+            <input type="hidden" name="report" value="{{a.pk}}"/>
+            {% if a.report_completed %}
+              <input class="true" type="submit" value="✓" />
+            {% else %}
+              <input class="false" type="submit" value="✓" />
+            {% endif %}
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+    </table>
+  </div>
 {% endblock %}
 {% block footer %} {% endblock %}
 {% block javascript %}

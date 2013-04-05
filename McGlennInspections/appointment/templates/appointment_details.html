@@ -3,30 +3,14 @@
 <link href="/media/css/detail.view.css" rel="stylesheet" type="text/css" media="screen">
 <!-- TODO - Use Google maps in the inspection_address detail view. -->
 {% endblock %}
-{% block heading %}
-<div class="toolbar">
-  <ul class="navbar">
-    <li class="navbar-item">
-      <form method="post">{% csrf_token %}
-        <button type="submit" name="delete" value="{{detail.pk}}" onclick="return confirm('Remove appointment for {{ detail.full_name}}?');"><img src="/media/images/Delete.png" class="mini-buttons"/></button>
-      </form>
-    </li>
-    <li class="navbar-item">
-      <button><a href="/appointment/"><img class="mini-buttons" src="/media/images/Home.png"/></a></button>
-    </li>
-    <li class="navbar-item">
-      <button onclick="location.reload(); return TRUE;"><img src="/media/images/Refresh.png" class="mini-buttons"></button>
-    </li>
-    <li class="navbar-item">
-      <button><a href="/appointment/{{ detail.get_previous_by_date_requested }}"><img class="mini-buttons" src="/media/images/Arrow-Left.png"/></a></button>
-    </li>
-    <li class="navbar-item">
+{% block heading %} {%endblock%}
+{% block toolbar %}
+      <button>
+        <a href="/appointment/{{ detail.get_previous_by_date_requested }}"><img class="mini-buttons" src="/media/images/Arrow-Left.png"/></a>
+      </button>
       <button>
         <a href="/appointment/{{ detail.get_next_by_date_requested }}"><img class="mini-buttons" src="/media/images/Arrow-Right.png"/></a>
       </button>
-    </li>
-  </ul>
-</div>
 {% endblock %}
 {% block content %}
 <div class="appointment-detail">

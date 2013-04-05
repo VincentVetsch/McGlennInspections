@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce import models as tinymce_models
 
 
 class Posts(models.Model):
@@ -8,7 +9,7 @@ class Posts(models.Model):
     author = models.CharField(max_length=30)
     title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
-    bodytext = models.TextField()
+    bodytext = tinymce_models.HTMLField()
     timestamp = models.DateTimeField()
     tags = models.CharField(max_length=50)
     image1 = models.ImageField(
